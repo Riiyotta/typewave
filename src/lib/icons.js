@@ -1,0 +1,13 @@
+// Inline SVG markup extracted from the original page (recon-assets/svg).
+export { default as navbarLogo } from '../../recon-assets/svg/navbar-logo.svg?raw'
+export { default as footerLogo } from '../../recon-assets/svg/footer-logo.svg?raw'
+export { default as figmaIcon } from '../../recon-assets/svg/figma-icon-btn.svg?raw'
+export { default as checkIcon } from '../../recon-assets/svg/check.svg?raw'
+export { default as chevronIcon } from '../../recon-assets/svg/chevron.svg?raw'
+export { default as presetFolder } from '../../recon-assets/svg/preset-folder.svg?raw'
+export { default as logoCursor } from '../../recon-assets/svg/logo-cursor.svg?raw'
+export { default as logoVscode } from '../../recon-assets/svg/logo-vscode.svg?raw'
+export { default as logoClaude } from '../../recon-assets/svg/logo-claude.svg?raw'
+export { default as logoCursorAi } from '../../recon-assets/svg/logo-cursor-ai-card.svg?raw'
+export { default as logoOpenai } from '../../recon-assets/svg/logo-openai.svg?raw'
+export { default as logoLovable } from '../../recon-assets/svg/logo-lovable.svg?raw'

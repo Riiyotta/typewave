@@ -1,0 +1,140 @@
+{
+  "id": "overlay.floating-cta",
+  "kind": "section",
+  "category": "overlay",
+  "purpose": "Keep the install CTA reachable mid-page: a fixed bottom bar that appears only while scrolling down between the hero video and the newsletter.",
+  "implementedBy": [
+    "src/components/FloatingCta.jsx"
+  ],
+  "variants": [],
+  "constraints": {
+    "onePerPage": true,
+    "maxPerPage": 1,
+    "mustFollowFooter": true,
+    "requiresSections": [
+      "hero.video-scale",
+      "form.newsletter-inline",
+      "shell.navbar"
+    ]
+  },
+  "content": {
+    "schemaRef": "#/definitions/content.overlay.floating-cta",
+    "schema": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "cta",
+        "secondary"
+      ],
+      "properties": {
+        "cta": {
+          "$ref": "#/definitions/figmaCta"
+        },
+        "secondary": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "label",
+            "target"
+          ],
+          "properties": {
+            "label": {
+              "$ref": "#/definitions/text"
+            },
+            "target": {
+              "$ref": "#/definitions/anchorTarget"
+            }
+          }
+        }
+      }
+    },
+    "wordBudgets": [
+      {
+        "path": "cta.label",
+        "observedMaxWords": 3,
+        "maxWords": 4
+      },
+      {
+        "path": "secondary.label",
+        "observedMaxWords": 1,
+        "maxWords": 2
+      }
+    ]
+  },
+  "assetRoles": [
+    "icon.figma-glyph"
+  ],
+  "motion": {
+    "allowedPatterns": [
+      "floating-cta-visibility"
+    ],
+    "reducedMotionFallback": "instant-hide-show",
+    "reducedMotionEvidence": "prescribed-not-in-source",
+    "observedRevealDelaysMs": [],
+    "patternEvidence": {
+      "floating-cta-visibility": [
+        {
+          "cite": "src/components/FloatingCta.jsx:5",
+          "expect": "// M15: visible only when hero video top <= 0"
+        },
+        {
+          "cite": "CLONE_SPEC.md:666",
+          "expect": "| M15 | Floating CTA"
+        }
+      ]
+    }
+  },
+  "responsive": [
+    {
+      "breakpoint": "desktop",
+      "query": "(min-width: 1025px)",
+      "changes": {
+        "sizePx": [
+          231.2,
+          56
+        ]
+      },
+      "measuredFrom": [
+        {
+          "cite": "CLONE_SPEC.md:620",
+          "expect": "Size: 231.2x56 desktop, 216x56 at ≤1024."
+        }
+      ]
+    },
+    {
+      "breakpoint": "tablet",
+      "query": "(max-width: 1024px)",
+      "changes": {
+        "sizePx": [
+          216,
+          56
+        ]
+      },
+      "measuredFrom": [
+        {
+          "cite": "CLONE_SPEC.md:620",
+          "expect": "Size: 231.2x56 desktop, 216x56 at ≤1024."
+        }
+      ]
+    }
+  ],
+  "accessibility": "",
+  "measuredFrom": [
+    {
+      "cite": "src/App.jsx:47",
+      "expect": "<FloatingCta />"
+    },
+    {
+      "cite": "src/components/FloatingCta.jsx:18",
+      "expect": "const video = document.querySelector('.hero__image')"
+    },
+    {
+      "cite": "src/components/FloatingCta.jsx:19",
+      "expect": "const field = document.querySelector('.newsletter__field')"
+    },
+    {
+      "cite": "@original/index-B7zdGq3H.js",
+      "quote": "r=document.querySelector(\".newsletter__field\")"
+    }
+  ]
+}

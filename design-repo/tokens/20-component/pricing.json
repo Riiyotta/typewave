@@ -1,0 +1,78 @@
+{
+  "component.pricing": {
+    "seam-height": {
+      "$value": "12px",
+      "$type": "dimension",
+      "$description": "Ticket perforation band.",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "src/index.css:328",
+            "expect": ".pricing-plan__seam{display:flex;height:12px;background:var(--color-bg)}"
+          },
+          {
+            "cite": "@original/index-D4COY28s.css",
+            "quote": ".pricing-plan__seam{display:flex;height:12px"
+          }
+        ]
+      }
+    },
+    "notch-size": {
+      "$value": "12px",
+      "$type": "dimension",
+      "$description": "Semicircle notch diameter.",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "src/index.css:330",
+            "expect": "width:12px;height:12px;border-radius:50%"
+          }
+        ]
+      }
+    },
+    "notch-inset": {
+      "$value": "24px",
+      "$type": "dimension",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "src/index.css:329",
+            "expect": ".pricing-plan__seam-notch{position:relative;flex:1 1 auto;margin-inline:24px"
+          }
+        ]
+      }
+    },
+    "panel-padding": {
+      "$value": "32px",
+      "$type": "dimension",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "src/index.css:322",
+            "expect": ".pricing-plan__content{display:flex;flex-direction:column;gap:32px;padding:32px"
+          }
+        ]
+      }
+    },
+    "includes-padding": {
+      "$value": "48px",
+      "$type": "dimension",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "src/index.css:339",
+            "expect": ".pricing-includes{display:flex;flex-direction:column;gap:32px;padding:48px"
+          }
+        ]
+      }
+    },
+    "shell-bg": {
+      "$value": "{color-roles.surface.page}",
+      "$type": "alias"
+    },
+    "panel-bg": {
+      "$value": "{color-roles.surface.raised}",
+      "$type": "alias"
+    }
+  }
+}

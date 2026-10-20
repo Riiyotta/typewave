@@ -1,0 +1,210 @@
+{
+  "id": "shell.navbar",
+  "kind": "section",
+  "category": "shell",
+  "purpose": "Persistent orientation and the primary install CTA: logo home link, in-page jumps to the four decision sections, one \"Try it now\" button; collapses to a full-screen menu on touch widths.",
+  "implementedBy": [
+    "src/components/Navbar.jsx",
+    "src/components/FigmaButton.jsx"
+  ],
+  "variants": [],
+  "constraints": {
+    "onePerPage": true,
+    "maxPerPage": 1,
+    "mustBeFirst": true
+  },
+  "content": {
+    "schemaRef": "#/definitions/content.shell.navbar",
+    "schema": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "logo",
+        "logoLabel",
+        "links",
+        "cta"
+      ],
+      "properties": {
+        "logo": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "assetRole",
+            "assetRef"
+          ],
+          "properties": {
+            "assetRole": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/assetRole"
+                },
+                {
+                  "const": "brand.logo-wordmark"
+                }
+              ]
+            },
+            "assetRef": {
+              "$ref": "#/definitions/assetRef"
+            }
+          }
+        },
+        "logoLabel": {
+          "$ref": "#/definitions/text"
+        },
+        "links": {
+          "type": "array",
+          "minItems": 0,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "label",
+              "target"
+            ],
+            "properties": {
+              "label": {
+                "$ref": "#/definitions/text"
+              },
+              "target": {
+                "$ref": "#/definitions/anchorTarget"
+              },
+              "tag": {
+                "enum": [
+                  "NEW"
+                ]
+              }
+            }
+          }
+        },
+        "cta": {
+          "$ref": "#/definitions/figmaCta"
+        }
+      }
+    },
+    "wordBudgets": [
+      {
+        "path": "logoLabel",
+        "observedMaxWords": 2,
+        "maxWords": 3
+      },
+      {
+        "path": "links[].label",
+        "observedMaxWords": 3,
+        "maxWords": 4
+      },
+      {
+        "path": "cta.label",
+        "observedMaxWords": 3,
+        "maxWords": 4
+      }
+    ]
+  },
+  "assetRoles": [
+    "brand.logo-wordmark",
+    "icon.figma-glyph"
+  ],
+  "motion": {
+    "allowedPatterns": [
+      "nav-hide-on-scroll",
+      "mobile-menu"
+    ],
+    "reducedMotionFallback": "instant-hide-show",
+    "reducedMotionEvidence": "prescribed-not-in-source",
+    "observedRevealDelaysMs": [],
+    "patternEvidence": {
+      "nav-hide-on-scroll": [
+        {
+          "cite": "src/components/Navbar.jsx:34",
+          "expect": "// M12: hide on scroll down"
+        },
+        {
+          "cite": "CLONE_SPEC.md:663",
+          "expect": "| M12 | Navbar hide/show"
+        }
+      ],
+      "mobile-menu": [
+        {
+          "cite": "src/index.css:135",
+          "expect": ".navbar--open .navbar__mobile-menu{visibility:visible;opacity:1;transform:scale(1);pointer-events:auto}"
+        },
+        {
+          "cite": "CLONE_SPEC.md:667",
+          "expect": "| M16 | Mobile menu"
+        }
+      ]
+    }
+  },
+  "responsive": [
+    {
+      "breakpoint": "desktop",
+      "query": "(min-width: 1025px)",
+      "changes": {
+        "navLinks": "inline-centered",
+        "cta": "visible",
+        "heightPx": 88,
+        "hideOnScrollDownAfterPx": 80
+      },
+      "measuredFrom": [
+        {
+          "cite": "src/index.css:122",
+          "expect": ".navbar__nav{position:absolute;left:50%;transform:translate(-50%)"
+        },
+        {
+          "cite": "src/components/Navbar.jsx:45",
+          "expect": "const hide = y > lastY && y > 80"
+        }
+      ]
+    },
+    {
+      "breakpoint": "tablet",
+      "query": "(max-width: 1024px)",
+      "changes": {
+        "navLinks": "hamburger-fullscreen-menu",
+        "cta": "inside-mobile-menu",
+        "heightPx": 80,
+        "logoHeightPx": 32,
+        "menuHeight": "100dvh",
+        "smoothScroll": "native-shim (Lenis not created)"
+      },
+      "measuredFrom": [
+        {
+          "cite": "src/index.css:131",
+          "expect": ".navbar__nav,.navbar__cta{display:none}"
+        },
+        {
+          "cite": "src/index.css:133",
+          "expect": ".navbar--open{background:var(--color-bg);height:100dvh"
+        },
+        {
+          "cite": "src/lib/scroll.js:50",
+          "expect": "if (window.matchMedia('(max-width: 1024px)').matches) {"
+        }
+      ]
+    },
+    {
+      "breakpoint": "mobile",
+      "query": "(max-width: 767px)",
+      "changes": {
+        "innerPaddingInlinePx": 24
+      },
+      "measuredFrom": [
+        {
+          "cite": "src/index.css:85",
+          "expect": "@media (max-width: 767px){.container{padding-inline:24px}}"
+        }
+      ]
+    }
+  ],
+  "accessibility": "Hamburger exposes aria-label Open/Close menu and aria-expanded; nav items are buttons that scroll (offset -80).",
+  "measuredFrom": [
+    {
+      "cite": "src/App.jsx:34",
+      "expect": "<Navbar />"
+    },
+    {
+      "cite": "CLONE_SPEC.md:132",
+      "expect": "## 3. Navbar `header.navbar`"
+    }
+  ]
+}

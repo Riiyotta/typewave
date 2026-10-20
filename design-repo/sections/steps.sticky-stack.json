@@ -1,0 +1,260 @@
+{
+  "id": "steps.sticky-stack",
+  "kind": "section",
+  "category": "steps",
+  "purpose": "Explain the three-step workflow; each step card pins and scales into focus over the previous one while its loop starts playing.",
+  "implementedBy": [
+    "src/components/HowItWorks.jsx"
+  ],
+  "variants": [],
+  "constraints": {
+    "onePerPage": true,
+    "maxPerPage": 1
+  },
+  "observedAnchorId": "how-it-works",
+  "content": {
+    "schemaRef": "#/definitions/content.steps.sticky-stack",
+    "schema": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "title",
+        "cards"
+      ],
+      "properties": {
+        "title": {
+          "$ref": "#/definitions/title"
+        },
+        "cards": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 3,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "badge",
+              "badgeTone",
+              "title",
+              "text",
+              "video"
+            ],
+            "properties": {
+              "badge": {
+                "type": "string",
+                "pattern": "^[1-9]$"
+              },
+              "badgeTone": {
+                "enum": [
+                  "brand",
+                  "step-2",
+                  "step-3"
+                ]
+              },
+              "title": {
+                "$ref": "#/definitions/text"
+              },
+              "text": {
+                "$ref": "#/definitions/text"
+              },
+              "video": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "assetRole",
+                  "assetRef"
+                ],
+                "properties": {
+                  "assetRole": {
+                    "allOf": [
+                      {
+                        "$ref": "#/definitions/assetRole"
+                      },
+                      {
+                        "const": "media.step-video"
+                      }
+                    ]
+                  },
+                  "assetRef": {
+                    "$ref": "#/definitions/assetRef"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "wordBudgets": [
+      {
+        "path": "title",
+        "observedMaxWords": 10,
+        "specWords": 10,
+        "maxWords": 12,
+        "measuredFrom": [
+          {
+            "cite": "CLONE_SPEC.md:238",
+            "expect": "**h2:** 62 chars / 10 words"
+          }
+        ]
+      },
+      {
+        "path": "cards[].title",
+        "observedMaxWords": 8,
+        "specWords": 8,
+        "maxWords": 10,
+        "measuredFrom": [
+          {
+            "cite": "CLONE_SPEC.md:239",
+            "expect": "41ch/8w (3 lines @272px)"
+          }
+        ]
+      },
+      {
+        "path": "cards[].text",
+        "observedMaxWords": 39,
+        "specWords": 37,
+        "maxWords": 47,
+        "measuredFrom": [
+          {
+            "cite": "CLONE_SPEC.md:240",
+            "expect": "176ch/25w (6 lines), 233ch/34w (7 lines), 199ch/37w"
+          }
+        ]
+      }
+    ]
+  },
+  "assetRoles": [
+    "media.step-video"
+  ],
+  "motion": {
+    "allowedPatterns": [
+      "char-reveal-scroll-linked",
+      "fade-up",
+      "parallax",
+      "sticky-stack-scale"
+    ],
+    "reducedMotionFallback": "static-unscaled-stack",
+    "reducedMotionEvidence": "prescribed-not-in-source",
+    "observedRevealDelaysMs": [
+      150
+    ],
+    "patternEvidence": {
+      "char-reveal-scroll-linked": [
+        {
+          "cite": "src/lib/compose.jsx:54",
+          "expect": "export function initScrollCompose() {"
+        },
+        {
+          "cite": "CLONE_SPEC.md:653",
+          "expect": "| M4 | Scroll-composed characters"
+        }
+      ],
+      "fade-up": [
+        {
+          "cite": "src/index.css:91",
+          "expect": ".reveal{opacity:0;transform:translateY(32px);transition:opacity .7s ease,transform .7s ease"
+        },
+        {
+          "cite": "CLONE_SPEC.md:651",
+          "expect": "| M2 | Reveal (fade-up)"
+        }
+      ],
+      "parallax": [
+        {
+          "cite": "src/lib/parallax.js:5",
+          "expect": "export function initParallax(lenis) {"
+        },
+        {
+          "cite": "CLONE_SPEC.md:654",
+          "expect": "| M5 | Parallax"
+        }
+      ],
+      "sticky-stack-scale": [
+        {
+          "cite": "src/components/HowItWorks.jsx:9",
+          "expect": "// M8: sticky stacking cards"
+        },
+        {
+          "cite": "CLONE_SPEC.md:657",
+          "expect": "| M8 | Sticky stacking cards"
+        }
+      ]
+    }
+  },
+  "responsive": [
+    {
+      "breakpoint": "desktop",
+      "query": "(min-width: 1025px)",
+      "changes": {
+        "cardLayout": "row (text 25%+24px | media)",
+        "cardPosition": "sticky (top = (vh - cardHeight)/2)",
+        "stackScale": [
+          0.75,
+          1
+        ],
+        "cardsGapPx": 80
+      },
+      "measuredFrom": [
+        {
+          "cite": "src/index.css:176",
+          "expect": ".card{display:flex;background:var(--color-surface);border-radius:var(--radius-md);overflow:hidden;position:sticky"
+        },
+        {
+          "cite": "src/components/HowItWorks.jsx:34",
+          "expect": "r = (window.innerHeight - cards[0].offsetHeight) / 2"
+        }
+      ]
+    },
+    {
+      "breakpoint": "tablet",
+      "query": "(max-width: 1024px)",
+      "changes": {
+        "cardLayout": "column-reverse (media on top)",
+        "cardPosition": "static",
+        "stackScale": null,
+        "cardsGapPx": 24,
+        "videos": "all play on load"
+      },
+      "measuredFrom": [
+        {
+          "cite": "src/index.css:185",
+          "expect": ".card{flex-direction:column-reverse;position:static;transform:none!important}"
+        },
+        {
+          "cite": "src/components/HowItWorks.jsx:31",
+          "expect": "videos.forEach((_, i) => playVideo(i))"
+        }
+      ]
+    },
+    {
+      "breakpoint": "mobile",
+      "query": "(max-width: 767px)",
+      "changes": {
+        "cardPaddingPx": 24,
+        "wrapperGapPx": 40
+      },
+      "measuredFrom": [
+        {
+          "cite": "src/index.css:191",
+          "expect": ".card__body,.card__media{padding:24px}"
+        },
+        {
+          "cite": "src/index.css:175",
+          "expect": "@media (max-width: 767px){.how-it-works__wrapper{gap:40px}}"
+        }
+      ]
+    }
+  ],
+  "accessibility": "",
+  "measuredFrom": [
+    {
+      "cite": "src/App.jsx:37",
+      "expect": "<HowItWorks />"
+    },
+    {
+      "cite": "CLONE_SPEC.md:218",
+      "expect": "## 5. How it works `section.how-it-works#how-it-works`"
+    }
+  ]
+}

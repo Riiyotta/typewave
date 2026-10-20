@@ -1,0 +1,32 @@
+{
+  "id": "button",
+  "kind": "primitive",
+  "purpose": "Inline-flex button/link: sm 40px, radius 4; variants primary / brand / ghost (secondary/dark declared, unused).",
+  "implementedBy": [
+    "src/components/FigmaButton.jsx"
+  ],
+  "variants": [
+    "primary",
+    "brand",
+    "ghost"
+  ],
+  "tokens": [
+    "component.button.height-sm",
+    "component.button.primary-bg",
+    "component.button.brand-bg",
+    "component.button.ghost-text"
+  ],
+  "states": {
+    "hover": "primary bg -> text-muted; brand unchanged; ghost text -> text-muted (instant, not transitioned)"
+  },
+  "measuredFrom": [
+    {
+      "cite": "src/index.css:102",
+      "expect": ".btn--primary:hover{background-color:var(--btn-primary-bg-hover)}"
+    },
+    {
+      "cite": "CLONE_SPEC.md:115",
+      "expect": "### Buttons `.btn`"
+    }
+  ]
+}

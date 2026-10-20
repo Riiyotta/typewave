@@ -1,0 +1,563 @@
+{
+  "version": "1.0.0",
+  "$description": "Closed asset-role vocabulary. Every PageSpec media field is {assetRole, assetRef[, alt|label]}; assetRole must be a settable role and the one the field expects (schema const); assetRef must use a prefix the role's policy allows. Non-settable roles exist so fonts, the Lottie ban and live endpoints are machine-checkable.",
+  "sourceIsRealCompany": true,
+  "licensing": {
+    "summary": "Typewave (typewave.blendmodes.com) is a real, live, commercial site for a Figma plugin by Blend Modes. Its marks, product videos/screenshots, OG cover and marketing copy are proprietary; tool logos are third-party trademarks; Roobert/Vesterbro (and the GT Super Display glyphs inside the Lottie) are commercial fonts; checkout/newsletter/plugin/mailbox/legal URLs are live endpoints. The clone (and this design-repo's example) uses ORIGINAL PLACEHOLDER copy written fresh in src/content.js, never the live copy.",
+    "forbidden": [
+      "reproducing, tracing or AI-generating the Typewave / Blend Modes mark or favicon",
+      "AI-generating, redrawing or imitating any third-party logo (Figma, Cursor, VS Code, Claude, OpenAI, Lovable)",
+      "reusing the original videos, screenshots or OG cover in any generated page (only newly generated stand-ins)",
+      "reusing recon-assets/breakpoint-lottie.json (it embeds the original copy as glyphs)",
+      "shipping or generating Roobert / Vesterbro / GT Super Display font files",
+      "emitting the live checkout, newsletter, plugin, mailbox, legal or affiliate endpoints",
+      "transcribing the live site's marketing copy"
+    ]
+  },
+  "policies": {
+    "must-not-reproduce": {
+      "description": "The real company's own mark (Blend Modes / Typewave). Never reproduce, redraw, trace or AI-generate it or a look-alike. A page owner supplies their OWN mark through an owner-supplied slot.",
+      "allowedRefPrefixes": [
+        "owner-supplied"
+      ]
+    },
+    "must-not-fabricate": {
+      "description": "A third-party trademark (Figma, Cursor, VS Code, Claude, OpenAI, Lovable). Never AI-generate, redraw or imitate it. Only the official asset, obtained by the page owner from the mark owner under its brand guidelines, may fill an owner-supplied slot; otherwise omit it.",
+      "allowedRefPrefixes": [
+        "owner-supplied"
+      ]
+    },
+    "generated-stand-in-only": {
+      "description": "The real company's proprietary product media (videos, screenshots, OG cover). Generated pages may only use NEWLY GENERATED stand-ins (assetRef generated:<slot>) that do not depict the original UI, people or logos. The original files are registered only so they can be recognised and rejected.",
+      "allowedRefPrefixes": [
+        "generated"
+      ]
+    },
+    "html-rebuild-only": {
+      "description": "Render from PageSpec copy with HTML/CSS (the BreakpointMock rebuild). The original Lottie JSON must never be reused: it embeds the original marketing copy as glyph shapes and GT Super Display glyph outlines.",
+      "allowedRefPrefixes": []
+    },
+    "licensed-font-required": {
+      "description": "Commercial typeface. Reference it by family name only; the deployer must hold a licence. Font files are never shipped in this design-repo or generated.",
+      "allowedRefPrefixes": []
+    },
+    "must-not-reuse-live-endpoint": {
+      "description": "A live third-party endpoint of the real site (checkout, newsletter POST, plugin listing, company mailbox, legal pages, affiliate script). Never emit it in a generated page; use the page owner's own URL or a placeholder (https://example.com/...).",
+      "allowedRefPrefixes": []
+    },
+    "may-generate-new": {
+      "description": "Generic UI glyph. New artwork in the same stroke/size may be drawn; it must not contain a real logo.",
+      "allowedRefPrefixes": [
+        "generated",
+        "owner-supplied"
+      ]
+    }
+  },
+  "pinnedPolicies": {
+    "brand.logo-wordmark": "must-not-reproduce",
+    "brand.logo-mark": "must-not-reproduce",
+    "meta.favicon": "must-not-reproduce",
+    "meta.og-image": "generated-stand-in-only",
+    "logo.third-party-tool": "must-not-fabricate",
+    "icon.figma-glyph": "must-not-fabricate",
+    "media.hero-video": "generated-stand-in-only",
+    "media.step-video": "generated-stand-in-only",
+    "media.figma-panel": "generated-stand-in-only",
+    "media.export-screenshot": "generated-stand-in-only",
+    "media.faq-screenshot": "generated-stand-in-only",
+    "media.device-mockup": "html-rebuild-only",
+    "font.roobert": "licensed-font-required",
+    "font.vesterbro": "licensed-font-required",
+    "endpoint.checkout": "must-not-reuse-live-endpoint",
+    "endpoint.newsletter-form": "must-not-reuse-live-endpoint",
+    "endpoint.plugin-listing": "must-not-reuse-live-endpoint",
+    "endpoint.company-mailbox": "must-not-reuse-live-endpoint",
+    "endpoint.legal-pages": "must-not-reuse-live-endpoint",
+    "script.affiliate": "must-not-reuse-live-endpoint"
+  },
+  "refRules": {
+    "asset:": "registered id of the field role; allowed only where the policy lists \"asset\" (no settable role does: every original asset is proprietary or a trademark)",
+    "owner-supplied:": "the page owner supplies media/marks they hold rights to (their own mark; an official third-party mark under its brand guidelines)",
+    "generated:": "a newly generated stand-in, allowed only for generated-stand-in-only / may-generate-new roles"
+  },
+  "roles": {
+    "brand.logo-wordmark": {
+      "settableInPageSpec": true,
+      "description": "Typewave wordmark (inline SVG 171x40; 136.8x32 at <=1024). Real company mark of Blend Modes.",
+      "assets": [
+        {
+          "id": "asset:navbar-logo",
+          "source": "recon-assets/svg/navbar-logo.svg"
+        }
+      ],
+      "generationPolicy": "must-not-reproduce",
+      "measuredFrom": [
+        {
+          "cite": "src/lib/icons.js:2",
+          "expect": "navbarLogo } from '../../recon-assets/svg/navbar-logo.svg?raw'"
+        },
+        {
+          "cite": "src/components/Navbar.jsx:92",
+          "expect": "dangerouslySetInnerHTML={{ __html: navbarLogo }}"
+        }
+      ]
+    },
+    "brand.logo-mark": {
+      "settableInPageSpec": true,
+      "description": "Typewave mark in the footer hero (44x40). Real company mark.",
+      "assets": [
+        {
+          "id": "asset:footer-logo",
+          "source": "recon-assets/svg/footer-logo.svg"
+        }
+      ],
+      "generationPolicy": "must-not-reproduce",
+      "measuredFrom": [
+        {
+          "cite": "src/components/Footer.jsx:11",
+          "expect": "dangerouslySetInnerHTML={{ __html: footerLogo }}"
+        }
+      ]
+    },
+    "meta.favicon": {
+      "settableInPageSpec": true,
+      "description": "Favicon (the brand mark), svg + 32x32 png.",
+      "assets": [
+        {
+          "id": "asset:favicon-svg",
+          "source": "public/favicon.svg"
+        },
+        {
+          "id": "asset:favicon-png",
+          "source": "public/favicon.png"
+        }
+      ],
+      "generationPolicy": "must-not-reproduce",
+      "measuredFrom": [
+        {
+          "cite": "index.html:9",
+          "expect": "<link rel=\"icon\" type=\"image/svg+xml\" href=\"/favicon.svg\" />"
+        }
+      ]
+    },
+    "meta.og-image": {
+      "settableInPageSpec": true,
+      "description": "1200x630 OG/Twitter cover. Proprietary marketing image.",
+      "assets": [
+        {
+          "id": "asset:og-cover",
+          "source": "public/cover.png"
+        }
+      ],
+      "generationPolicy": "generated-stand-in-only",
+      "measuredFrom": [
+        {
+          "cite": "index.html:14",
+          "expect": "<meta property=\"og:image\" content=\"/cover.png\" />"
+        }
+      ]
+    },
+    "logo.third-party-tool": {
+      "settableInPageSpec": true,
+      "description": "Third-party tool logos (32x32, fill #E6E3DA) in the export cards: Cursor, VS Code, Claude, OpenAI, Lovable. Trademarks of their owners.",
+      "assets": [
+        {
+          "id": "asset:logo-cursor",
+          "source": "recon-assets/svg/logo-cursor.svg"
+        },
+        {
+          "id": "asset:logo-vscode",
+          "source": "recon-assets/svg/logo-vscode.svg"
+        },
+        {
+          "id": "asset:logo-claude",
+          "source": "recon-assets/svg/logo-claude.svg"
+        },
+        {
+          "id": "asset:logo-cursor-ai",
+          "source": "recon-assets/svg/logo-cursor-ai-card.svg"
+        },
+        {
+          "id": "asset:logo-openai",
+          "source": "recon-assets/svg/logo-openai.svg"
+        },
+        {
+          "id": "asset:logo-lovable",
+          "source": "recon-assets/svg/logo-lovable.svg"
+        }
+      ],
+      "generationPolicy": "must-not-fabricate",
+      "measuredFrom": [
+        {
+          "cite": "src/components/Exports.jsx:22",
+          "expect": "<Logo svg={logoCursor} label=\"Cursor\" />"
+        },
+        {
+          "cite": "src/components/Exports.jsx:37",
+          "expect": "<Logo svg={logoLovable} label=\"Lovable\" />"
+        }
+      ]
+    },
+    "icon.figma-glyph": {
+      "settableInPageSpec": true,
+      "description": "Figma glyph (16x17) inside every \"Try it now\" button. Figma trademark.",
+      "assets": [
+        {
+          "id": "asset:figma-glyph",
+          "source": "recon-assets/svg/figma-icon-btn.svg"
+        }
+      ],
+      "generationPolicy": "must-not-fabricate",
+      "measuredFrom": [
+        {
+          "cite": "src/components/FigmaButton.jsx:13",
+          "expect": "dangerouslySetInnerHTML={{ __html: figmaIcon }}"
+        }
+      ]
+    },
+    "media.hero-video": {
+      "settableInPageSpec": true,
+      "description": "Hero product video, 16:9 (original 1920x1078, 2.03s, muted, playsinline, no autoplay/loop; plays once per entry).",
+      "assets": [
+        {
+          "id": "asset:intro-video",
+          "source": "public/assets/intro-DrshnI3i.mp4"
+        }
+      ],
+      "generationPolicy": "generated-stand-in-only",
+      "measuredFrom": [
+        {
+          "cite": "src/components/Hero.jsx:113",
+          "expect": "src=\"/assets/intro-DrshnI3i.mp4\""
+        },
+        {
+          "cite": "ASSET_MANIFEST.md:11",
+          "expect": "public/assets/intro-DrshnI3i.mp4"
+        }
+      ]
+    },
+    "media.step-video": {
+      "settableInPageSpec": true,
+      "description": "Step-card product loop, 4:3 (original 1200x900; loop muted playsinline preload=metadata; JS play()).",
+      "assets": [
+        {
+          "id": "asset:step-video-1",
+          "source": "public/assets/def1--g7RFuQa.mp4"
+        },
+        {
+          "id": "asset:step-video-2",
+          "source": "public/assets/def2-0T0-0aPX.mp4"
+        },
+        {
+          "id": "asset:step-video-3",
+          "source": "public/assets/loop3-CWAyqkgp.mp4"
+        }
+      ],
+      "generationPolicy": "generated-stand-in-only",
+      "measuredFrom": [
+        {
+          "cite": "src/content.js:23",
+          "expect": "video: '/assets/def1--g7RFuQa.mp4',"
+        },
+        {
+          "cite": "src/components/HowItWorks.jsx:93",
+          "expect": "<video className=\"card__image\" src={card.video} loop muted playsInline preload=\"metadata\" />"
+        }
+      ]
+    },
+    "media.figma-panel": {
+      "settableInPageSpec": true,
+      "description": "Figma-panel screenshot, 4:3 (original 800x600 PNG, object-fit cover).",
+      "assets": [
+        {
+          "id": "asset:figma-frames",
+          "source": "public/assets/frame-Cg0zK82j.png"
+        },
+        {
+          "id": "asset:figma-styles",
+          "source": "public/assets/styles-DpEOnP78.png"
+        },
+        {
+          "id": "asset:figma-variables",
+          "source": "public/assets/variable-fdRUIB1a.png"
+        }
+      ],
+      "generationPolicy": "generated-stand-in-only",
+      "measuredFrom": [
+        {
+          "cite": "src/content.js:48",
+          "expect": "img: '/assets/frame-Cg0zK82j.png',"
+        },
+        {
+          "cite": "src/components/FigmaOrg.jsx:17",
+          "expect": "<img src={card.img} alt={card.alt} width=\"800\" height=\"600\" />"
+        }
+      ]
+    },
+    "media.export-screenshot": {
+      "settableInPageSpec": true,
+      "description": "Export screenshot, 707x553 JPG (width 100%, height auto).",
+      "assets": [
+        {
+          "id": "asset:css-export",
+          "source": "public/assets/css-export-DPacxBL7.jpg"
+        },
+        {
+          "id": "asset:ai-prompt",
+          "source": "public/assets/ai-prompt-B1wIQtkI.jpg"
+        }
+      ],
+      "generationPolicy": "generated-stand-in-only",
+      "measuredFrom": [
+        {
+          "cite": "src/components/Exports.jsx:16",
+          "expect": "src=\"/assets/css-export-DPacxBL7.jpg\""
+        },
+        {
+          "cite": "src/components/Exports.jsx:41",
+          "expect": "src=\"/assets/ai-prompt-B1wIQtkI.jpg\""
+        }
+      ]
+    },
+    "media.faq-screenshot": {
+      "settableInPageSpec": true,
+      "description": "Screenshot inside one FAQ answer, 869x650 PNG.",
+      "assets": [
+        {
+          "id": "asset:token-editor",
+          "source": "public/assets/token-Dmg8Y-M9.png"
+        }
+      ],
+      "generationPolicy": "generated-stand-in-only",
+      "measuredFrom": [
+        {
+          "cite": "src/content.js:165",
+          "expect": "src: '/assets/token-Dmg8Y-M9.png',"
+        }
+      ]
+    },
+    "media.device-mockup": {
+      "settableInPageSpec": false,
+      "description": "Breakpoint-section device mockup (desktop browser -> tablet -> phone over 50 frames). Rendered by the HTML/CSS rebuild (BreakpointMock) from PageSpec copy.",
+      "assets": [],
+      "generationPolicy": "html-rebuild-only",
+      "forbiddenSources": [
+        "recon-assets/breakpoint-lottie.json"
+      ],
+      "measuredFrom": [
+        {
+          "cite": "src/components/BreakpointMock.jsx:4",
+          "expect": "// HTML/CSS rebuild of the 1280x728 \"Breakpoint\" Lottie"
+        },
+        {
+          "cite": "CLONE_SPEC.md:365",
+          "expect": "**COPY WARNING:**"
+        },
+        {
+          "cite": "CLONE_SPEC.md:365",
+          "expect": "Do not ship the JSON unedited."
+        }
+      ]
+    },
+    "icon.ui-check": {
+      "settableInPageSpec": false,
+      "description": "Check glyph 16x16 (stroke white 2) in the includes list.",
+      "assets": [
+        {
+          "id": "asset:check",
+          "source": "recon-assets/svg/check.svg"
+        }
+      ],
+      "generationPolicy": "may-generate-new",
+      "measuredFrom": [
+        {
+          "cite": "src/components/Pricing.jsx:54",
+          "expect": "dangerouslySetInnerHTML={{ __html: checkIcon }}"
+        }
+      ]
+    },
+    "icon.ui-chevron": {
+      "settableInPageSpec": false,
+      "description": "Chevron 24x24 (stroke #E6E3DA 2) in FAQ questions.",
+      "assets": [
+        {
+          "id": "asset:chevron",
+          "source": "recon-assets/svg/chevron.svg"
+        }
+      ],
+      "generationPolicy": "may-generate-new",
+      "measuredFrom": [
+        {
+          "cite": "src/components/Faq.jsx:64",
+          "expect": "dangerouslySetInnerHTML={{ __html: chevronIcon }}"
+        }
+      ]
+    },
+    "icon.preset-folder": {
+      "settableInPageSpec": false,
+      "description": "Folder glyph 96x84 (fill currentColor + \"Ag\" in #0F0F0E).",
+      "assets": [
+        {
+          "id": "asset:preset-folder",
+          "source": "recon-assets/svg/preset-folder.svg"
+        }
+      ],
+      "generationPolicy": "may-generate-new",
+      "measuredFrom": [
+        {
+          "cite": "src/components/Presets.jsx:71",
+          "expect": "dangerouslySetInnerHTML={{ __html: presetFolder }}"
+        }
+      ]
+    },
+    "font.roobert": {
+      "settableInPageSpec": false,
+      "description": "Roobert (commercial). Only 400 and 500 load; 300/600/700/800 declared.",
+      "assets": [],
+      "generationPolicy": "licensed-font-required",
+      "sourceFilesNotShipped": [
+        "public/assets/Roobert-Regular-BNQS-qUa.woff2",
+        "public/assets/Roobert-Medium-Jj6nDRYB.woff2"
+      ],
+      "measuredFrom": [
+        {
+          "cite": "src/index.css:7",
+          "expect": "@font-face{font-family:Roobert;font-weight:400"
+        },
+        {
+          "cite": "CLONE_SPEC.md:35",
+          "expect": "Only weights **400** and **500** actually load"
+        }
+      ]
+    },
+    "font.vesterbro": {
+      "settableInPageSpec": false,
+      "description": "Vesterbro (commercial). Declared via @font-face, never rendered.",
+      "assets": [],
+      "generationPolicy": "licensed-font-required",
+      "measuredFrom": [
+        {
+          "cite": "src/index.css:12",
+          "expect": "@font-face{font-family:Vesterbro;font-weight:300"
+        },
+        {
+          "cite": "CLONE_SPEC.md:36",
+          "expect": "is declared but **never used** on the page"
+        }
+      ]
+    },
+    "endpoint.checkout": {
+      "settableInPageSpec": false,
+      "description": "Two live Lemon Squeezy checkout URLs (Freelancer, Studio plans).",
+      "assets": [],
+      "generationPolicy": "must-not-reuse-live-endpoint",
+      "liveValues": [
+        "typewave.lemonsqueezy.com/checkout/buy/f38b86ac-2475-4b2b-a7a8-67abd5d7cfec",
+        "typewave.lemonsqueezy.com/checkout/buy/65e62acf-90b0-4084-90e6-62ab198548a4",
+        "lemonsqueezy.com/checkout"
+      ],
+      "measuredFrom": [
+        {
+          "cite": "src/content.js:101",
+          "expect": "href: 'https://typewave.lemonsqueezy.com/checkout/buy/f38b86ac-2475-4b2b-a7a8-67abd5d7cfec',"
+        },
+        {
+          "cite": "src/content.js:112",
+          "expect": "href: 'https://typewave.lemonsqueezy.com/checkout/buy/65e62acf-90b0-4084-90e6-62ab198548a4',"
+        }
+      ]
+    },
+    "endpoint.newsletter-form": {
+      "settableInPageSpec": false,
+      "description": "Live newsletter form POST target (Lemon Squeezy).",
+      "assets": [],
+      "generationPolicy": "must-not-reuse-live-endpoint",
+      "liveValues": [
+        "typewave.lemonsqueezy.com/email-subscribe",
+        "lemonsqueezy.com/email-subscribe"
+      ],
+      "measuredFrom": [
+        {
+          "cite": "src/components/Newsletter.jsx:17",
+          "expect": "action=\"https://typewave.lemonsqueezy.com/email-subscribe/external\""
+        }
+      ]
+    },
+    "endpoint.plugin-listing": {
+      "settableInPageSpec": false,
+      "description": "Live Figma Community plugin URL (every \"Try it now\" button).",
+      "assets": [],
+      "generationPolicy": "must-not-reuse-live-endpoint",
+      "liveValues": [
+        "figma.com/community/plugin/1615417453541684477"
+      ],
+      "measuredFrom": [
+        {
+          "cite": "src/content.js:9",
+          "expect": "export const FIGMA_URL = 'https://www.figma.com/community/plugin/1615417453541684477/typewave'"
+        }
+      ]
+    },
+    "endpoint.company-mailbox": {
+      "settableInPageSpec": false,
+      "description": "The real company mailbox (FAQ email link, FAQ answer link, Enterprise plan mailto).",
+      "assets": [],
+      "generationPolicy": "must-not-reuse-live-endpoint",
+      "liveValues": [
+        "hello@blendmodes.com",
+        "blendmodes.com"
+      ],
+      "measuredFrom": [
+        {
+          "cite": "src/content.js:134",
+          "expect": "export const EMAIL = 'hello@blendmodes.com'"
+        },
+        {
+          "cite": "src/content.js:122",
+          "expect": "href: 'mailto:hello@blendmodes.com?subject=Typewave%20Enterprise%20Licenses',"
+        }
+      ]
+    },
+    "endpoint.legal-pages": {
+      "settableInPageSpec": false,
+      "description": "Lemon Squeezy privacy / buyer-terms pages linked from the footer (the reseller's legal pages, not the page owner's).",
+      "assets": [],
+      "generationPolicy": "must-not-reuse-live-endpoint",
+      "liveValues": [
+        "lemonsqueezy.com/privacy",
+        "lemonsqueezy.com/buyer-terms"
+      ],
+      "measuredFrom": [
+        {
+          "cite": "src/components/Footer.jsx:23",
+          "expect": "href=\"https://www.lemonsqueezy.com/privacy\""
+        },
+        {
+          "cite": "src/components/Footer.jsx:26",
+          "expect": "href=\"https://www.lemonsqueezy.com/buyer-terms\""
+        }
+      ]
+    },
+    "script.affiliate": {
+      "settableInPageSpec": false,
+      "description": "Lemon Squeezy affiliate.js (tracking + checkout-link rewriting). Excluded from the clone; never include.",
+      "assets": [],
+      "generationPolicy": "must-not-reuse-live-endpoint",
+      "liveValues": [
+        "lmsqueezy.com/affiliate.js",
+        "lmsqueezy.com",
+        "lemonsqueezyaffiliateconfig"
+      ],
+      "measuredFrom": [
+        {
+          "cite": "index.html:34",
+          "expect": "<!-- Lemon Squeezy affiliate.js intentionally omitted in the clone (third-party script). -->"
+        },
+        {
+          "cite": "CLONE_SPEC.md:631",
+          "expect": "### Affiliate (`https://lmsqueezy.com/affiliate.js`, third-party, deferred)"
+        }
+      ]
+    }
+  }
+}

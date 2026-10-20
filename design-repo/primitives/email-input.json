@@ -1,0 +1,14 @@
+{
+  "id": "email-input",
+  "kind": "primitive",
+  "purpose": "Borderless display-2 email input with muted placeholder.",
+  "implementedBy": [
+    "src/components/Newsletter.jsx"
+  ],
+  "measuredFrom": [
+    {
+      "cite": "src/index.css:392",
+      "expect": ".newsletter__input{flex:1;min-width:0;background:none;border:none;outline:none"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "preset-folder",
+  "kind": "component",
+  "purpose": "Folder glyph + \"Preset N\" label; colour cycles brand, step-3, pink, step-2, text.",
+  "composes": [
+    "icon"
+  ],
+  "measuredFrom": [
+    {
+      "cite": "src/components/Presets.jsx:9",
+      "expect": "'var(--color-brand)',"
+    }
+  ]
+}

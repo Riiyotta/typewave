@@ -1,0 +1,280 @@
+{
+  "id": "pricing.ticket-plans",
+  "kind": "section",
+  "category": "pricing",
+  "purpose": "Convert: three one-time-licence plans rendered as \"tickets\" (content panel, perforated seam with semicircle notches, CTA stub) plus an \"Everything included\" list.",
+  "implementedBy": [
+    "src/components/Pricing.jsx"
+  ],
+  "variants": [],
+  "constraints": {
+    "onePerPage": true,
+    "maxPerPage": 1
+  },
+  "observedAnchorId": "pricing",
+  "content": {
+    "schemaRef": "#/definitions/content.pricing.ticket-plans",
+    "schema": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "title",
+        "plans",
+        "includes"
+      ],
+      "properties": {
+        "title": {
+          "$ref": "#/definitions/title"
+        },
+        "plans": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "name",
+              "subtitle",
+              "license",
+              "price",
+              "featured",
+              "cta"
+            ],
+            "properties": {
+              "name": {
+                "$ref": "#/definitions/text"
+              },
+              "subtitle": {
+                "$ref": "#/definitions/text"
+              },
+              "license": {
+                "$ref": "#/definitions/text"
+              },
+              "price": {
+                "$ref": "#/definitions/text"
+              },
+              "featured": {
+                "type": "boolean"
+              },
+              "cta": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "label",
+                  "href",
+                  "variant"
+                ],
+                "properties": {
+                  "label": {
+                    "$ref": "#/definitions/text"
+                  },
+                  "href": {
+                    "$ref": "#/definitions/href"
+                  },
+                  "variant": {
+                    "enum": [
+                      "brand",
+                      "primary"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "includes": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "title",
+            "columns"
+          ],
+          "properties": {
+            "title": {
+              "$ref": "#/definitions/text"
+            },
+            "columns": {
+              "type": "array",
+              "minItems": 2,
+              "maxItems": 2,
+              "items": {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 4,
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "text"
+                  ],
+                  "properties": {
+                    "text": {
+                      "$ref": "#/definitions/text"
+                    },
+                    "tag": {
+                      "enum": [
+                        "NEW"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "wordBudgets": [
+      {
+        "path": "title",
+        "observedMaxWords": 4,
+        "specWords": 4,
+        "maxWords": 5,
+        "measuredFrom": [
+          {
+            "cite": "CLONE_SPEC.md:444",
+            "expect": "(4 words: 3 plain + 1 brand word"
+          }
+        ]
+      },
+      {
+        "path": "plans[].name",
+        "observedMaxWords": 1,
+        "maxWords": 2
+      },
+      {
+        "path": "plans[].subtitle",
+        "observedMaxWords": 4,
+        "maxWords": 5
+      },
+      {
+        "path": "plans[].license",
+        "observedMaxWords": 2,
+        "maxWords": 3
+      },
+      {
+        "path": "plans[].price",
+        "observedMaxWords": 2,
+        "maxWords": 3
+      },
+      {
+        "path": "plans[].cta.label",
+        "observedMaxWords": 2,
+        "maxWords": 3
+      },
+      {
+        "path": "includes.title",
+        "observedMaxWords": 2,
+        "maxWords": 3
+      },
+      {
+        "path": "includes.columns[][].text",
+        "observedMaxWords": 5,
+        "maxWords": 6
+      }
+    ]
+  },
+  "assetRoles": [],
+  "motion": {
+    "allowedPatterns": [
+      "char-reveal-scroll-linked",
+      "fade-up"
+    ],
+    "reducedMotionFallback": "instant-visible",
+    "reducedMotionEvidence": "prescribed-not-in-source",
+    "observedRevealDelaysMs": [
+      0,
+      150,
+      300
+    ],
+    "patternEvidence": {
+      "char-reveal-scroll-linked": [
+        {
+          "cite": "src/lib/compose.jsx:54",
+          "expect": "export function initScrollCompose() {"
+        },
+        {
+          "cite": "CLONE_SPEC.md:653",
+          "expect": "| M4 | Scroll-composed characters"
+        }
+      ],
+      "fade-up": [
+        {
+          "cite": "src/index.css:91",
+          "expect": ".reveal{opacity:0;transform:translateY(32px);transition:opacity .7s ease,transform .7s ease"
+        },
+        {
+          "cite": "CLONE_SPEC.md:651",
+          "expect": "| M2 | Reveal (fade-up)"
+        }
+      ]
+    }
+  },
+  "responsive": [
+    {
+      "breakpoint": "desktop",
+      "query": "(min-width: 1025px)",
+      "changes": {
+        "columns": 3,
+        "gapPx": 24,
+        "includesColumns": 2
+      },
+      "measuredFrom": [
+        {
+          "cite": "src/index.css:318",
+          "expect": ".pricing__grid{display:grid;grid-template-columns:repeat(3,1fr)"
+        },
+        {
+          "cite": "src/index.css:341",
+          "expect": ".pricing-includes__columns{display:grid;grid-template-columns:repeat(2,1fr);gap:16px 88px}"
+        }
+      ]
+    },
+    {
+      "breakpoint": "tablet",
+      "query": "(max-width: 1024px)",
+      "changes": {
+        "columns": 1,
+        "gapPx": 16,
+        "priceFontPx": 32
+      },
+      "measuredFrom": [
+        {
+          "cite": "src/index.css:319",
+          "expect": "@media (max-width: 1024px){.pricing__grid{grid-template-columns:1fr"
+        }
+      ]
+    },
+    {
+      "breakpoint": "mobile",
+      "query": "(max-width: 767px)",
+      "changes": {
+        "panelPaddingPx": 24,
+        "priceFontPx": 40,
+        "includesColumns": 1
+      },
+      "measuredFrom": [
+        {
+          "cite": "src/index.css:336",
+          "expect": ".pricing-plan__content,.pricing-plan__cta{padding:24px}"
+        },
+        {
+          "cite": "src/index.css:349",
+          "expect": ".pricing-includes__columns{grid-template-columns:1fr;gap:24px}"
+        }
+      ]
+    }
+  ],
+  "accessibility": "",
+  "measuredFrom": [
+    {
+      "cite": "src/App.jsx:42",
+      "expect": "<Pricing />"
+    },
+    {
+      "cite": "CLONE_SPEC.md:439",
+      "expect": "## 10. Pricing `section.pricing#pricing`"
+    }
+  ]
+}

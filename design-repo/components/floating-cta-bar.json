@@ -1,0 +1,14 @@
+{
+  "id": "floating-cta-bar",
+  "kind": "component",
+  "purpose": "Fixed bottom bar: primary CTA + ghost \"Pricing\" jump, blur(12px).",
+  "composes": [
+    "button"
+  ],
+  "measuredFrom": [
+    {
+      "cite": "src/index.css:419",
+      "expect": ".floating-cta.is-visible{transform:translate(-50%);pointer-events:auto}"
+    }
+  ]
+}

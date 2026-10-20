@@ -1,0 +1,60 @@
+{
+  "breakpoint": {
+    "$description": "Desktop-first. Desktop >=1025, tablet <=1024, mobile <=767. Lenis smooth scroll is decided ONCE at load from the 1024 query.",
+    "desktop": {
+      "$value": "(min-width: 1025px)",
+      "$type": "mediaQuery",
+      "$description": "Lenis, sticky/scale effects, parallax, hero video scale.",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "src/index.css:35",
+            "expect": "@media (min-width: 1025px){html{overscroll-behavior:none}}"
+          },
+          {
+            "cite": "src/lib/scroll.js:5",
+            "expect": "export const DESKTOP_MQ = '(min-width: 1025px)'"
+          },
+          {
+            "cite": "@original/index-D4COY28s.css",
+            "quote": "@media (min-width: 1025px)"
+          }
+        ]
+      }
+    },
+    "tablet": {
+      "$value": "(max-width: 1024px)",
+      "$type": "mediaQuery",
+      "$description": "Hamburger nav, scroll-scrub effects static, single-column layouts, Lenis off.",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "src/index.css:56",
+            "expect": "@media (max-width: 1024px){"
+          },
+          {
+            "cite": "@original/index-B7zdGq3H.js",
+            "quote": "const isMobile=window.matchMedia(\"(max-width: 1024px)\").matches"
+          }
+        ]
+      }
+    },
+    "mobile": {
+      "$value": "(max-width: 767px)",
+      "$type": "mediaQuery",
+      "$description": "Container padding 24, mobile type scale, forced title breaks hidden.",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "src/index.css:88",
+            "expect": "@media (max-width: 767px){.title-break{display:none}}"
+          },
+          {
+            "cite": "@original/index-D4COY28s.css",
+            "quote": ".title-break{display:none}"
+          }
+        ]
+      }
+    }
+  }
+}

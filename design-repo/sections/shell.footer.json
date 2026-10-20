@@ -1,0 +1,199 @@
+{
+  "id": "shell.footer",
+  "kind": "section",
+  "category": "shell",
+  "purpose": "Close with a final install prompt in a raised hero panel, then copyright and legal links.",
+  "implementedBy": [
+    "src/components/Footer.jsx",
+    "src/components/FigmaButton.jsx"
+  ],
+  "variants": [],
+  "constraints": {
+    "onePerPage": true,
+    "maxPerPage": 1,
+    "mustCloseMain": true
+  },
+  "content": {
+    "schemaRef": "#/definitions/content.shell.footer",
+    "schema": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "logo",
+        "title",
+        "cta",
+        "copyright",
+        "legalLinks"
+      ],
+      "properties": {
+        "logo": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "assetRole",
+            "assetRef"
+          ],
+          "properties": {
+            "assetRole": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/assetRole"
+                },
+                {
+                  "const": "brand.logo-mark"
+                }
+              ]
+            },
+            "assetRef": {
+              "$ref": "#/definitions/assetRef"
+            }
+          }
+        },
+        "title": {
+          "$ref": "#/definitions/title"
+        },
+        "cta": {
+          "$ref": "#/definitions/figmaCta"
+        },
+        "copyright": {
+          "$ref": "#/definitions/text"
+        },
+        "legalLinks": {
+          "type": "array",
+          "minItems": 0,
+          "maxItems": 2,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "label",
+              "href"
+            ],
+            "properties": {
+              "label": {
+                "$ref": "#/definitions/text"
+              },
+              "href": {
+                "$ref": "#/definitions/href"
+              }
+            }
+          }
+        }
+      }
+    },
+    "wordBudgets": [
+      {
+        "path": "title",
+        "observedMaxWords": 7,
+        "specWords": 8,
+        "maxWords": 10,
+        "measuredFrom": [
+          {
+            "cite": "CLONE_SPEC.md:590",
+            "expect": "(2 lines: \"The\" + brand span 2 words + \"for\" / 3 words; 40ch)"
+          }
+        ]
+      },
+      {
+        "path": "cta.label",
+        "observedMaxWords": 3,
+        "maxWords": 4
+      },
+      {
+        "path": "copyright",
+        "observedMaxWords": 3,
+        "maxWords": 4
+      },
+      {
+        "path": "legalLinks[].label",
+        "observedMaxWords": 3,
+        "maxWords": 4
+      }
+    ]
+  },
+  "assetRoles": [
+    "brand.logo-mark",
+    "icon.figma-glyph"
+  ],
+  "motion": {
+    "allowedPatterns": [
+      "fade-up"
+    ],
+    "reducedMotionFallback": "instant-visible",
+    "reducedMotionEvidence": "prescribed-not-in-source",
+    "observedRevealDelaysMs": [
+      0,
+      150
+    ],
+    "patternEvidence": {
+      "fade-up": [
+        {
+          "cite": "src/index.css:91",
+          "expect": ".reveal{opacity:0;transform:translateY(32px);transition:opacity .7s ease,transform .7s ease"
+        },
+        {
+          "cite": "CLONE_SPEC.md:651",
+          "expect": "| M2 | Reveal (fade-up)"
+        }
+      ]
+    }
+  },
+  "responsive": [
+    {
+      "breakpoint": "desktop",
+      "query": "(min-width: 1025px)",
+      "changes": {
+        "heroPaddingYPx": 96,
+        "titleFontPx": 56
+      },
+      "measuredFrom": [
+        {
+          "cite": "src/index.css:402",
+          "expect": ".footer__hero{display:flex;flex-direction:column;align-items:center;gap:32px;text-align:center;padding-top:96px"
+        }
+      ]
+    },
+    {
+      "breakpoint": "tablet",
+      "query": "(max-width: 1024px)",
+      "changes": {
+        "titleFontPx": 32
+      },
+      "measuredFrom": [
+        {
+          "cite": "CLONE_SPEC.md:605",
+          "expect": "Footer title: 56px at desktop (529 wide, 2 lines), 32 at ≤1024, 24 at ≤767."
+        }
+      ]
+    },
+    {
+      "breakpoint": "mobile",
+      "query": "(max-width: 767px)",
+      "changes": {
+        "titleFontPx": 24,
+        "heroPaddingInlinePx": 48
+      },
+      "measuredFrom": [
+        {
+          "cite": "src/index.css:403",
+          "expect": "@media (max-width: 767px){.footer__hero{padding-inline:48px}}"
+        }
+      ]
+    }
+  ],
+  "accessibility": "",
+  "measuredFrom": [
+    {
+      "cite": "src/App.jsx:46",
+      "expect": "<Footer />"
+    },
+    {
+      "cite": "CLONE_SPEC.md:582",
+      "expect": "## 13. Footer `footer.footer`"
+    },
+    {
+      "cite": "src/components/Footer.jsx:12",
+      "expect": "{/* excluded from scroll-compose (M4) */}"
+    }
+  ]
+}

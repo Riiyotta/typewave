@@ -1,0 +1,1778 @@
+{
+  "version": "1.0.0",
+  "$description": "Curated, referenceable token view for generators. Reference by {category.path}; never emit raw values. verify_all.py checks this catalog lists exactly the token leaves on disk.",
+  "categories": {
+    "breakpoint": {
+      "desktop": {
+        "type": "mediaQuery",
+        "value": "(min-width: 1025px)",
+        "file": "tokens/00-foundation/breakpoint.json"
+      },
+      "tablet": {
+        "type": "mediaQuery",
+        "value": "(max-width: 1024px)",
+        "file": "tokens/00-foundation/breakpoint.json"
+      },
+      "mobile": {
+        "type": "mediaQuery",
+        "value": "(max-width: 767px)",
+        "file": "tokens/00-foundation/breakpoint.json"
+      }
+    },
+    "color": {
+      "bg": {
+        "type": "color",
+        "value": "#0F0F0E",
+        "file": "tokens/00-foundation/color.json"
+      },
+      "surface": {
+        "type": "color",
+        "value": "#191918",
+        "file": "tokens/00-foundation/color.json"
+      },
+      "text": {
+        "type": "color",
+        "value": "#E6E3DA",
+        "file": "tokens/00-foundation/color.json"
+      },
+      "text-muted": {
+        "type": "color",
+        "value": "#7E7C77",
+        "file": "tokens/00-foundation/color.json"
+      },
+      "brand": {
+        "type": "color",
+        "value": "#E6F490",
+        "file": "tokens/00-foundation/color.json"
+      },
+      "accent": {
+        "type": "color",
+        "value": "#D99F50",
+        "file": "tokens/00-foundation/color.json"
+      },
+      "danger": {
+        "type": "color",
+        "value": "#DF3535",
+        "file": "tokens/00-foundation/color.json"
+      },
+      "chrome": {
+        "type": "color",
+        "value": "#2A2928",
+        "file": "tokens/00-foundation/color.json"
+      },
+      "chrome-raised": {
+        "type": "color",
+        "value": "#3a3937",
+        "file": "tokens/00-foundation/color.json"
+      },
+      "badge-2": {
+        "type": "color",
+        "value": "#FE8A3D",
+        "file": "tokens/00-foundation/color.json"
+      },
+      "badge-3": {
+        "type": "color",
+        "value": "#0469FF",
+        "file": "tokens/00-foundation/color.json"
+      },
+      "preset-pink": {
+        "type": "color",
+        "value": "#DCBDC2",
+        "file": "tokens/00-foundation/color.json"
+      },
+      "divider": {
+        "type": "color",
+        "value": "rgba(230,227,218,.08)",
+        "file": "tokens/00-foundation/color.json"
+      },
+      "floating-bg": {
+        "type": "color",
+        "value": "#0f0f0ecc",
+        "file": "tokens/00-foundation/color.json"
+      },
+      "bg-transparent": {
+        "type": "color",
+        "value": "#0f0f0e00",
+        "file": "tokens/00-foundation/color.json"
+      },
+      "mock-text": {
+        "type": "color",
+        "value": "#EBEBEB",
+        "file": "tokens/00-foundation/color.json"
+      }
+    },
+    "elevation": {
+      "shadow-none": {
+        "type": "shadow",
+        "value": "none",
+        "file": "tokens/00-foundation/elevation.json"
+      },
+      "blur-floating": {
+        "type": "dimension",
+        "value": "12px",
+        "file": "tokens/00-foundation/elevation.json"
+      }
+    },
+    "icon-size": {
+      "button-glyph": {
+        "type": "size",
+        "value": "16x17",
+        "file": "tokens/00-foundation/icon-size.json"
+      },
+      "check": {
+        "type": "dimension",
+        "value": "16px",
+        "file": "tokens/00-foundation/icon-size.json"
+      },
+      "chevron": {
+        "type": "dimension",
+        "value": "24px",
+        "file": "tokens/00-foundation/icon-size.json"
+      },
+      "logo-tile": {
+        "type": "dimension",
+        "value": "32px",
+        "file": "tokens/00-foundation/icon-size.json"
+      },
+      "nav-logo": {
+        "type": "size",
+        "value": "171x40",
+        "file": "tokens/00-foundation/icon-size.json"
+      },
+      "footer-mark": {
+        "type": "size",
+        "value": "44x40",
+        "file": "tokens/00-foundation/icon-size.json"
+      },
+      "folder": {
+        "type": "size",
+        "value": "96x84",
+        "file": "tokens/00-foundation/icon-size.json"
+      }
+    },
+    "motion": {
+      "easing.standard": {
+        "type": "cubicBezier",
+        "value": "cubic-bezier(.4,0,.2,1)",
+        "file": "tokens/00-foundation/motion.json"
+      },
+      "easing.decel": {
+        "type": "cubicBezier",
+        "value": "cubic-bezier(0,0,.2,1)",
+        "file": "tokens/00-foundation/motion.json"
+      },
+      "easing.ease": {
+        "type": "keyword",
+        "value": "ease",
+        "file": "tokens/00-foundation/motion.json"
+      },
+      "easing.lenis": {
+        "type": "function",
+        "value": "t => 1 - Math.pow(1 - t, 5)",
+        "file": "tokens/00-foundation/motion.json"
+      },
+      "duration.inspector": {
+        "type": "duration",
+        "value": "120ms",
+        "file": "tokens/00-foundation/motion.json"
+      },
+      "duration.select": {
+        "type": "duration",
+        "value": "150ms",
+        "file": "tokens/00-foundation/motion.json"
+      },
+      "duration.hover": {
+        "type": "duration",
+        "value": "200ms",
+        "file": "tokens/00-foundation/motion.json"
+      },
+      "duration.menu": {
+        "type": "duration",
+        "value": "300ms",
+        "file": "tokens/00-foundation/motion.json"
+      },
+      "duration.standard": {
+        "type": "duration",
+        "value": "350ms",
+        "file": "tokens/00-foundation/motion.json"
+      },
+      "duration.floating": {
+        "type": "duration",
+        "value": "400ms",
+        "file": "tokens/00-foundation/motion.json"
+      },
+      "duration.reveal": {
+        "type": "duration",
+        "value": "700ms",
+        "file": "tokens/00-foundation/motion.json"
+      },
+      "duration.lenis": {
+        "type": "duration",
+        "value": "1.4s",
+        "file": "tokens/00-foundation/motion.json"
+      },
+      "reveal.distance": {
+        "type": "dimension",
+        "value": "32px",
+        "file": "tokens/00-foundation/motion.json"
+      },
+      "reveal.threshold": {
+        "type": "number",
+        "value": 0.15,
+        "file": "tokens/00-foundation/motion.json"
+      },
+      "reveal.delays": {
+        "type": "durationList",
+        "value": [
+          0,
+          100,
+          150,
+          200,
+          300,
+          450
+        ],
+        "file": "tokens/00-foundation/motion.json"
+      },
+      "compose.start": {
+        "type": "number",
+        "value": 0.9,
+        "file": "tokens/00-foundation/motion.json"
+      },
+      "compose.end": {
+        "type": "number",
+        "value": 0.45,
+        "file": "tokens/00-foundation/motion.json"
+      },
+      "compose.stagger": {
+        "type": "number",
+        "value": 0.35,
+        "file": "tokens/00-foundation/motion.json"
+      },
+      "hero.scale-from": {
+        "type": "number",
+        "value": 0.8,
+        "file": "tokens/00-foundation/motion.json"
+      },
+      "hero.peek": {
+        "type": "number",
+        "value": 0.06,
+        "file": "tokens/00-foundation/motion.json"
+      },
+      "stack.scale-min": {
+        "type": "number",
+        "value": 0.75,
+        "file": "tokens/00-foundation/motion.json"
+      },
+      "stack.play-at": {
+        "type": "number",
+        "value": 0.98,
+        "file": "tokens/00-foundation/motion.json"
+      },
+      "scrub.window-start": {
+        "type": "number",
+        "value": 0.2,
+        "file": "tokens/00-foundation/motion.json"
+      },
+      "scrub.window-end": {
+        "type": "number",
+        "value": 0.8,
+        "file": "tokens/00-foundation/motion.json"
+      },
+      "scrub.frames": {
+        "type": "number",
+        "value": 50,
+        "file": "tokens/00-foundation/motion.json"
+      },
+      "scrub.px-per-frame": {
+        "type": "number",
+        "value": 8,
+        "file": "tokens/00-foundation/motion.json"
+      },
+      "scrub.caption-travel": {
+        "type": "number",
+        "value": 0.6,
+        "file": "tokens/00-foundation/motion.json"
+      },
+      "wave.amp-desktop": {
+        "type": "number",
+        "value": 88,
+        "file": "tokens/00-foundation/motion.json"
+      },
+      "wave.amp-tablet": {
+        "type": "number",
+        "value": 50,
+        "file": "tokens/00-foundation/motion.json"
+      },
+      "wave.amp-mobile": {
+        "type": "number",
+        "value": 22,
+        "file": "tokens/00-foundation/motion.json"
+      },
+      "wave.trigger-start": {
+        "type": "number",
+        "value": 0.8,
+        "file": "tokens/00-foundation/motion.json"
+      },
+      "wave.trigger-end": {
+        "type": "number",
+        "value": 0.2,
+        "file": "tokens/00-foundation/motion.json"
+      },
+      "wave.pulse": {
+        "type": "number",
+        "value": 0.35,
+        "file": "tokens/00-foundation/motion.json"
+      },
+      "nav.hide-after": {
+        "type": "number",
+        "value": 80,
+        "file": "tokens/00-foundation/motion.json"
+      },
+      "nav.scroll-offset": {
+        "type": "number",
+        "value": -80,
+        "file": "tokens/00-foundation/motion.json"
+      },
+      "parallax.hero-wrapper": {
+        "type": "number",
+        "value": -0.02,
+        "file": "tokens/00-foundation/motion.json"
+      },
+      "parallax.hero-content": {
+        "type": "number",
+        "value": -0.08,
+        "file": "tokens/00-foundation/motion.json"
+      },
+      "parallax.steps-header": {
+        "type": "number",
+        "value": -0.04,
+        "file": "tokens/00-foundation/motion.json"
+      }
+    },
+    "radius": {
+      "xs": {
+        "type": "dimension",
+        "value": "2px",
+        "file": "tokens/00-foundation/radius.json"
+      },
+      "sm": {
+        "type": "dimension",
+        "value": "4px",
+        "file": "tokens/00-foundation/radius.json"
+      },
+      "md": {
+        "type": "dimension",
+        "value": "8px",
+        "file": "tokens/00-foundation/radius.json"
+      },
+      "lg": {
+        "type": "dimension",
+        "value": "16px",
+        "file": "tokens/00-foundation/radius.json"
+      },
+      "full": {
+        "type": "dimension",
+        "value": "9999px",
+        "file": "tokens/00-foundation/radius.json"
+      }
+    },
+    "space": {
+      "declared.xs": {
+        "type": "dimension",
+        "value": ".25rem",
+        "file": "tokens/00-foundation/spacing.json"
+      },
+      "declared.sm": {
+        "type": "dimension",
+        "value": ".5rem",
+        "file": "tokens/00-foundation/spacing.json"
+      },
+      "declared.md": {
+        "type": "dimension",
+        "value": "1rem",
+        "file": "tokens/00-foundation/spacing.json"
+      },
+      "declared.lg": {
+        "type": "dimension",
+        "value": "2rem",
+        "file": "tokens/00-foundation/spacing.json"
+      },
+      "declared.xl": {
+        "type": "dimension",
+        "value": "4rem",
+        "file": "tokens/00-foundation/spacing.json"
+      },
+      "step.4": {
+        "type": "dimension",
+        "value": "4px",
+        "file": "tokens/00-foundation/spacing.json"
+      },
+      "step.6": {
+        "type": "dimension",
+        "value": "6px",
+        "file": "tokens/00-foundation/spacing.json"
+      },
+      "step.8": {
+        "type": "dimension",
+        "value": "8px",
+        "file": "tokens/00-foundation/spacing.json"
+      },
+      "step.12": {
+        "type": "dimension",
+        "value": "12px",
+        "file": "tokens/00-foundation/spacing.json"
+      },
+      "step.16": {
+        "type": "dimension",
+        "value": "16px",
+        "file": "tokens/00-foundation/spacing.json"
+      },
+      "step.24": {
+        "type": "dimension",
+        "value": "24px",
+        "file": "tokens/00-foundation/spacing.json"
+      },
+      "step.32": {
+        "type": "dimension",
+        "value": "32px",
+        "file": "tokens/00-foundation/spacing.json"
+      },
+      "step.40": {
+        "type": "dimension",
+        "value": "40px",
+        "file": "tokens/00-foundation/spacing.json"
+      },
+      "step.48": {
+        "type": "dimension",
+        "value": "48px",
+        "file": "tokens/00-foundation/spacing.json"
+      },
+      "step.60": {
+        "type": "dimension",
+        "value": "60px",
+        "file": "tokens/00-foundation/spacing.json"
+      },
+      "step.72": {
+        "type": "dimension",
+        "value": "72px",
+        "file": "tokens/00-foundation/spacing.json"
+      },
+      "step.80": {
+        "type": "dimension",
+        "value": "80px",
+        "file": "tokens/00-foundation/spacing.json"
+      },
+      "step.88": {
+        "type": "dimension",
+        "value": "88px",
+        "file": "tokens/00-foundation/spacing.json"
+      },
+      "step.96": {
+        "type": "dimension",
+        "value": "96px",
+        "file": "tokens/00-foundation/spacing.json"
+      },
+      "step.104": {
+        "type": "dimension",
+        "value": "104px",
+        "file": "tokens/00-foundation/spacing.json"
+      },
+      "step.160": {
+        "type": "dimension",
+        "value": "160px",
+        "file": "tokens/00-foundation/spacing.json"
+      }
+    },
+    "typography": {
+      "family.primary": {
+        "type": "fontFamily",
+        "value": "\"Roobert\", sans-serif",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "family.secondary": {
+        "type": "fontFamily",
+        "value": "\"Vesterbro\", sans-serif",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "family.mono": {
+        "type": "fontFamily",
+        "value": "'SF Mono','Menlo',monospace",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "weight.regular": {
+        "type": "fontWeight",
+        "value": 400,
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "weight.medium": {
+        "type": "fontWeight",
+        "value": 500,
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.display-1.desktop.size": {
+        "type": "dimension",
+        "value": "96px",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.display-1.desktop.weight": {
+        "type": "fontWeight",
+        "value": "500",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.display-1.desktop.lineHeight": {
+        "type": "number",
+        "value": "1",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.display-1.desktop.letterSpacing": {
+        "type": "dimension",
+        "value": "-1.2px",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.display-1.tablet.size": {
+        "type": "dimension",
+        "value": "72px",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.display-1.tablet.weight": {
+        "type": "fontWeight",
+        "value": "500",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.display-1.tablet.lineHeight": {
+        "type": "number",
+        "value": "1",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.display-1.tablet.letterSpacing": {
+        "type": "dimension",
+        "value": "0",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.display-1.mobile.size": {
+        "type": "dimension",
+        "value": "40px",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.display-1.mobile.weight": {
+        "type": "fontWeight",
+        "value": "500",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.display-1.mobile.lineHeight": {
+        "type": "number",
+        "value": "1",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.display-1.mobile.letterSpacing": {
+        "type": "dimension",
+        "value": "0",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.display-2.desktop.size": {
+        "type": "dimension",
+        "value": "72px",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.display-2.desktop.weight": {
+        "type": "fontWeight",
+        "value": "500",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.display-2.desktop.lineHeight": {
+        "type": "number",
+        "value": "1",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.display-2.desktop.letterSpacing": {
+        "type": "dimension",
+        "value": "-1.2px",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.display-2.tablet.size": {
+        "type": "dimension",
+        "value": "48px",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.display-2.tablet.weight": {
+        "type": "fontWeight",
+        "value": "500",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.display-2.tablet.lineHeight": {
+        "type": "number",
+        "value": "1",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.display-2.tablet.letterSpacing": {
+        "type": "dimension",
+        "value": "0",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.display-2.mobile.size": {
+        "type": "dimension",
+        "value": "32px",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.display-2.mobile.weight": {
+        "type": "fontWeight",
+        "value": "500",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.display-2.mobile.lineHeight": {
+        "type": "number",
+        "value": "1",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.display-2.mobile.letterSpacing": {
+        "type": "dimension",
+        "value": "0",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.display-3.desktop.size": {
+        "type": "dimension",
+        "value": "56px",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.display-3.desktop.weight": {
+        "type": "fontWeight",
+        "value": "500",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.display-3.desktop.lineHeight": {
+        "type": "number",
+        "value": "1",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.display-3.desktop.letterSpacing": {
+        "type": "dimension",
+        "value": "0",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.display-3.tablet.size": {
+        "type": "dimension",
+        "value": "32px",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.display-3.tablet.weight": {
+        "type": "fontWeight",
+        "value": "500",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.display-3.tablet.lineHeight": {
+        "type": "number",
+        "value": "1",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.display-3.tablet.letterSpacing": {
+        "type": "dimension",
+        "value": "0",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.display-3.mobile.size": {
+        "type": "dimension",
+        "value": "24px",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.display-3.mobile.weight": {
+        "type": "fontWeight",
+        "value": "500",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.display-3.mobile.lineHeight": {
+        "type": "number",
+        "value": "1",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.display-3.mobile.letterSpacing": {
+        "type": "dimension",
+        "value": "0",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.heading-1.desktop.size": {
+        "type": "dimension",
+        "value": "32px",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.heading-1.desktop.weight": {
+        "type": "fontWeight",
+        "value": "500",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.heading-1.desktop.lineHeight": {
+        "type": "number",
+        "value": "1",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.heading-1.desktop.letterSpacing": {
+        "type": "dimension",
+        "value": "0",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.heading-1.tablet.size": {
+        "type": "dimension",
+        "value": "32px",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.heading-1.tablet.weight": {
+        "type": "fontWeight",
+        "value": "500",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.heading-1.tablet.lineHeight": {
+        "type": "number",
+        "value": "1.125",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.heading-1.tablet.letterSpacing": {
+        "type": "dimension",
+        "value": "0",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.heading-1.mobile.size": {
+        "type": "dimension",
+        "value": "24px",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.heading-1.mobile.weight": {
+        "type": "fontWeight",
+        "value": "500",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.heading-1.mobile.lineHeight": {
+        "type": "number",
+        "value": "1.143",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.heading-1.mobile.letterSpacing": {
+        "type": "dimension",
+        "value": "0",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.heading-2.desktop.size": {
+        "type": "dimension",
+        "value": "24px",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.heading-2.desktop.weight": {
+        "type": "fontWeight",
+        "value": "500",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.heading-2.desktop.lineHeight": {
+        "type": "number",
+        "value": "1",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.heading-2.desktop.letterSpacing": {
+        "type": "dimension",
+        "value": "0",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.heading-2.tablet.size": {
+        "type": "dimension",
+        "value": "24px",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.heading-2.tablet.weight": {
+        "type": "fontWeight",
+        "value": "500",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.heading-2.tablet.lineHeight": {
+        "type": "number",
+        "value": "1",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.heading-2.tablet.letterSpacing": {
+        "type": "dimension",
+        "value": "0",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.heading-2.mobile.size": {
+        "type": "dimension",
+        "value": "20px",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.heading-2.mobile.weight": {
+        "type": "fontWeight",
+        "value": "500",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.heading-2.mobile.lineHeight": {
+        "type": "number",
+        "value": "1",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.heading-2.mobile.letterSpacing": {
+        "type": "dimension",
+        "value": "0",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.subtitle-1.desktop.size": {
+        "type": "dimension",
+        "value": "20px",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.subtitle-1.desktop.weight": {
+        "type": "fontWeight",
+        "value": "500",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.subtitle-1.desktop.lineHeight": {
+        "type": "number",
+        "value": "1.4",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.subtitle-1.desktop.letterSpacing": {
+        "type": "dimension",
+        "value": "0",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.subtitle-1.tablet.size": {
+        "type": "dimension",
+        "value": "18px",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.subtitle-1.tablet.weight": {
+        "type": "fontWeight",
+        "value": "500",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.subtitle-1.tablet.lineHeight": {
+        "type": "number",
+        "value": "1.4",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.subtitle-1.tablet.letterSpacing": {
+        "type": "dimension",
+        "value": "0",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.subtitle-1.mobile.size": {
+        "type": "dimension",
+        "value": "16px",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.subtitle-1.mobile.weight": {
+        "type": "fontWeight",
+        "value": "500",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.subtitle-1.mobile.lineHeight": {
+        "type": "number",
+        "value": "1.2",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.subtitle-1.mobile.letterSpacing": {
+        "type": "dimension",
+        "value": "0",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.body-1.desktop.size": {
+        "type": "dimension",
+        "value": "16px",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.body-1.desktop.weight": {
+        "type": "fontWeight",
+        "value": "400",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.body-1.desktop.lineHeight": {
+        "type": "number",
+        "value": "1.5",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.body-1.desktop.letterSpacing": {
+        "type": "dimension",
+        "value": "0",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.body-1.tablet.size": {
+        "type": "dimension",
+        "value": "16px",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.body-1.tablet.weight": {
+        "type": "fontWeight",
+        "value": "400",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.body-1.tablet.lineHeight": {
+        "type": "number",
+        "value": "1.5",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.body-1.tablet.letterSpacing": {
+        "type": "dimension",
+        "value": "0",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.body-1.mobile.size": {
+        "type": "dimension",
+        "value": "16px",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.body-1.mobile.weight": {
+        "type": "fontWeight",
+        "value": "400",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.body-1.mobile.lineHeight": {
+        "type": "number",
+        "value": "1.5",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.body-1.mobile.letterSpacing": {
+        "type": "dimension",
+        "value": "0",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.body-2.desktop.size": {
+        "type": "dimension",
+        "value": "14px",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.body-2.desktop.weight": {
+        "type": "fontWeight",
+        "value": "400",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.body-2.desktop.lineHeight": {
+        "type": "number",
+        "value": "1.429",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.body-2.desktop.letterSpacing": {
+        "type": "dimension",
+        "value": "0",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.body-2.tablet.size": {
+        "type": "dimension",
+        "value": "14px",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.body-2.tablet.weight": {
+        "type": "fontWeight",
+        "value": "400",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.body-2.tablet.lineHeight": {
+        "type": "number",
+        "value": "1.429",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.body-2.tablet.letterSpacing": {
+        "type": "dimension",
+        "value": "0",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.body-2.mobile.size": {
+        "type": "dimension",
+        "value": "14px",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.body-2.mobile.weight": {
+        "type": "fontWeight",
+        "value": "400",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.body-2.mobile.lineHeight": {
+        "type": "number",
+        "value": "1.429",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.body-2.mobile.letterSpacing": {
+        "type": "dimension",
+        "value": "0",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.button-1.desktop.size": {
+        "type": "dimension",
+        "value": "20px",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.button-1.desktop.weight": {
+        "type": "fontWeight",
+        "value": "500",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.button-1.desktop.lineHeight": {
+        "type": "number",
+        "value": "1",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.button-1.desktop.letterSpacing": {
+        "type": "dimension",
+        "value": "0",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.button-1.tablet.size": {
+        "type": "dimension",
+        "value": "16px",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.button-1.tablet.weight": {
+        "type": "fontWeight",
+        "value": "500",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.button-1.tablet.lineHeight": {
+        "type": "number",
+        "value": "1.5",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.button-1.tablet.letterSpacing": {
+        "type": "dimension",
+        "value": "0",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.button-1.mobile.size": {
+        "type": "dimension",
+        "value": "16px",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.button-1.mobile.weight": {
+        "type": "fontWeight",
+        "value": "500",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.button-1.mobile.lineHeight": {
+        "type": "number",
+        "value": "1.5",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.button-1.mobile.letterSpacing": {
+        "type": "dimension",
+        "value": "0",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.button-2.desktop.size": {
+        "type": "dimension",
+        "value": "16px",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.button-2.desktop.weight": {
+        "type": "fontWeight",
+        "value": "500",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.button-2.desktop.lineHeight": {
+        "type": "number",
+        "value": "1",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.button-2.desktop.letterSpacing": {
+        "type": "dimension",
+        "value": "0",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.button-2.tablet.size": {
+        "type": "dimension",
+        "value": "14px",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.button-2.tablet.weight": {
+        "type": "fontWeight",
+        "value": "500",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.button-2.tablet.lineHeight": {
+        "type": "number",
+        "value": "1.429",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.button-2.tablet.letterSpacing": {
+        "type": "dimension",
+        "value": "0",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.button-2.mobile.size": {
+        "type": "dimension",
+        "value": "14px",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.button-2.mobile.weight": {
+        "type": "fontWeight",
+        "value": "500",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.button-2.mobile.lineHeight": {
+        "type": "number",
+        "value": "1.429",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.button-2.mobile.letterSpacing": {
+        "type": "dimension",
+        "value": "0",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.caption-1.desktop.size": {
+        "type": "dimension",
+        "value": "10px",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.caption-1.desktop.weight": {
+        "type": "fontWeight",
+        "value": "500",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.caption-1.desktop.lineHeight": {
+        "type": "number",
+        "value": "1.333",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.caption-1.desktop.letterSpacing": {
+        "type": "dimension",
+        "value": "0",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.caption-1.tablet.size": {
+        "type": "dimension",
+        "value": "10px",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.caption-1.tablet.weight": {
+        "type": "fontWeight",
+        "value": "500",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.caption-1.tablet.lineHeight": {
+        "type": "number",
+        "value": "1.333",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.caption-1.tablet.letterSpacing": {
+        "type": "dimension",
+        "value": "0",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.caption-1.mobile.size": {
+        "type": "dimension",
+        "value": "10px",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.caption-1.mobile.weight": {
+        "type": "fontWeight",
+        "value": "500",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.caption-1.mobile.lineHeight": {
+        "type": "number",
+        "value": "1.333",
+        "file": "tokens/00-foundation/typography.json"
+      },
+      "scale.caption-1.mobile.letterSpacing": {
+        "type": "dimension",
+        "value": "0",
+        "file": "tokens/00-foundation/typography.json"
+      }
+    },
+    "color-roles": {
+      "text.primary": {
+        "type": "alias",
+        "value": "{color.text}",
+        "file": "tokens/10-semantic/color-roles.json"
+      },
+      "text.secondary": {
+        "type": "alias",
+        "value": "{color.text-muted}",
+        "file": "tokens/10-semantic/color-roles.json"
+      },
+      "text.brand": {
+        "type": "alias",
+        "value": "{color.brand}",
+        "file": "tokens/10-semantic/color-roles.json"
+      },
+      "text.inverse": {
+        "type": "alias",
+        "value": "{color.bg}",
+        "file": "tokens/10-semantic/color-roles.json"
+      },
+      "text.mockup": {
+        "type": "alias",
+        "value": "{color.mock-text}",
+        "file": "tokens/10-semantic/color-roles.json"
+      },
+      "surface.page": {
+        "type": "alias",
+        "value": "{color.bg}",
+        "file": "tokens/10-semantic/color-roles.json"
+      },
+      "surface.raised": {
+        "type": "alias",
+        "value": "{color.surface}",
+        "file": "tokens/10-semantic/color-roles.json"
+      },
+      "surface.chrome": {
+        "type": "alias",
+        "value": "{color.chrome}",
+        "file": "tokens/10-semantic/color-roles.json"
+      },
+      "surface.floating": {
+        "type": "alias",
+        "value": "{color.floating-bg}",
+        "file": "tokens/10-semantic/color-roles.json"
+      },
+      "surface.fade-end": {
+        "type": "alias",
+        "value": "{color.bg-transparent}",
+        "file": "tokens/10-semantic/color-roles.json"
+      },
+      "border.subtle": {
+        "type": "alias",
+        "value": "{color.surface}",
+        "file": "tokens/10-semantic/color-roles.json"
+      },
+      "border.divider": {
+        "type": "alias",
+        "value": "{color.divider}",
+        "file": "tokens/10-semantic/color-roles.json"
+      },
+      "border.chrome": {
+        "type": "alias",
+        "value": "{color.chrome}",
+        "file": "tokens/10-semantic/color-roles.json"
+      },
+      "accent.brand": {
+        "type": "alias",
+        "value": "{color.brand}",
+        "file": "tokens/10-semantic/color-roles.json"
+      },
+      "accent.step-2": {
+        "type": "alias",
+        "value": "{color.badge-2}",
+        "file": "tokens/10-semantic/color-roles.json"
+      },
+      "accent.step-3": {
+        "type": "alias",
+        "value": "{color.badge-3}",
+        "file": "tokens/10-semantic/color-roles.json"
+      },
+      "accent.preset-pink": {
+        "type": "alias",
+        "value": "{color.preset-pink}",
+        "file": "tokens/10-semantic/color-roles.json"
+      },
+      "action.primary-bg": {
+        "type": "alias",
+        "value": "{color.text}",
+        "file": "tokens/10-semantic/color-roles.json"
+      },
+      "action.primary-bg-hover": {
+        "type": "alias",
+        "value": "{color.text-muted}",
+        "file": "tokens/10-semantic/color-roles.json"
+      },
+      "action.primary-text": {
+        "type": "alias",
+        "value": "{color.bg}",
+        "file": "tokens/10-semantic/color-roles.json"
+      },
+      "action.brand-bg": {
+        "type": "alias",
+        "value": "{color.brand}",
+        "file": "tokens/10-semantic/color-roles.json"
+      },
+      "action.brand-text": {
+        "type": "alias",
+        "value": "{color.bg}",
+        "file": "tokens/10-semantic/color-roles.json"
+      },
+      "action.ghost-text": {
+        "type": "alias",
+        "value": "{color.text}",
+        "file": "tokens/10-semantic/color-roles.json"
+      },
+      "action.ghost-text-hover": {
+        "type": "alias",
+        "value": "{color.text-muted}",
+        "file": "tokens/10-semantic/color-roles.json"
+      }
+    },
+    "motion-roles": {
+      "reveal": {
+        "type": "alias",
+        "value": "{motion.duration.reveal}",
+        "file": "tokens/10-semantic/motion-roles.json"
+      },
+      "ui-state": {
+        "type": "alias",
+        "value": "{motion.duration.standard}",
+        "file": "tokens/10-semantic/motion-roles.json"
+      },
+      "ui-easing": {
+        "type": "alias",
+        "value": "{motion.easing.standard}",
+        "file": "tokens/10-semantic/motion-roles.json"
+      },
+      "accordion-easing": {
+        "type": "alias",
+        "value": "{motion.easing.decel}",
+        "file": "tokens/10-semantic/motion-roles.json"
+      },
+      "hover": {
+        "type": "alias",
+        "value": "{motion.duration.hover}",
+        "file": "tokens/10-semantic/motion-roles.json"
+      },
+      "smooth-scroll": {
+        "type": "alias",
+        "value": "{motion.duration.lenis}",
+        "file": "tokens/10-semantic/motion-roles.json"
+      }
+    },
+    "typography-roles": {
+      "heading-hero": {
+        "type": "alias",
+        "value": "{typography.scale.display-1}",
+        "file": "tokens/10-semantic/typography-roles.json"
+      },
+      "heading-section": {
+        "type": "alias",
+        "value": "{typography.scale.display-2}",
+        "file": "tokens/10-semantic/typography-roles.json"
+      },
+      "heading-price": {
+        "type": "alias",
+        "value": "{typography.scale.display-3}",
+        "file": "tokens/10-semantic/typography-roles.json"
+      },
+      "heading-footer": {
+        "type": "alias",
+        "value": "{typography.scale.display-3}",
+        "file": "tokens/10-semantic/typography-roles.json"
+      },
+      "heading-card": {
+        "type": "alias",
+        "value": "{typography.scale.heading-1}",
+        "file": "tokens/10-semantic/typography-roles.json"
+      },
+      "heading-plan": {
+        "type": "alias",
+        "value": "{typography.scale.heading-2}",
+        "file": "tokens/10-semantic/typography-roles.json"
+      },
+      "text-lead": {
+        "type": "alias",
+        "value": "{typography.scale.subtitle-1}",
+        "file": "tokens/10-semantic/typography-roles.json"
+      },
+      "text-body": {
+        "type": "alias",
+        "value": "{typography.scale.body-1}",
+        "file": "tokens/10-semantic/typography-roles.json"
+      },
+      "text-small": {
+        "type": "alias",
+        "value": "{typography.scale.body-2}",
+        "file": "tokens/10-semantic/typography-roles.json"
+      },
+      "text-button": {
+        "type": "alias",
+        "value": "{typography.scale.button-2}",
+        "file": "tokens/10-semantic/typography-roles.json"
+      },
+      "text-caption": {
+        "type": "alias",
+        "value": "{typography.scale.caption-1}",
+        "file": "tokens/10-semantic/typography-roles.json"
+      }
+    },
+    "component.badge": {
+      "size": {
+        "type": "dimension",
+        "value": "32px",
+        "file": "tokens/20-component/badge.json"
+      },
+      "radius": {
+        "type": "alias",
+        "value": "{radius.sm}",
+        "file": "tokens/20-component/badge.json"
+      },
+      "tone-1": {
+        "type": "alias",
+        "value": "{color-roles.accent.brand}",
+        "file": "tokens/20-component/badge.json"
+      },
+      "tone-2": {
+        "type": "alias",
+        "value": "{color-roles.accent.step-2}",
+        "file": "tokens/20-component/badge.json"
+      },
+      "tone-3": {
+        "type": "alias",
+        "value": "{color-roles.accent.step-3}",
+        "file": "tokens/20-component/badge.json"
+      }
+    },
+    "component.button": {
+      "height-sm": {
+        "type": "dimension",
+        "value": "40px",
+        "file": "tokens/20-component/button.json"
+      },
+      "padding-x-sm": {
+        "type": "dimension",
+        "value": "16px",
+        "file": "tokens/20-component/button.json"
+      },
+      "gap": {
+        "type": "dimension",
+        "value": "8px",
+        "file": "tokens/20-component/button.json"
+      },
+      "radius": {
+        "type": "alias",
+        "value": "{radius.sm}",
+        "file": "tokens/20-component/button.json"
+      },
+      "height-plan": {
+        "type": "dimension",
+        "value": "48px",
+        "file": "tokens/20-component/button.json"
+      },
+      "height-mobile-menu": {
+        "type": "dimension",
+        "value": "56px",
+        "file": "tokens/20-component/button.json"
+      },
+      "primary-bg": {
+        "type": "alias",
+        "value": "{color-roles.action.primary-bg}",
+        "file": "tokens/20-component/button.json"
+      },
+      "primary-bg-hover": {
+        "type": "alias",
+        "value": "{color-roles.action.primary-bg-hover}",
+        "file": "tokens/20-component/button.json"
+      },
+      "primary-text": {
+        "type": "alias",
+        "value": "{color-roles.action.primary-text}",
+        "file": "tokens/20-component/button.json"
+      },
+      "brand-bg": {
+        "type": "alias",
+        "value": "{color-roles.action.brand-bg}",
+        "file": "tokens/20-component/button.json"
+      },
+      "brand-text": {
+        "type": "alias",
+        "value": "{color-roles.action.brand-text}",
+        "file": "tokens/20-component/button.json"
+      },
+      "ghost-text": {
+        "type": "alias",
+        "value": "{color-roles.action.ghost-text}",
+        "file": "tokens/20-component/button.json"
+      },
+      "ghost-text-hover": {
+        "type": "alias",
+        "value": "{color-roles.action.ghost-text-hover}",
+        "file": "tokens/20-component/button.json"
+      }
+    },
+    "component.card": {
+      "radius": {
+        "type": "alias",
+        "value": "{radius.md}",
+        "file": "tokens/20-component/card.json"
+      },
+      "bg": {
+        "type": "alias",
+        "value": "{color-roles.surface.raised}",
+        "file": "tokens/20-component/card.json"
+      },
+      "padding": {
+        "type": "dimension",
+        "value": "32px",
+        "file": "tokens/20-component/card.json"
+      },
+      "padding-mobile": {
+        "type": "dimension",
+        "value": "24px",
+        "file": "tokens/20-component/card.json"
+      },
+      "body-width": {
+        "type": "calc",
+        "value": "calc(25% + 24px)",
+        "file": "tokens/20-component/card.json"
+      },
+      "media-radius": {
+        "type": "alias",
+        "value": "{radius.sm}",
+        "file": "tokens/20-component/card.json"
+      }
+    },
+    "component.faq": {
+      "lead-top": {
+        "type": "calc",
+        "value": "calc(88px + 32px)",
+        "file": "tokens/20-component/faq.json"
+      },
+      "lead-top-nav-hidden": {
+        "type": "dimension",
+        "value": "32px",
+        "file": "tokens/20-component/faq.json"
+      },
+      "question-padding-y": {
+        "type": "dimension",
+        "value": "24px",
+        "file": "tokens/20-component/faq.json"
+      },
+      "border": {
+        "type": "alias",
+        "value": "{color-roles.border.subtle}",
+        "file": "tokens/20-component/faq.json"
+      }
+    },
+    "component.floating-cta": {
+      "bottom": {
+        "type": "dimension",
+        "value": "24px",
+        "file": "tokens/20-component/floating-cta.json"
+      },
+      "padding": {
+        "type": "dimension",
+        "value": "8px 24px 8px 8px",
+        "file": "tokens/20-component/floating-cta.json"
+      },
+      "gap": {
+        "type": "dimension",
+        "value": "24px",
+        "file": "tokens/20-component/floating-cta.json"
+      },
+      "bg": {
+        "type": "alias",
+        "value": "{color-roles.surface.floating}",
+        "file": "tokens/20-component/floating-cta.json"
+      },
+      "blur": {
+        "type": "alias",
+        "value": "{elevation.blur-floating}",
+        "file": "tokens/20-component/floating-cta.json"
+      },
+      "radius": {
+        "type": "alias",
+        "value": "{radius.md}",
+        "file": "tokens/20-component/floating-cta.json"
+      }
+    },
+    "component.navbar": {
+      "height": {
+        "type": "dimension",
+        "value": "88px",
+        "file": "tokens/20-component/navbar.json"
+      },
+      "height-mobile": {
+        "type": "dimension",
+        "value": "80px",
+        "file": "tokens/20-component/navbar.json"
+      },
+      "fade-height": {
+        "type": "dimension",
+        "value": "120px",
+        "file": "tokens/20-component/navbar.json"
+      },
+      "fade-from": {
+        "type": "alias",
+        "value": "{color-roles.surface.page}",
+        "file": "tokens/20-component/navbar.json"
+      },
+      "fade-to": {
+        "type": "alias",
+        "value": "{color-roles.surface.fade-end}",
+        "file": "tokens/20-component/navbar.json"
+      }
+    },
+    "component.pricing": {
+      "seam-height": {
+        "type": "dimension",
+        "value": "12px",
+        "file": "tokens/20-component/pricing.json"
+      },
+      "notch-size": {
+        "type": "dimension",
+        "value": "12px",
+        "file": "tokens/20-component/pricing.json"
+      },
+      "notch-inset": {
+        "type": "dimension",
+        "value": "24px",
+        "file": "tokens/20-component/pricing.json"
+      },
+      "panel-padding": {
+        "type": "dimension",
+        "value": "32px",
+        "file": "tokens/20-component/pricing.json"
+      },
+      "includes-padding": {
+        "type": "dimension",
+        "value": "48px",
+        "file": "tokens/20-component/pricing.json"
+      },
+      "shell-bg": {
+        "type": "alias",
+        "value": "{color-roles.surface.page}",
+        "file": "tokens/20-component/pricing.json"
+      },
+      "panel-bg": {
+        "type": "alias",
+        "value": "{color-roles.surface.raised}",
+        "file": "tokens/20-component/pricing.json"
+      }
+    },
+    "component.tag": {
+      "padding": {
+        "type": "dimension",
+        "value": "2px 6px",
+        "file": "tokens/20-component/tag.json"
+      },
+      "radius": {
+        "type": "alias",
+        "value": "{radius.xs}",
+        "file": "tokens/20-component/tag.json"
+      },
+      "bg": {
+        "type": "alias",
+        "value": "{color-roles.accent.brand}",
+        "file": "tokens/20-component/tag.json"
+      },
+      "text": {
+        "type": "alias",
+        "value": "{color-roles.text.inverse}",
+        "file": "tokens/20-component/tag.json"
+      }
+    },
+    "component.type-inspector": {
+      "font": {
+        "type": "alias",
+        "value": "{typography.family.mono}",
+        "file": "tokens/20-component/type-inspector.json"
+      },
+      "bg": {
+        "type": "alias",
+        "value": "{color-roles.surface.raised}",
+        "file": "tokens/20-component/type-inspector.json"
+      },
+      "text": {
+        "type": "alias",
+        "value": "{color-roles.text.brand}",
+        "file": "tokens/20-component/type-inspector.json"
+      },
+      "border": {
+        "type": "alias",
+        "value": "{color-roles.border.chrome}",
+        "file": "tokens/20-component/type-inspector.json"
+      },
+      "offset": {
+        "type": "dimension",
+        "value": "16px",
+        "file": "tokens/20-component/type-inspector.json"
+      }
+    },
+    "component.typo-sim": {
+      "row-gap": {
+        "type": "dimension",
+        "value": "24px",
+        "file": "tokens/20-component/typo-sim.json"
+      },
+      "label-tracking": {
+        "type": "dimension",
+        "value": ".07em",
+        "file": "tokens/20-component/typo-sim.json"
+      },
+      "select-color": {
+        "type": "alias",
+        "value": "{color-roles.text.brand}",
+        "file": "tokens/20-component/typo-sim.json"
+      },
+      "divider": {
+        "type": "alias",
+        "value": "{color-roles.border.divider}",
+        "file": "tokens/20-component/typo-sim.json"
+      }
+    },
+    "layout.container": {
+      "max-width": {
+        "type": "dimension",
+        "value": "1344px",
+        "file": "tokens/30-layout/container.json"
+      },
+      "padding-inline": {
+        "type": "dimension",
+        "value": "48px",
+        "file": "tokens/30-layout/container.json"
+      },
+      "padding-inline-mobile": {
+        "type": "dimension",
+        "value": "24px",
+        "file": "tokens/30-layout/container.json"
+      },
+      "content-width-1440": {
+        "type": "dimension",
+        "value": "1248px",
+        "file": "tokens/30-layout/container.json"
+      }
+    },
+    "layout.grid": {
+      "columns": {
+        "type": "number",
+        "value": "12",
+        "file": "tokens/30-layout/grid.json"
+      },
+      "gutter": {
+        "type": "dimension",
+        "value": "24px",
+        "file": "tokens/30-layout/grid.json"
+      },
+      "gutter-tablet": {
+        "type": "dimension",
+        "value": "16px",
+        "file": "tokens/30-layout/grid.json"
+      },
+      "gutter-mobile": {
+        "type": "dimension",
+        "value": "16px",
+        "file": "tokens/30-layout/grid.json"
+      }
+    },
+    "layout.section-spacing": {
+      "desktop": {
+        "type": "dimension",
+        "value": "120px",
+        "file": "tokens/30-layout/section-spacing.json"
+      },
+      "tablet": {
+        "type": "dimension",
+        "value": "80px",
+        "file": "tokens/30-layout/section-spacing.json"
+      },
+      "mobile": {
+        "type": "dimension",
+        "value": "40px",
+        "file": "tokens/30-layout/section-spacing.json"
+      }
+    },
+    "layout.z-index": {
+      "navbar": {
+        "type": "number",
+        "value": 100,
+        "file": "tokens/30-layout/z-index.json"
+      },
+      "floating-cta": {
+        "type": "number",
+        "value": 90,
+        "file": "tokens/30-layout/z-index.json"
+      },
+      "type-inspector": {
+        "type": "number",
+        "value": 99999,
+        "file": "tokens/30-layout/z-index.json"
+      }
+    }
+  }
+}

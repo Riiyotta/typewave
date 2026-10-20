@@ -1,0 +1,53 @@
+{
+  "layout.section-spacing": {
+    "desktop": {
+      "$value": "120px",
+      "$type": "dimension",
+      "$description": "Top/bottom section padding.",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "src/index.css:23",
+            "expect": "--section-padding: 120px"
+          },
+          {
+            "cite": "@original/index-D4COY28s.css",
+            "quote": "--section-padding: 120px"
+          }
+        ]
+      }
+    },
+    "tablet": {
+      "$value": "80px",
+      "$type": "dimension",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "src/index.css:23",
+            "expect": "--section-padding-tablet: 80px"
+          },
+          {
+            "cite": "@original/index-D4COY28s.css",
+            "quote": "--section-padding-tablet: 80px"
+          }
+        ]
+      }
+    },
+    "mobile": {
+      "$value": "40px",
+      "$type": "dimension",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "src/index.css:23",
+            "expect": "--section-padding-mobile: 40px"
+          },
+          {
+            "cite": "@original/index-D4COY28s.css",
+            "quote": "--section-padding-mobile: 40px"
+          }
+        ]
+      }
+    }
+  }
+}

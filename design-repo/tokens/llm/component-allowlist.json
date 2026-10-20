@@ -1,0 +1,371 @@
+{
+  "version": "1.0.0",
+  "$description": "Closed set a generator may instantiate (sections, via PageSpec nodes) or that contracts compose (primitives/components). verify_all.py checks parity with the files on disk and with pagespec.schema.json in both directions.",
+  "templates": [
+    "template.home"
+  ],
+  "sections": [
+    {
+      "id": "shell.navbar",
+      "file": "sections/shell.navbar.json",
+      "purpose": "Persistent orientation and the primary install CTA: logo home link, in-page jumps to the four decision sections, one \"Try it now\" button; collapses to a full-screen menu on touch widths.",
+      "variants": [],
+      "settableProperties": [
+        "cta",
+        "links",
+        "logo",
+        "logoLabel"
+      ],
+      "motionFields": [
+        "patterns",
+        "reducedMotionFallback",
+        "revealDelaysMs"
+      ],
+      "assetRoles": [
+        "brand.logo-wordmark",
+        "icon.figma-glyph"
+      ]
+    },
+    {
+      "id": "hero.video-scale",
+      "file": "sections/hero.video-scale.json",
+      "purpose": "Land the one-line promise (type scale without the math) and convert to install, then hand off to a product video that scales from 0.8 to full width as the visitor scrolls.",
+      "variants": [],
+      "settableProperties": [
+        "cta",
+        "subtitle",
+        "title",
+        "video"
+      ],
+      "motionFields": [
+        "patterns",
+        "reducedMotionFallback",
+        "revealDelaysMs"
+      ],
+      "assetRoles": [
+        "icon.figma-glyph",
+        "media.hero-video"
+      ]
+    },
+    {
+      "id": "steps.sticky-stack",
+      "file": "sections/steps.sticky-stack.json",
+      "purpose": "Explain the three-step workflow; each step card pins and scales into focus over the previous one while its loop starts playing.",
+      "variants": [],
+      "settableProperties": [
+        "cards",
+        "title"
+      ],
+      "motionFields": [
+        "patterns",
+        "reducedMotionFallback",
+        "revealDelaysMs"
+      ],
+      "assetRoles": [
+        "media.step-video"
+      ]
+    },
+    {
+      "id": "cards.feature-carousel",
+      "file": "sections/cards.feature-carousel.json",
+      "purpose": "Show what lands in the Figma file (frames, styles, variables) as three equal cards; becomes a swipeable snap carousel on touch widths.",
+      "variants": [],
+      "settableProperties": [
+        "cards",
+        "title"
+      ],
+      "motionFields": [
+        "patterns",
+        "reducedMotionFallback",
+        "revealDelaysMs"
+      ],
+      "assetRoles": [
+        "media.figma-panel"
+      ]
+    },
+    {
+      "id": "showcase.breakpoint-scrub",
+      "file": "sections/showcase.breakpoint-scrub.json",
+      "purpose": "Prove responsive scaling: a device mockup morphs desktop -> tablet -> phone as the visitor scrubs through a pinned 100vh+400px stage, beside a live type-size simulator.",
+      "variants": [],
+      "settableProperties": [
+        "caption",
+        "mockup",
+        "simulator",
+        "title"
+      ],
+      "motionFields": [
+        "patterns",
+        "reducedMotionFallback",
+        "revealDelaysMs"
+      ],
+      "assetRoles": []
+    },
+    {
+      "id": "grid.preset-wave",
+      "file": "sections/grid.preset-wave.json",
+      "purpose": "Signal saved presets as a row of colour-cycled folders that ripple with a single travelling sine bump as the grid scrolls into view.",
+      "variants": [],
+      "settableProperties": [
+        "labelPrefix",
+        "title"
+      ],
+      "motionFields": [
+        "patterns",
+        "reducedMotionFallback",
+        "revealDelaysMs"
+      ],
+      "assetRoles": []
+    },
+    {
+      "id": "split.export-cards",
+      "file": "sections/split.export-cards.json",
+      "purpose": "Bridge design and engineering: two alternating media/text cards for the CSS export and the AI Prompt export, each with the tools it targets.",
+      "variants": [],
+      "settableProperties": [
+        "cards",
+        "title"
+      ],
+      "motionFields": [
+        "patterns",
+        "reducedMotionFallback",
+        "revealDelaysMs"
+      ],
+      "assetRoles": [
+        "logo.third-party-tool",
+        "media.export-screenshot"
+      ]
+    },
+    {
+      "id": "pricing.ticket-plans",
+      "file": "sections/pricing.ticket-plans.json",
+      "purpose": "Convert: three one-time-licence plans rendered as \"tickets\" (content panel, perforated seam with semicircle notches, CTA stub) plus an \"Everything included\" list.",
+      "variants": [],
+      "settableProperties": [
+        "includes",
+        "plans",
+        "title"
+      ],
+      "motionFields": [
+        "patterns",
+        "reducedMotionFallback",
+        "revealDelaysMs"
+      ],
+      "assetRoles": []
+    },
+    {
+      "id": "faq.sticky-accordion",
+      "file": "sections/faq.sticky-accordion.json",
+      "purpose": "Answer purchase objections: a sticky lead column (title + contact email) beside a single-open accordion.",
+      "variants": [],
+      "settableProperties": [
+        "email",
+        "items",
+        "title"
+      ],
+      "motionFields": [
+        "patterns",
+        "reducedMotionFallback",
+        "revealDelaysMs"
+      ],
+      "assetRoles": [
+        "media.faq-screenshot"
+      ]
+    },
+    {
+      "id": "form.newsletter-inline",
+      "file": "sections/form.newsletter-inline.json",
+      "purpose": "Capture an email for product updates with an oversized inline field and an arrow submit.",
+      "variants": [],
+      "settableProperties": [
+        "form",
+        "placeholder",
+        "submitLabel",
+        "title"
+      ],
+      "motionFields": [
+        "patterns",
+        "reducedMotionFallback",
+        "revealDelaysMs"
+      ],
+      "assetRoles": []
+    },
+    {
+      "id": "shell.footer",
+      "file": "sections/shell.footer.json",
+      "purpose": "Close with a final install prompt in a raised hero panel, then copyright and legal links.",
+      "variants": [],
+      "settableProperties": [
+        "copyright",
+        "cta",
+        "legalLinks",
+        "logo",
+        "title"
+      ],
+      "motionFields": [
+        "patterns",
+        "reducedMotionFallback",
+        "revealDelaysMs"
+      ],
+      "assetRoles": [
+        "brand.logo-mark",
+        "icon.figma-glyph"
+      ]
+    },
+    {
+      "id": "overlay.floating-cta",
+      "file": "sections/overlay.floating-cta.json",
+      "purpose": "Keep the install CTA reachable mid-page: a fixed bottom bar that appears only while scrolling down between the hero video and the newsletter.",
+      "variants": [],
+      "settableProperties": [
+        "cta",
+        "secondary"
+      ],
+      "motionFields": [
+        "patterns",
+        "reducedMotionFallback",
+        "revealDelaysMs"
+      ],
+      "assetRoles": [
+        "icon.figma-glyph"
+      ]
+    },
+    {
+      "id": "overlay.type-inspector",
+      "file": "sections/overlay.type-inspector.json",
+      "purpose": "Demonstrate the type system itself: on fine pointers a cursor badge names the type-scale class under the pointer.",
+      "variants": [],
+      "settableProperties": [],
+      "motionFields": [
+        "patterns",
+        "reducedMotionFallback",
+        "revealDelaysMs"
+      ],
+      "assetRoles": []
+    }
+  ],
+  "primitives": [
+    {
+      "id": "badge",
+      "file": "primitives/badge.json"
+    },
+    {
+      "id": "button",
+      "file": "primitives/button.json"
+    },
+    {
+      "id": "email-input",
+      "file": "primitives/email-input.json"
+    },
+    {
+      "id": "icon",
+      "file": "primitives/icon.json"
+    },
+    {
+      "id": "media-image",
+      "file": "primitives/media-image.json"
+    },
+    {
+      "id": "media-video",
+      "file": "primitives/media-video.json"
+    },
+    {
+      "id": "select",
+      "file": "primitives/select.json"
+    },
+    {
+      "id": "tag",
+      "file": "primitives/tag.json"
+    },
+    {
+      "id": "text-link",
+      "file": "primitives/text-link.json"
+    },
+    {
+      "id": "title-text",
+      "file": "primitives/title-text.json"
+    }
+  ],
+  "components": [
+    {
+      "id": "accordion-item",
+      "file": "components/accordion-item.json"
+    },
+    {
+      "id": "device-mockup",
+      "file": "components/device-mockup.json"
+    },
+    {
+      "id": "export-card",
+      "file": "components/export-card.json"
+    },
+    {
+      "id": "figma-card",
+      "file": "components/figma-card.json"
+    },
+    {
+      "id": "floating-cta-bar",
+      "file": "components/floating-cta-bar.json"
+    },
+    {
+      "id": "footer-hero",
+      "file": "components/footer-hero.json"
+    },
+    {
+      "id": "includes-list",
+      "file": "components/includes-list.json"
+    },
+    {
+      "id": "mobile-menu",
+      "file": "components/mobile-menu.json"
+    },
+    {
+      "id": "preset-folder",
+      "file": "components/preset-folder.json"
+    },
+    {
+      "id": "pricing-plan",
+      "file": "components/pricing-plan.json"
+    },
+    {
+      "id": "step-card",
+      "file": "components/step-card.json"
+    },
+    {
+      "id": "type-inspector-badge",
+      "file": "components/type-inspector-badge.json"
+    },
+    {
+      "id": "typo-simulator",
+      "file": "components/typo-simulator.json"
+    }
+  ],
+  "nodeProperties": [
+    "anchorId",
+    "content",
+    "id",
+    "motion",
+    "section"
+  ],
+  "pageProperties": [
+    "meta",
+    "nodes",
+    "pageSpecVersion",
+    "route",
+    "template",
+    "theme"
+  ],
+  "assetRoles": [
+    "brand.logo-mark",
+    "brand.logo-wordmark",
+    "icon.figma-glyph",
+    "logo.third-party-tool",
+    "media.export-screenshot",
+    "media.faq-screenshot",
+    "media.figma-panel",
+    "media.hero-video",
+    "media.step-video",
+    "meta.favicon",
+    "meta.og-image"
+  ]
+}

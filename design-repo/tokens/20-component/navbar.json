@@ -1,0 +1,49 @@
+{
+  "component.navbar": {
+    "height": {
+      "$value": "88px",
+      "$type": "dimension",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "src/index.css:23",
+            "expect": "--navbar-height: 88px"
+          }
+        ]
+      }
+    },
+    "height-mobile": {
+      "$value": "80px",
+      "$type": "dimension",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "src/index.css:23",
+            "expect": "--navbar-height-mobile: 80px"
+          }
+        ]
+      }
+    },
+    "fade-height": {
+      "$value": "120px",
+      "$type": "dimension",
+      "$description": "Gradient ::before.",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "src/index.css:117",
+            "expect": "height:120px;background:linear-gradient(180deg"
+          }
+        ]
+      }
+    },
+    "fade-from": {
+      "$value": "{color-roles.surface.page}",
+      "$type": "alias"
+    },
+    "fade-to": {
+      "$value": "{color-roles.surface.fade-end}",
+      "$type": "alias"
+    }
+  }
+}

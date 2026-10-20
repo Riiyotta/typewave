@@ -1,0 +1,303 @@
+{
+  "id": "faq.sticky-accordion",
+  "kind": "section",
+  "category": "faq",
+  "purpose": "Answer purchase objections: a sticky lead column (title + contact email) beside a single-open accordion.",
+  "implementedBy": [
+    "src/components/Faq.jsx"
+  ],
+  "variants": [],
+  "constraints": {
+    "onePerPage": true,
+    "maxPerPage": 1
+  },
+  "observedAnchorId": "faq",
+  "content": {
+    "schemaRef": "#/definitions/content.faq.sticky-accordion",
+    "schema": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "title",
+        "email",
+        "items"
+      ],
+      "properties": {
+        "title": {
+          "$ref": "#/definitions/title"
+        },
+        "email": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "label",
+            "href"
+          ],
+          "properties": {
+            "label": {
+              "$ref": "#/definitions/text"
+            },
+            "href": {
+              "$ref": "#/definitions/href"
+            }
+          }
+        },
+        "items": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 7,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "question"
+            ],
+            "properties": {
+              "question": {
+                "$ref": "#/definitions/text"
+              },
+              "paragraphs": {
+                "type": "array",
+                "minItems": 0,
+                "maxItems": 2,
+                "items": {
+                  "$ref": "#/definitions/text"
+                }
+              },
+              "linkParagraph": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "before",
+                  "after"
+                ],
+                "properties": {
+                  "before": {
+                    "$ref": "#/definitions/text"
+                  },
+                  "after": {
+                    "$ref": "#/definitions/text"
+                  }
+                }
+              },
+              "image": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "assetRole",
+                  "assetRef",
+                  "alt"
+                ],
+                "properties": {
+                  "assetRole": {
+                    "allOf": [
+                      {
+                        "$ref": "#/definitions/assetRole"
+                      },
+                      {
+                        "const": "media.faq-screenshot"
+                      }
+                    ]
+                  },
+                  "assetRef": {
+                    "$ref": "#/definitions/assetRef"
+                  },
+                  "alt": {
+                    "$ref": "#/definitions/text"
+                  }
+                }
+              }
+            },
+            "anyOf": [
+              {
+                "required": [
+                  "linkParagraph"
+                ]
+              },
+              {
+                "required": [
+                  "paragraphs"
+                ],
+                "properties": {
+                  "paragraphs": {
+                    "minItems": 1
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    "wordBudgets": [
+      {
+        "path": "title",
+        "observedMaxWords": 3,
+        "specWords": 3,
+        "maxWords": 4,
+        "measuredFrom": [
+          {
+            "cite": "CLONE_SPEC.md:503",
+            "expect": "(2 lines: 1 word / brand span \"& ...\" 2 words; 19ch)"
+          }
+        ]
+      },
+      {
+        "path": "email.label",
+        "observedMaxWords": 1,
+        "maxWords": 2
+      },
+      {
+        "path": "items[].question",
+        "observedMaxWords": 9,
+        "specWords": 9,
+        "maxWords": 11,
+        "measuredFrom": [
+          {
+            "cite": "CLONE_SPEC.md:523",
+            "expect": "| 4 | 46/9 \"control over design tokens\""
+          }
+        ]
+      },
+      {
+        "path": "items[].paragraphs[]",
+        "observedMaxWords": 82,
+        "maxWords": 99
+      },
+      {
+        "path": "items[].linkParagraph.before",
+        "observedMaxWords": 5,
+        "maxWords": 6
+      },
+      {
+        "path": "items[].linkParagraph.after",
+        "observedMaxWords": 46,
+        "maxWords": 56
+      },
+      {
+        "path": "items[].image.alt",
+        "observedMaxWords": 14,
+        "maxWords": 17
+      }
+    ]
+  },
+  "assetRoles": [
+    "media.faq-screenshot"
+  ],
+  "motion": {
+    "allowedPatterns": [
+      "char-reveal-scroll-linked",
+      "fade-up",
+      "accordion",
+      "sticky-lead-offset"
+    ],
+    "reducedMotionFallback": "instant-toggle",
+    "reducedMotionEvidence": "prescribed-not-in-source",
+    "observedRevealDelaysMs": [
+      0,
+      150
+    ],
+    "patternEvidence": {
+      "char-reveal-scroll-linked": [
+        {
+          "cite": "src/lib/compose.jsx:54",
+          "expect": "export function initScrollCompose() {"
+        },
+        {
+          "cite": "CLONE_SPEC.md:653",
+          "expect": "| M4 | Scroll-composed characters"
+        }
+      ],
+      "fade-up": [
+        {
+          "cite": "src/index.css:91",
+          "expect": ".reveal{opacity:0;transform:translateY(32px);transition:opacity .7s ease,transform .7s ease"
+        },
+        {
+          "cite": "CLONE_SPEC.md:651",
+          "expect": "| M2 | Reveal (fade-up)"
+        }
+      ],
+      "accordion": [
+        {
+          "cite": "src/index.css:374",
+          "expect": ".faq__item.is-open .faq__answer{grid-template-rows:1fr}"
+        },
+        {
+          "cite": "CLONE_SPEC.md:665",
+          "expect": "| M14 | FAQ accordion"
+        }
+      ],
+      "sticky-lead-offset": [
+        {
+          "cite": "src/index.css:358",
+          "expect": ":root.navbar-hidden .faq__lead{top:32px}"
+        },
+        {
+          "cite": "CLONE_SPEC.md:664",
+          "expect": "| M13 | FAQ sticky lead offset"
+        }
+      ]
+    }
+  },
+  "responsive": [
+    {
+      "breakpoint": "desktop",
+      "query": "(min-width: 1025px)",
+      "changes": {
+        "columns": 2,
+        "leadPosition": "sticky",
+        "leadTopPx": {
+          "navVisible": 120,
+          "navHidden": 32
+        },
+        "outsideClickClosesAll": true
+      },
+      "measuredFrom": [
+        {
+          "cite": "src/index.css:356",
+          "expect": ".faq__inner{display:grid;grid-template-columns:1fr 1fr"
+        },
+        {
+          "cite": "src/index.css:357",
+          "expect": ".faq__lead{display:flex;flex-direction:column;gap:32px;position:sticky"
+        },
+        {
+          "cite": "src/components/Faq.jsx:28",
+          "expect": "if (!isDesktop()) return"
+        }
+      ]
+    },
+    {
+      "breakpoint": "tablet",
+      "query": "(max-width: 1024px)",
+      "changes": {
+        "columns": 1,
+        "gapPx": 48,
+        "leadPosition": "static",
+        "outsideClickClosesAll": false
+      },
+      "measuredFrom": [
+        {
+          "cite": "src/index.css:379",
+          "expect": ".faq__inner{grid-template-columns:1fr;gap:48px}"
+        },
+        {
+          "cite": "src/index.css:380",
+          "expect": ".faq__lead{position:static}"
+        }
+      ]
+    }
+  ],
+  "accessibility": "Questions are buttons with aria-expanded/aria-controls; answers are role=region with aria-hidden when closed. Single-open: opening one closes the rest.",
+  "measuredFrom": [
+    {
+      "cite": "src/App.jsx:43",
+      "expect": "<Faq />"
+    },
+    {
+      "cite": "CLONE_SPEC.md:497",
+      "expect": "## 11. FAQ `section.faq#faq`"
+    }
+  ]
+}

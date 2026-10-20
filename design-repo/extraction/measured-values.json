@@ -1,0 +1,775 @@
+{
+  "version": "1.0.0",
+  "$description": "Citation ledger for decisions that are not already cited inside a contract. Paths are relative to the clone project root (typewave-clone/); @original/<file> are the original compiled files one level above it, cited by a quote verify_all.py asserts is present; @repo/ is this folder. With no sibling project present the external citations degrade to WARN, never FAIL.",
+  "citationFormat": {
+    "line": {
+      "cite": "path:line[-line]",
+      "expect": "text that must occur inside that range"
+    },
+    "original": {
+      "cite": "@original/<file>",
+      "quote": "string that must occur in the file"
+    }
+  },
+  "facts": [
+    {
+      "id": "route-single",
+      "value": {
+        "routes": [
+          "/"
+        ],
+        "router": null,
+        "template": "template.home"
+      },
+      "note": "No router dependency, no route table: exactly one real route.",
+      "measuredFrom": [
+        {
+          "cite": "src/main.jsx:10",
+          "expect": "ReactDOM.createRoot(document.getElementById('root')).render(<App />)"
+        },
+        {
+          "cite": "package.json:7",
+          "expect": "\"dependencies\": { \"react\": \"^18.3.1\", \"react-dom\": \"^18.3.1\", \"lenis\": \"^1.1.13\" }"
+        }
+      ]
+    },
+    {
+      "id": "section-order",
+      "value": [
+        "Navbar",
+        "Hero",
+        "HowItWorks",
+        "FigmaOrg",
+        "Breakpoint",
+        "Presets",
+        "Exports",
+        "Pricing",
+        "Faq",
+        "Newsletter",
+        "Footer",
+        "FloatingCta",
+        "TypeInspector"
+      ],
+      "measuredFrom": [
+        {
+          "cite": "src/App.jsx:34-48",
+          "expect": "<Navbar />"
+        },
+        {
+          "cite": "src/App.jsx:34",
+          "expect": "<Navbar />"
+        },
+        {
+          "cite": "src/App.jsx:48",
+          "expect": "<TypeInspector />"
+        }
+      ]
+    },
+    {
+      "id": "clone-stack",
+      "value": {
+        "react": "^18.3.1 (lock 18.3.1)",
+        "vite": "^5.4.11 (lock 5.4.21)",
+        "tailwindcss": "^3.4.17 (lock 3.4.19)",
+        "lenis": "^1.1.13 (lock 1.3.27)"
+      },
+      "measuredFrom": [
+        {
+          "cite": "package.json:7",
+          "expect": "\"react\": \"^18.3.1\""
+        },
+        {
+          "cite": "package.json:8",
+          "expect": "\"tailwindcss\": \"^3.4.17\""
+        },
+        {
+          "cite": "package-lock.json:2207-2208",
+          "expect": "\"version\": \"18.3.1\""
+        },
+        {
+          "cite": "package-lock.json:1811-1812",
+          "expect": "\"version\": \"1.3.27\""
+        },
+        {
+          "cite": "package-lock.json:2597-2598",
+          "expect": "\"version\": \"5.4.21\""
+        },
+        {
+          "cite": "package-lock.json:2430-2431",
+          "expect": "\"version\": \"3.4.19\""
+        }
+      ]
+    },
+    {
+      "id": "original-stack",
+      "value": "Single static HTML page, vanilla JS, Lenis 1.3.18, lottie-web; no framework.",
+      "measuredFrom": [
+        {
+          "cite": "CLONE_SPEC.md:7",
+          "expect": "It uses vanilla JS with Lenis 1.3.18 and lottie-web, and has no framework."
+        }
+      ]
+    },
+    {
+      "id": "breakpoints",
+      "value": {
+        "desktop": ">=1025",
+        "tablet": "<=1024",
+        "mobile": "<=767",
+        "fluidType": false
+      },
+      "measuredFrom": [
+        {
+          "cite": "CLONE_SPEC.md:20",
+          "expect": "| Desktop | `min-width: 1025px` |"
+        },
+        {
+          "cite": "CLONE_SPEC.md:96",
+          "expect": "The scale is fixed px per breakpoint, with no clamp() or vw sizing anywhere."
+        }
+      ]
+    },
+    {
+      "id": "container",
+      "value": {
+        "maxWidthPx": 1344,
+        "paddingInlinePx": {
+          "desktop": 48,
+          "mobile": 24
+        },
+        "contentWidthPx": {
+          "1440": 1248,
+          "1280": 1184,
+          "768": 672,
+          "375": 327
+        }
+      },
+      "measuredFrom": [
+        {
+          "cite": "CLONE_SPEC.md:25",
+          "expect": "`.container`: `width:100%; max-width:1344px; margin-inline:auto; padding-inline:48px` (24px at ≤767)."
+        }
+      ]
+    },
+    {
+      "id": "document-height-original",
+      "value": {
+        "1440": 11623,
+        "1280": 11242,
+        "768": 11956,
+        "375": 9290
+      },
+      "measuredFrom": [
+        {
+          "cite": "CLONE_SPEC.md:691",
+          "expect": "| **document** | **11623** | **11242** | **11956** | **9290** |"
+        }
+      ]
+    },
+    {
+      "id": "typo-simulator-size",
+      "value": {
+        "widthPx": 312,
+        "heightPx": 424,
+        "at": 1440
+      },
+      "measuredFrom": [
+        {
+          "cite": "CLONE_SPEC.md:348",
+          "expect": "Size at 1440: 312x424."
+        }
+      ]
+    },
+    {
+      "id": "newsletter-input-height",
+      "value": {
+        "1440": 86,
+        "768": 58,
+        "375": 39
+      },
+      "measuredFrom": [
+        {
+          "cite": "CLONE_SPEC.md:576",
+          "expect": "Rendered height is **86** at desktop, 58 at 768 and 39 at 375."
+        }
+      ]
+    },
+    {
+      "id": "fonts-loaded",
+      "value": {
+        "Roobert": [
+          400,
+          500
+        ],
+        "Vesterbro": "declared, never rendered",
+        "licence": "commercial (Roobert, Vesterbro); GT Super Display glyphs inside the Lottie"
+      },
+      "measuredFrom": [
+        {
+          "cite": "CLONE_SPEC.md:35",
+          "expect": "Only weights **400** and **500** actually load"
+        },
+        {
+          "cite": "CLONE_SPEC.md:36",
+          "expect": "`--font-secondary:\"Vesterbro\",sans-serif` is declared but **never used** on the page."
+        },
+        {
+          "cite": "CLONE_SPEC.md:363",
+          "expect": "a serif headline (GT Super Display Bold glyphs)"
+        }
+      ]
+    },
+    {
+      "id": "no-shadows-no-keyframes",
+      "value": true,
+      "measuredFrom": [
+        {
+          "cite": "CLONE_SPEC.md:76",
+          "expect": "No box-shadows anywhere on the page."
+        },
+        {
+          "cite": "CLONE_SPEC.md:109",
+          "expect": "There are no CSS `@keyframes` on the site."
+        }
+      ]
+    },
+    {
+      "id": "lenis-desktop-only",
+      "value": {
+        "duration": 1.4,
+        "easing": "1-(1-t)^5",
+        "smoothWheel": true,
+        "decidedOnceAtLoad": true
+      },
+      "measuredFrom": [
+        {
+          "cite": "src/lib/scroll.js:50",
+          "expect": "if (window.matchMedia('(max-width: 1024px)').matches) {"
+        },
+        {
+          "cite": "src/lib/scroll.js:55",
+          "expect": "duration: 1.4,"
+        },
+        {
+          "cite": "src/lib/scroll.js:56",
+          "expect": "easing: (t) => 1 - Math.pow(1 - t, 5),"
+        },
+        {
+          "cite": "@original/index-B7zdGq3H.js",
+          "quote": "duration:1.4,easing:t=>1-Math.pow(1-t,5),smoothWheel:!0"
+        }
+      ]
+    },
+    {
+      "id": "char-reveal",
+      "value": {
+        "start": 0.9,
+        "end": 0.45,
+        "stagger": 0.35,
+        "targets": "h1/h2 .display-1/.display-2 except .footer__title",
+        "reducedMotion": "skipped (fully opaque)"
+      },
+      "measuredFrom": [
+        {
+          "cite": "src/lib/compose.jsx:65",
+          "expect": "const start = 0.9 * vh"
+        },
+        {
+          "cite": "src/lib/compose.jsx:60",
+          "expect": ".filter((h) => !h.classList.contains('footer__title'))"
+        },
+        {
+          "cite": "src/lib/compose.jsx:55",
+          "expect": "if (prefersReducedMotion()) return () => {}"
+        },
+        {
+          "cite": "@original/index-B7zdGq3H.js",
+          "quote": "const START_VH=.9,END_VH=.45,STAGGER=.35"
+        }
+      ]
+    },
+    {
+      "id": "fade-up-reveal",
+      "value": {
+        "distancePx": 32,
+        "durationS": 0.7,
+        "threshold": 0.15,
+        "once": true
+      },
+      "measuredFrom": [
+        {
+          "cite": "src/index.css:91",
+          "expect": ".reveal{opacity:0;transform:translateY(32px)"
+        },
+        {
+          "cite": "src/lib/reveal.js:11",
+          "expect": "{ threshold: 0.15 }"
+        }
+      ]
+    },
+    {
+      "id": "hero-video-scale",
+      "value": {
+        "from": 0.8,
+        "to": 1,
+        "peek": 0.06,
+        "playOncePerEntry": true,
+        "desktopOnly": true
+      },
+      "measuredFrom": [
+        {
+          "cite": "src/components/Hero.jsx:44",
+          "expect": "const s = 0.8 + 0.2 * clamp01(window.scrollY / o)"
+        },
+        {
+          "cite": "src/components/Hero.jsx:82",
+          "expect": "if (armed && down && r.top + r.height / 2 <= vh) {"
+        }
+      ]
+    },
+    {
+      "id": "sticky-stack",
+      "value": {
+        "scaleRange": [
+          0.75,
+          1
+        ],
+        "stickyTop": "(vh - cardHeight)/2",
+        "videoPlaysAtScale": 0.98,
+        "desktopOnly": true
+      },
+      "measuredFrom": [
+        {
+          "cite": "src/components/HowItWorks.jsx:45",
+          "expect": "const p = 0.75 + 0.25 * clamp01((vh - rect.top) / span)"
+        },
+        {
+          "cite": "src/components/HowItWorks.jsx:51",
+          "expect": "if (scale >= 0.98) playVideo(i)"
+        }
+      ]
+    },
+    {
+      "id": "scrub",
+      "value": {
+        "sectionHeight": "calc(100vh + 400px)",
+        "frames": 50,
+        "progressWindow": [
+          0.2,
+          0.8
+        ],
+        "captionTravelVh": 0.6
+      },
+      "measuredFrom": [
+        {
+          "cite": "src/components/Breakpoint.jsx:51",
+          "expect": "style={{ height: `calc(100vh + ${TOTAL_FRAMES * 8}px)` }}"
+        },
+        {
+          "cite": "src/components/Breakpoint.jsx:22",
+          "expect": "const toFrame = (progress) => clamp01((progress - 0.2) / 0.6) * (TOTAL_FRAMES - 1)"
+        }
+      ]
+    },
+    {
+      "id": "sine-wave",
+      "value": {
+        "amplitudePx": {
+          "desktop": 88,
+          "tablet": 50,
+          "mobile": 22
+        },
+        "folders": {
+          "desktop": 12,
+          "tablet": 8,
+          "mobile": 5
+        },
+        "reducedMotion": "skipped"
+      },
+      "measuredFrom": [
+        {
+          "cite": "src/components/Presets.jsx:18",
+          "expect": "desktop: { count: 12, amp: 88 },"
+        },
+        {
+          "cite": "src/components/Presets.jsx:39",
+          "expect": "if (prefersReducedMotion()) return"
+        },
+        {
+          "cite": "@original/index-B7zdGq3H.js",
+          "quote": "WAVE_AMPLITUDE=88"
+        }
+      ]
+    },
+    {
+      "id": "nav-hide",
+      "value": {
+        "thresholdPx": 80,
+        "transition": ".35s cubic-bezier(.4,0,.2,1)",
+        "skippedWhileMenuOpen": true
+      },
+      "measuredFrom": [
+        {
+          "cite": "src/components/Navbar.jsx:45",
+          "expect": "const hide = y > lastY && y > 80"
+        },
+        {
+          "cite": "src/index.css:116",
+          "expect": ".navbar--hidden{transform:translateY(-100%)}"
+        }
+      ]
+    },
+    {
+      "id": "floating-cta-visibility",
+      "value": "visible only when hero video top <= 0 AND newsletter field top > vh AND navbar hidden",
+      "measuredFrom": [
+        {
+          "cite": "src/components/FloatingCta.jsx:24",
+          "expect": "video.getBoundingClientRect().top <= 0 &&"
+        },
+        {
+          "cite": "src/components/FloatingCta.jsx:25",
+          "expect": "field.getBoundingClientRect().top > window.innerHeight &&"
+        }
+      ]
+    },
+    {
+      "id": "faq-behaviour",
+      "value": {
+        "singleOpen": true,
+        "outsideClickClosesOnDesktop": true,
+        "stickyLeadTopPx": [
+          120,
+          32
+        ]
+      },
+      "measuredFrom": [
+        {
+          "cite": "src/components/Faq.jsx:61",
+          "expect": "onClick={() => setOpenIndex(open ? -1 : i)}"
+        },
+        {
+          "cite": "src/components/Faq.jsx:28",
+          "expect": "if (!isDesktop()) return"
+        }
+      ]
+    },
+    {
+      "id": "lottie-replaced",
+      "value": {
+        "original": "recon-assets/breakpoint-lottie.json (Bodymovin 4.8.0, 1280x728, 50 frames)",
+        "clone": "HTML/CSS rebuild (BreakpointMock)",
+        "reuseAllowed": false,
+        "why": "the Lottie embeds the original marketing copy as text layers / glyph shapes and GT Super Display glyphs"
+      },
+      "measuredFrom": [
+        {
+          "cite": "src/components/BreakpointMock.jsx:4",
+          "expect": "// HTML/CSS rebuild of the 1280x728 \"Breakpoint\" Lottie"
+        },
+        {
+          "cite": "src/content.js:72",
+          "expect": "// Device mockup copy (rebuilt in HTML/CSS instead of the original Lottie)"
+        },
+        {
+          "cite": "CLONE_SPEC.md:365",
+          "expect": "**COPY WARNING:**"
+        },
+        {
+          "cite": "package.json:7",
+          "expect": "\"dependencies\": { \"react\": \"^18.3.1\", \"react-dom\": \"^18.3.1\", \"lenis\": \"^1.1.13\" }"
+        }
+      ]
+    },
+    {
+      "id": "copy-is-placeholder",
+      "value": "Long copy in src/content.js is ORIGINAL PLACEHOLDER text written for the clone, length-matched to the recon word/char counts. The live copy is never transcribed; budgets use the counts.",
+      "measuredFrom": [
+        {
+          "cite": "src/content.js:1",
+          "expect": "// Placeholder copy for the clone. Written fresh for a fictional typographic-scale"
+        },
+        {
+          "cite": "CLONE_SPEC.md:9",
+          "expect": "**Content rule:** long copy is not transcribed."
+        }
+      ]
+    },
+    {
+      "id": "short-ui-labels-retained",
+      "value": "Functional UI labels (nav items, \"Try it now\", plan names and licence lines, \"Get Plan\", \"Contact Us\", \"Everything included\", \"Pricing\") are kept verbatim from the original by the clone; they are short interface labels recorded in CLONE_SPEC, not marketing copy.",
+      "measuredFrom": [
+        {
+          "cite": "src/components/Navbar.jsx:7",
+          "expect": "{ label: 'How it works', target: '#how-it-works' },"
+        },
+        {
+          "cite": "CLONE_SPEC.md:452",
+          "expect": "p.pricing-plan__name.heading-2        \"Freelancer\" | \"Studio\" | \"Enterprise\""
+        }
+      ]
+    },
+    {
+      "id": "clone-still-uses-live-endpoints",
+      "value": "The clone itself still links the live Figma plugin, both Lemon Squeezy checkouts, the Lemon Squeezy newsletter POST, the company mailbox and Lemon Squeezy legal pages. The design-repo pins all of them must-not-reuse-live-endpoint; the example uses example.com placeholders.",
+      "measuredFrom": [
+        {
+          "cite": "src/content.js:9",
+          "expect": "export const FIGMA_URL = 'https://www.figma.com/community/plugin/1615417453541684477/typewave'"
+        },
+        {
+          "cite": "src/components/Newsletter.jsx:17",
+          "expect": "action=\"https://typewave.lemonsqueezy.com/email-subscribe/external\""
+        },
+        {
+          "cite": "src/components/Footer.jsx:23",
+          "expect": "href=\"https://www.lemonsqueezy.com/privacy\""
+        }
+      ]
+    },
+    {
+      "id": "affiliate-excluded",
+      "value": "Lemon Squeezy affiliate.js (tracking, checkout-link rewriting) is intentionally omitted from the clone.",
+      "measuredFrom": [
+        {
+          "cite": "index.html:34",
+          "expect": "<!-- Lemon Squeezy affiliate.js intentionally omitted in the clone (third-party script). -->"
+        }
+      ]
+    },
+    {
+      "id": "title-not-reused",
+      "value": "index.html <title> equals the live site title; the example uses a placeholder title composed from the clone hero copy instead.",
+      "measuredFrom": [
+        {
+          "cite": "index.html:6",
+          "expect": "<title>"
+        },
+        {
+          "cite": "CLONE_SPEC.md:41",
+          "expect": "- `<title>`:"
+        }
+      ]
+    },
+    {
+      "id": "third-party-logos",
+      "value": [
+        "Cursor",
+        "VS Code",
+        "Claude",
+        "OpenAI",
+        "Lovable",
+        "Figma glyph"
+      ],
+      "measuredFrom": [
+        {
+          "cite": "ASSET_MANIFEST.md:30",
+          "expect": "| recon-assets/svg/logo-cursor.svg | svg | 32x32 |"
+        },
+        {
+          "cite": "ASSET_MANIFEST.md:26",
+          "expect": "| recon-assets/svg/figma-icon-btn.svg | svg | 16x17 |"
+        }
+      ]
+    },
+    {
+      "id": "clone-copy-not-fully-placeholder",
+      "value": {
+        "faqQuestionsVerbatimFromLiveSite (1-based)": [
+          2,
+          3,
+          5,
+          6
+        ],
+        "planSubtitlesVerbatim": true
+      },
+      "note": "Found by verify_all check 15: although src/content.js is described as placeholder copy, FAQ questions 2, 3, 5 and 6 and the three plan subtitles are identical to the live site. The clone still ships them (outside this repo); the example rewords both the questions and the plan subtitles (see exampleDeviations). The strings are deliberately not repeated here.",
+      "measuredFrom": [
+        {
+          "cite": "src/content.js:147",
+          "expect": "q: '"
+        },
+        {
+          "cite": "src/content.js:153",
+          "expect": "q: '"
+        },
+        {
+          "cite": "src/content.js:170",
+          "expect": "q: '"
+        },
+        {
+          "cite": "src/content.js:176",
+          "expect": "q: '"
+        }
+      ]
+    }
+  ],
+  "exampleDeviations": [
+    {
+      "path": "meta.title",
+      "value": "Typewave – Craft a balanced type scale",
+      "reason": "The clone's <title> is the live site's title verbatim, so the example uses a placeholder composed from the clone hero copy.",
+      "measuredFrom": [
+        {
+          "cite": "index.html:6",
+          "expect": "<title>"
+        }
+      ]
+    },
+    {
+      "path": "nodes[pricing].content.plans[0].subtitle",
+      "value": "For solo designers",
+      "reason": "The clone's plan subtitle is identical to the live site's, so the example rewords it. The clone value is deliberately not stored here.",
+      "measuredFrom": [
+        {
+          "cite": "src/content.js:95",
+          "expect": "name: 'Freelancer',"
+        }
+      ]
+    },
+    {
+      "path": "nodes[pricing].content.plans[1].subtitle",
+      "value": "For small design teams",
+      "reason": "The clone's plan subtitle is identical to the live site's, so the example rewords it. The clone value is deliberately not stored here.",
+      "measuredFrom": [
+        {
+          "cite": "src/content.js:106",
+          "expect": "name: 'Studio',"
+        }
+      ]
+    },
+    {
+      "path": "nodes[pricing].content.plans[2].subtitle",
+      "value": "Larger rollout planned?",
+      "reason": "The clone's plan subtitle is identical to the live site's, so the example rewords it. The clone value is deliberately not stored here.",
+      "measuredFrom": [
+        {
+          "cite": "src/content.js:116",
+          "expect": "name: 'Enterprise',"
+        }
+      ]
+    },
+    {
+      "path": "nodes[faq].content.items[1].question",
+      "value": "How is the tablet and mobile scaling worked out?",
+      "reason": "The clone's src/content.js question at this position is identical to the live site's question (verify_all check 15), so the example rewords it. The clone value is deliberately not stored here.",
+      "measuredFrom": [
+        {
+          "cite": "src/content.js:147",
+          "expect": "q: '"
+        }
+      ]
+    },
+    {
+      "path": "nodes[faq].content.items[2].question",
+      "value": "Can the role hierarchy be changed later?",
+      "reason": "The clone's src/content.js question at this position is identical to the live site's question (verify_all check 15), so the example rewords it. The clone value is deliberately not stored here.",
+      "measuredFrom": [
+        {
+          "cite": "src/content.js:153",
+          "expect": "q: '"
+        }
+      ]
+    },
+    {
+      "path": "nodes[faq].content.items[4].question",
+      "value": "What goes into the AI Prompt export file?",
+      "reason": "The clone's src/content.js question at this position is identical to the live site's question (verify_all check 15), so the example rewords it. The clone value is deliberately not stored here.",
+      "measuredFrom": [
+        {
+          "cite": "src/content.js:170",
+          "expect": "q: '"
+        }
+      ]
+    },
+    {
+      "path": "nodes[faq].content.items[5].question",
+      "value": "Why is the plugin a paid tool?",
+      "reason": "The clone's src/content.js question at this position is identical to the live site's question (verify_all check 15), so the example rewords it. The clone value is deliberately not stored here.",
+      "measuredFrom": [
+        {
+          "cite": "src/content.js:176",
+          "expect": "q: '"
+        }
+      ]
+    }
+  ],
+  "reportedFacts": [
+    {
+      "id": "pixel-audit-parity",
+      "value": {
+        "documentHeightPx": {
+          "1440": 11623,
+          "1280": 11242,
+          "768": 11956,
+          "375": 9290
+        },
+        "cloneEqualsOriginal": true,
+        "typoSimulatorHeightPx": 424,
+        "newsletterSubmitHeightPx": 86
+      },
+      "evidenceLevel": "reported-by-pixel-audit-not-file-backed",
+      "note": "Reported by the clone's pixel-audit pass (clone vs live original at 1440/1280/768/375). No audit artefact exists on disk; the ORIGINAL side of each number is file-backed by the cited CLONE_SPEC lines, the clone-equals-original claim is not.",
+      "measuredFrom": [
+        {
+          "cite": "CLONE_SPEC.md:691",
+          "expect": "| **document** | **11623** | **11242** | **11956** | **9290** |"
+        },
+        {
+          "cite": "CLONE_SPEC.md:348",
+          "expect": "Size at 1440: 312x424."
+        },
+        {
+          "cite": "CLONE_SPEC.md:577",
+          "expect": "The arrow glyph uses display-2 type (50x86 at 1440)."
+        }
+      ]
+    }
+  ],
+  "unverified": [
+    {
+      "id": "lottie-keyframe-easing",
+      "note": "Per-layer Lottie easing was not analysed; the HTML rebuild switches geometry at the composition in/out frames.",
+      "measuredFrom": [
+        {
+          "cite": "CLONE_SPEC.md:716",
+          "expect": "- The Lottie's internal keyframe easing was not analysed per layer."
+        }
+      ]
+    },
+    {
+      "id": "affiliate-network",
+      "note": "affiliate.js behaviour inferred from reading its source, not exercised.",
+      "measuredFrom": [
+        {
+          "cite": "CLONE_SPEC.md:717",
+          "expect": "- `affiliate.js` network behaviour is inferred"
+        }
+      ]
+    },
+    {
+      "id": "hover-states",
+      "note": "Hover values come from the original CSS rules, not interactive testing.",
+      "measuredFrom": [
+        {
+          "cite": "CLONE_SPEC.md:718",
+          "expect": "- Hover was not interactively tested in the browser."
+        }
+      ]
+    },
+    {
+      "id": "reduced-motion-fallbacks",
+      "note": "Only char-reveal and the preset wave honour prefers-reduced-motion in the source; every other section fallback is PRESCRIBED by this design-repo (reducedMotionEvidence: prescribed-not-in-source).",
+      "measuredFrom": [
+        {
+          "cite": "src/lib/compose.jsx:55",
+          "expect": "if (prefersReducedMotion()) return () => {}"
+        },
+        {
+          "cite": "src/components/Presets.jsx:39",
+          "expect": "if (prefersReducedMotion()) return"
+        }
+      ]
+    }
+  ]
+}

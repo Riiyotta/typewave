@@ -1,0 +1,12 @@
+{
+  "id": "type-inspector-badge",
+  "kind": "component",
+  "purpose": "Cursor-following mono badge naming the type class.",
+  "composes": [],
+  "measuredFrom": [
+    {
+      "cite": "src/index.css:422",
+      "expect": ".type-inspector-badge.is-visible{opacity:1}"
+    }
+  ]
+}

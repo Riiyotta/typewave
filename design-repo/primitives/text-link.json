@@ -1,0 +1,22 @@
+{
+  "id": "text-link",
+  "kind": "primitive",
+  "purpose": "Underlined muted link (FAQ email) / plain muted link (footer legal); hover to text colour.",
+  "implementedBy": [
+    "src/components/Faq.jsx",
+    "src/components/Footer.jsx"
+  ],
+  "states": {
+    "hover": "color text (FAQ answer link: brand)"
+  },
+  "measuredFrom": [
+    {
+      "cite": "src/index.css:362",
+      "expect": ".faq__email:hover{color:var(--color-text)}"
+    },
+    {
+      "cite": "src/index.css:412",
+      "expect": ".footer__legal-link:hover{color:var(--color-text);text-decoration:underline}"
+    }
+  ]
+}

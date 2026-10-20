@@ -1,0 +1,22 @@
+{
+  "id": "title-text",
+  "kind": "primitive",
+  "purpose": "Heading string in the clone's mini-syntax: \"|\" = forced line break (hidden <=767), \"[...]\" = brand-coloured span. Each char is wrapped for the scroll-linked reveal.",
+  "implementedBy": [
+    "src/lib/compose.jsx"
+  ],
+  "syntax": {
+    "lineBreak": "|",
+    "brandSpan": "[...]"
+  },
+  "measuredFrom": [
+    {
+      "cite": "src/lib/compose.jsx:4",
+      "expect": "// Title mini-syntax: \"|\" -> <br class=\"title-break\">, \"[...]\" -> brand span."
+    },
+    {
+      "cite": "src/content.js:7",
+      "expect": "//   \"[...]\"  -> brand-coloured span"
+    }
+  ]
+}

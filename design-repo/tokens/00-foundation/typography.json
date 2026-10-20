@@ -1,0 +1,2301 @@
+{
+  "typography": {
+    "$description": "Fixed px per breakpoint; no clamp()/vw anywhere (CLONE_SPEC 1). Only Roobert 400/500 actually load.",
+    "family": {
+      "primary": {
+        "$value": "\"Roobert\", sans-serif",
+        "$type": "fontFamily",
+        "$description": "Roobert: the only family rendered. COMMERCIAL LICENSED FONT - a licence from the foundry is required for any new deployment; font files are NOT shipped in this design-repo (role font.roobert, pinned licensed-font-required).",
+        "$extensions": {
+          "measuredFrom": [
+            {
+              "cite": "src/index.css:23",
+              "expect": "--font-primary: \"Roobert\", sans-serif"
+            },
+            {
+              "cite": "@original/index-D4COY28s.css",
+              "quote": "--font-primary: \"Roobert\", sans-serif"
+            }
+          ],
+          "licence": "commercial-licence-required",
+          "assetRole": "font.roobert"
+        }
+      },
+      "secondary": {
+        "$value": "\"Vesterbro\", sans-serif",
+        "$type": "fontFamily",
+        "$description": "Vesterbro: declared with @font-face but never used on the page. COMMERCIAL LICENSED FONT. Do not use.",
+        "$extensions": {
+          "measuredFrom": [
+            {
+              "cite": "src/index.css:23",
+              "expect": "--font-secondary: \"Vesterbro\", sans-serif"
+            },
+            {
+              "cite": "@original/index-D4COY28s.css",
+              "quote": "--font-secondary: \"Vesterbro\", sans-serif"
+            }
+          ],
+          "usage": "declared-unused",
+          "licence": "commercial-licence-required",
+          "assetRole": "font.vesterbro"
+        }
+      },
+      "mono": {
+        "$value": "'SF Mono','Menlo',monospace",
+        "$type": "fontFamily",
+        "$description": "Type-inspector badge only (system fonts).",
+        "$extensions": {
+          "measuredFrom": [
+            {
+              "cite": "src/index.css:421",
+              "expect": "font:11px/1 'SF Mono','Menlo',monospace"
+            },
+            {
+              "cite": "@original/index-B7zdGq3H.js",
+              "quote": "font-family:    'SF Mono', 'Menlo', monospace;"
+            }
+          ]
+        }
+      }
+    },
+    "weight": {
+      "regular": {
+        "$value": 400,
+        "$type": "fontWeight",
+        "$description": "Loaded (preloaded woff2).",
+        "$extensions": {
+          "measuredFrom": [
+            {
+              "cite": "index.html:21",
+              "expect": "Roobert-Regular-BNQS-qUa.woff2"
+            },
+            {
+              "cite": "CLONE_SPEC.md:35",
+              "expect": "Only weights **400** and **500** actually load"
+            }
+          ]
+        }
+      },
+      "medium": {
+        "$value": 500,
+        "$type": "fontWeight",
+        "$description": "Loaded (preloaded woff2).",
+        "$extensions": {
+          "measuredFrom": [
+            {
+              "cite": "index.html:22",
+              "expect": "Roobert-Medium-Jj6nDRYB.woff2"
+            },
+            {
+              "cite": "CLONE_SPEC.md:35",
+              "expect": "Only weights **400** and **500** actually load"
+            }
+          ]
+        }
+      }
+    },
+    "scale": {
+      "display-1": {
+        "desktop": {
+          "size": {
+            "$value": "96px",
+            "$type": "dimension",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-display-1-size-desktop: 96px"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-display-1-size-desktop: 96px"
+                }
+              ]
+            }
+          },
+          "weight": {
+            "$value": "500",
+            "$type": "fontWeight",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-display-1-weight-desktop: 500"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-display-1-weight-desktop: 500"
+                }
+              ]
+            }
+          },
+          "lineHeight": {
+            "$value": "1",
+            "$type": "number",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-display-1-line-height-desktop: 1"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-display-1-line-height-desktop: 1"
+                }
+              ]
+            }
+          },
+          "letterSpacing": {
+            "$value": "-1.2px",
+            "$type": "dimension",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-display-1-letter-spacing-desktop:-1.2px"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-display-1-letter-spacing-desktop:-1.2px"
+                }
+              ]
+            }
+          }
+        },
+        "tablet": {
+          "size": {
+            "$value": "72px",
+            "$type": "dimension",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-display-1-size-tablet: 72px"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-display-1-size-tablet: 72px"
+                }
+              ]
+            }
+          },
+          "weight": {
+            "$value": "500",
+            "$type": "fontWeight",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-display-1-weight-tablet: 500"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-display-1-weight-tablet: 500"
+                }
+              ]
+            }
+          },
+          "lineHeight": {
+            "$value": "1",
+            "$type": "number",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-display-1-line-height-tablet: 1"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-display-1-line-height-tablet: 1"
+                }
+              ]
+            }
+          },
+          "letterSpacing": {
+            "$value": "0",
+            "$type": "dimension",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-display-1-letter-spacing-tablet:0"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-display-1-letter-spacing-tablet:0"
+                }
+              ]
+            }
+          }
+        },
+        "mobile": {
+          "size": {
+            "$value": "40px",
+            "$type": "dimension",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-display-1-size-mobile: 40px"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-display-1-size-mobile: 40px"
+                }
+              ]
+            }
+          },
+          "weight": {
+            "$value": "500",
+            "$type": "fontWeight",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-display-1-weight-mobile: 500"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-display-1-weight-mobile: 500"
+                }
+              ]
+            }
+          },
+          "lineHeight": {
+            "$value": "1",
+            "$type": "number",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-display-1-line-height-mobile: 1"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-display-1-line-height-mobile: 1"
+                }
+              ]
+            }
+          },
+          "letterSpacing": {
+            "$value": "0",
+            "$type": "dimension",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-display-1-letter-spacing-mobile:0"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-display-1-letter-spacing-mobile:0"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "display-2": {
+        "desktop": {
+          "size": {
+            "$value": "72px",
+            "$type": "dimension",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-display-2-size-desktop: 72px"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-display-2-size-desktop: 72px"
+                }
+              ]
+            }
+          },
+          "weight": {
+            "$value": "500",
+            "$type": "fontWeight",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-display-2-weight-desktop: 500"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-display-2-weight-desktop: 500"
+                }
+              ]
+            }
+          },
+          "lineHeight": {
+            "$value": "1",
+            "$type": "number",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-display-2-line-height-desktop: 1"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-display-2-line-height-desktop: 1"
+                }
+              ]
+            }
+          },
+          "letterSpacing": {
+            "$value": "-1.2px",
+            "$type": "dimension",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-display-2-letter-spacing-desktop:-1.2px"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-display-2-letter-spacing-desktop:-1.2px"
+                }
+              ]
+            }
+          }
+        },
+        "tablet": {
+          "size": {
+            "$value": "48px",
+            "$type": "dimension",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-display-2-size-tablet: 48px"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-display-2-size-tablet: 48px"
+                }
+              ]
+            }
+          },
+          "weight": {
+            "$value": "500",
+            "$type": "fontWeight",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-display-2-weight-tablet: 500"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-display-2-weight-tablet: 500"
+                }
+              ]
+            }
+          },
+          "lineHeight": {
+            "$value": "1",
+            "$type": "number",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-display-2-line-height-tablet: 1"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-display-2-line-height-tablet: 1"
+                }
+              ]
+            }
+          },
+          "letterSpacing": {
+            "$value": "0",
+            "$type": "dimension",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-display-2-letter-spacing-tablet:0"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-display-2-letter-spacing-tablet:0"
+                }
+              ]
+            }
+          }
+        },
+        "mobile": {
+          "size": {
+            "$value": "32px",
+            "$type": "dimension",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-display-2-size-mobile: 32px"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-display-2-size-mobile: 32px"
+                }
+              ]
+            }
+          },
+          "weight": {
+            "$value": "500",
+            "$type": "fontWeight",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-display-2-weight-mobile: 500"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-display-2-weight-mobile: 500"
+                }
+              ]
+            }
+          },
+          "lineHeight": {
+            "$value": "1",
+            "$type": "number",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-display-2-line-height-mobile: 1"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-display-2-line-height-mobile: 1"
+                }
+              ]
+            }
+          },
+          "letterSpacing": {
+            "$value": "0",
+            "$type": "dimension",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-display-2-letter-spacing-mobile:0"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-display-2-letter-spacing-mobile:0"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "display-3": {
+        "desktop": {
+          "size": {
+            "$value": "56px",
+            "$type": "dimension",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-display-3-size-desktop: 56px"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-display-3-size-desktop: 56px"
+                }
+              ]
+            }
+          },
+          "weight": {
+            "$value": "500",
+            "$type": "fontWeight",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-display-3-weight-desktop: 500"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-display-3-weight-desktop: 500"
+                }
+              ]
+            }
+          },
+          "lineHeight": {
+            "$value": "1",
+            "$type": "number",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-display-3-line-height-desktop: 1"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-display-3-line-height-desktop: 1"
+                }
+              ]
+            }
+          },
+          "letterSpacing": {
+            "$value": "0",
+            "$type": "dimension",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-display-3-letter-spacing-desktop:0"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-display-3-letter-spacing-desktop:0"
+                }
+              ]
+            }
+          }
+        },
+        "tablet": {
+          "size": {
+            "$value": "32px",
+            "$type": "dimension",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-display-3-size-tablet: 32px"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-display-3-size-tablet: 32px"
+                }
+              ]
+            }
+          },
+          "weight": {
+            "$value": "500",
+            "$type": "fontWeight",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-display-3-weight-tablet: 500"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-display-3-weight-tablet: 500"
+                }
+              ]
+            }
+          },
+          "lineHeight": {
+            "$value": "1",
+            "$type": "number",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-display-3-line-height-tablet: 1"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-display-3-line-height-tablet: 1"
+                }
+              ]
+            }
+          },
+          "letterSpacing": {
+            "$value": "0",
+            "$type": "dimension",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-display-3-letter-spacing-tablet:0"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-display-3-letter-spacing-tablet:0"
+                }
+              ]
+            }
+          }
+        },
+        "mobile": {
+          "size": {
+            "$value": "24px",
+            "$type": "dimension",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-display-3-size-mobile: 24px"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-display-3-size-mobile: 24px"
+                }
+              ]
+            }
+          },
+          "weight": {
+            "$value": "500",
+            "$type": "fontWeight",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-display-3-weight-mobile: 500"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-display-3-weight-mobile: 500"
+                }
+              ]
+            }
+          },
+          "lineHeight": {
+            "$value": "1",
+            "$type": "number",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-display-3-line-height-mobile: 1"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-display-3-line-height-mobile: 1"
+                }
+              ]
+            }
+          },
+          "letterSpacing": {
+            "$value": "0",
+            "$type": "dimension",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-display-3-letter-spacing-mobile:0"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-display-3-letter-spacing-mobile:0"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "heading-1": {
+        "desktop": {
+          "size": {
+            "$value": "32px",
+            "$type": "dimension",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-heading-1-size-desktop: 32px"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-heading-1-size-desktop: 32px"
+                }
+              ]
+            }
+          },
+          "weight": {
+            "$value": "500",
+            "$type": "fontWeight",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-heading-1-weight-desktop: 500"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-heading-1-weight-desktop: 500"
+                }
+              ]
+            }
+          },
+          "lineHeight": {
+            "$value": "1",
+            "$type": "number",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-heading-1-line-height-desktop: 1"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-heading-1-line-height-desktop: 1"
+                }
+              ]
+            }
+          },
+          "letterSpacing": {
+            "$value": "0",
+            "$type": "dimension",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-heading-1-letter-spacing-desktop:0"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-heading-1-letter-spacing-desktop:0"
+                }
+              ]
+            }
+          }
+        },
+        "tablet": {
+          "size": {
+            "$value": "32px",
+            "$type": "dimension",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-heading-1-size-tablet: 32px"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-heading-1-size-tablet: 32px"
+                }
+              ]
+            }
+          },
+          "weight": {
+            "$value": "500",
+            "$type": "fontWeight",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-heading-1-weight-tablet: 500"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-heading-1-weight-tablet: 500"
+                }
+              ]
+            }
+          },
+          "lineHeight": {
+            "$value": "1.125",
+            "$type": "number",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-heading-1-line-height-tablet: 1.125"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-heading-1-line-height-tablet: 1.125"
+                }
+              ]
+            }
+          },
+          "letterSpacing": {
+            "$value": "0",
+            "$type": "dimension",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-heading-1-letter-spacing-tablet:0"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-heading-1-letter-spacing-tablet:0"
+                }
+              ]
+            }
+          }
+        },
+        "mobile": {
+          "size": {
+            "$value": "24px",
+            "$type": "dimension",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-heading-1-size-mobile: 24px"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-heading-1-size-mobile: 24px"
+                }
+              ]
+            }
+          },
+          "weight": {
+            "$value": "500",
+            "$type": "fontWeight",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-heading-1-weight-mobile: 500"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-heading-1-weight-mobile: 500"
+                }
+              ]
+            }
+          },
+          "lineHeight": {
+            "$value": "1.143",
+            "$type": "number",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-heading-1-line-height-mobile: 1.143"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-heading-1-line-height-mobile: 1.143"
+                }
+              ]
+            }
+          },
+          "letterSpacing": {
+            "$value": "0",
+            "$type": "dimension",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-heading-1-letter-spacing-mobile:0"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-heading-1-letter-spacing-mobile:0"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "heading-2": {
+        "desktop": {
+          "size": {
+            "$value": "24px",
+            "$type": "dimension",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-heading-2-size-desktop: 24px"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-heading-2-size-desktop: 24px"
+                }
+              ]
+            }
+          },
+          "weight": {
+            "$value": "500",
+            "$type": "fontWeight",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-heading-2-weight-desktop: 500"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-heading-2-weight-desktop: 500"
+                }
+              ]
+            }
+          },
+          "lineHeight": {
+            "$value": "1",
+            "$type": "number",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-heading-2-line-height-desktop: 1"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-heading-2-line-height-desktop: 1"
+                }
+              ]
+            }
+          },
+          "letterSpacing": {
+            "$value": "0",
+            "$type": "dimension",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-heading-2-letter-spacing-desktop:0"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-heading-2-letter-spacing-desktop:0"
+                }
+              ]
+            }
+          }
+        },
+        "tablet": {
+          "size": {
+            "$value": "24px",
+            "$type": "dimension",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-heading-2-size-tablet: 24px"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-heading-2-size-tablet: 24px"
+                }
+              ]
+            }
+          },
+          "weight": {
+            "$value": "500",
+            "$type": "fontWeight",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-heading-2-weight-tablet: 500"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-heading-2-weight-tablet: 500"
+                }
+              ]
+            }
+          },
+          "lineHeight": {
+            "$value": "1",
+            "$type": "number",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-heading-2-line-height-tablet: 1"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-heading-2-line-height-tablet: 1"
+                }
+              ]
+            }
+          },
+          "letterSpacing": {
+            "$value": "0",
+            "$type": "dimension",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-heading-2-letter-spacing-tablet:0"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-heading-2-letter-spacing-tablet:0"
+                }
+              ]
+            }
+          }
+        },
+        "mobile": {
+          "size": {
+            "$value": "20px",
+            "$type": "dimension",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-heading-2-size-mobile: 20px"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-heading-2-size-mobile: 20px"
+                }
+              ]
+            }
+          },
+          "weight": {
+            "$value": "500",
+            "$type": "fontWeight",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-heading-2-weight-mobile: 500"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-heading-2-weight-mobile: 500"
+                }
+              ]
+            }
+          },
+          "lineHeight": {
+            "$value": "1",
+            "$type": "number",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-heading-2-line-height-mobile: 1"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-heading-2-line-height-mobile: 1"
+                }
+              ]
+            }
+          },
+          "letterSpacing": {
+            "$value": "0",
+            "$type": "dimension",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-heading-2-letter-spacing-mobile:0"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-heading-2-letter-spacing-mobile:0"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "subtitle-1": {
+        "desktop": {
+          "size": {
+            "$value": "20px",
+            "$type": "dimension",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-subtitle-1-size-desktop: 20px"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-subtitle-1-size-desktop: 20px"
+                }
+              ]
+            }
+          },
+          "weight": {
+            "$value": "500",
+            "$type": "fontWeight",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-subtitle-1-weight-desktop: 500"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-subtitle-1-weight-desktop: 500"
+                }
+              ]
+            }
+          },
+          "lineHeight": {
+            "$value": "1.4",
+            "$type": "number",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-subtitle-1-line-height-desktop: 1.4"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-subtitle-1-line-height-desktop: 1.4"
+                }
+              ]
+            }
+          },
+          "letterSpacing": {
+            "$value": "0",
+            "$type": "dimension",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-subtitle-1-letter-spacing-desktop:0"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-subtitle-1-letter-spacing-desktop:0"
+                }
+              ]
+            }
+          }
+        },
+        "tablet": {
+          "size": {
+            "$value": "18px",
+            "$type": "dimension",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-subtitle-1-size-tablet: 18px"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-subtitle-1-size-tablet: 18px"
+                }
+              ]
+            }
+          },
+          "weight": {
+            "$value": "500",
+            "$type": "fontWeight",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-subtitle-1-weight-tablet: 500"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-subtitle-1-weight-tablet: 500"
+                }
+              ]
+            }
+          },
+          "lineHeight": {
+            "$value": "1.4",
+            "$type": "number",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-subtitle-1-line-height-tablet: 1.4"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-subtitle-1-line-height-tablet: 1.4"
+                }
+              ]
+            }
+          },
+          "letterSpacing": {
+            "$value": "0",
+            "$type": "dimension",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-subtitle-1-letter-spacing-tablet:0"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-subtitle-1-letter-spacing-tablet:0"
+                }
+              ]
+            }
+          }
+        },
+        "mobile": {
+          "size": {
+            "$value": "16px",
+            "$type": "dimension",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-subtitle-1-size-mobile: 16px"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-subtitle-1-size-mobile: 16px"
+                }
+              ]
+            }
+          },
+          "weight": {
+            "$value": "500",
+            "$type": "fontWeight",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-subtitle-1-weight-mobile: 500"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-subtitle-1-weight-mobile: 500"
+                }
+              ]
+            }
+          },
+          "lineHeight": {
+            "$value": "1.2",
+            "$type": "number",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-subtitle-1-line-height-mobile: 1.2"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-subtitle-1-line-height-mobile: 1.2"
+                }
+              ]
+            }
+          },
+          "letterSpacing": {
+            "$value": "0",
+            "$type": "dimension",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-subtitle-1-letter-spacing-mobile:0"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-subtitle-1-letter-spacing-mobile:0"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "body-1": {
+        "desktop": {
+          "size": {
+            "$value": "16px",
+            "$type": "dimension",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-body-1-size-desktop: 16px"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-body-1-size-desktop: 16px"
+                }
+              ]
+            }
+          },
+          "weight": {
+            "$value": "400",
+            "$type": "fontWeight",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-body-1-weight-desktop: 400"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-body-1-weight-desktop: 400"
+                }
+              ]
+            }
+          },
+          "lineHeight": {
+            "$value": "1.5",
+            "$type": "number",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-body-1-line-height-desktop: 1.5"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-body-1-line-height-desktop: 1.5"
+                }
+              ]
+            }
+          },
+          "letterSpacing": {
+            "$value": "0",
+            "$type": "dimension",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-body-1-letter-spacing-desktop:0"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-body-1-letter-spacing-desktop:0"
+                }
+              ]
+            }
+          }
+        },
+        "tablet": {
+          "size": {
+            "$value": "16px",
+            "$type": "dimension",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-body-1-size-tablet: 16px"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-body-1-size-tablet: 16px"
+                }
+              ]
+            }
+          },
+          "weight": {
+            "$value": "400",
+            "$type": "fontWeight",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-body-1-weight-tablet: 400"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-body-1-weight-tablet: 400"
+                }
+              ]
+            }
+          },
+          "lineHeight": {
+            "$value": "1.5",
+            "$type": "number",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-body-1-line-height-tablet: 1.5"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-body-1-line-height-tablet: 1.5"
+                }
+              ]
+            }
+          },
+          "letterSpacing": {
+            "$value": "0",
+            "$type": "dimension",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-body-1-letter-spacing-tablet:0"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-body-1-letter-spacing-tablet:0"
+                }
+              ]
+            }
+          }
+        },
+        "mobile": {
+          "size": {
+            "$value": "16px",
+            "$type": "dimension",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-body-1-size-mobile: 16px"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-body-1-size-mobile: 16px"
+                }
+              ]
+            }
+          },
+          "weight": {
+            "$value": "400",
+            "$type": "fontWeight",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-body-1-weight-mobile: 400"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-body-1-weight-mobile: 400"
+                }
+              ]
+            }
+          },
+          "lineHeight": {
+            "$value": "1.5",
+            "$type": "number",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-body-1-line-height-mobile: 1.5"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-body-1-line-height-mobile: 1.5"
+                }
+              ]
+            }
+          },
+          "letterSpacing": {
+            "$value": "0",
+            "$type": "dimension",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-body-1-letter-spacing-mobile:0"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-body-1-letter-spacing-mobile:0"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "body-2": {
+        "desktop": {
+          "size": {
+            "$value": "14px",
+            "$type": "dimension",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-body-2-size-desktop: 14px"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-body-2-size-desktop: 14px"
+                }
+              ]
+            }
+          },
+          "weight": {
+            "$value": "400",
+            "$type": "fontWeight",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-body-2-weight-desktop: 400"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-body-2-weight-desktop: 400"
+                }
+              ]
+            }
+          },
+          "lineHeight": {
+            "$value": "1.429",
+            "$type": "number",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-body-2-line-height-desktop: 1.429"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-body-2-line-height-desktop: 1.429"
+                }
+              ]
+            }
+          },
+          "letterSpacing": {
+            "$value": "0",
+            "$type": "dimension",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-body-2-letter-spacing-desktop:0"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-body-2-letter-spacing-desktop:0"
+                }
+              ]
+            }
+          }
+        },
+        "tablet": {
+          "size": {
+            "$value": "14px",
+            "$type": "dimension",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-body-2-size-tablet: 14px"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-body-2-size-tablet: 14px"
+                }
+              ]
+            }
+          },
+          "weight": {
+            "$value": "400",
+            "$type": "fontWeight",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-body-2-weight-tablet: 400"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-body-2-weight-tablet: 400"
+                }
+              ]
+            }
+          },
+          "lineHeight": {
+            "$value": "1.429",
+            "$type": "number",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-body-2-line-height-tablet: 1.429"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-body-2-line-height-tablet: 1.429"
+                }
+              ]
+            }
+          },
+          "letterSpacing": {
+            "$value": "0",
+            "$type": "dimension",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-body-2-letter-spacing-tablet:0"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-body-2-letter-spacing-tablet:0"
+                }
+              ]
+            }
+          }
+        },
+        "mobile": {
+          "size": {
+            "$value": "14px",
+            "$type": "dimension",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-body-2-size-mobile: 14px"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-body-2-size-mobile: 14px"
+                }
+              ]
+            }
+          },
+          "weight": {
+            "$value": "400",
+            "$type": "fontWeight",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-body-2-weight-mobile: 400"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-body-2-weight-mobile: 400"
+                }
+              ]
+            }
+          },
+          "lineHeight": {
+            "$value": "1.429",
+            "$type": "number",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-body-2-line-height-mobile: 1.429"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-body-2-line-height-mobile: 1.429"
+                }
+              ]
+            }
+          },
+          "letterSpacing": {
+            "$value": "0",
+            "$type": "dimension",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-body-2-letter-spacing-mobile:0"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-body-2-letter-spacing-mobile:0"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "button-1": {
+        "desktop": {
+          "size": {
+            "$value": "20px",
+            "$type": "dimension",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-button-1-size-desktop: 20px"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-button-1-size-desktop: 20px"
+                }
+              ]
+            }
+          },
+          "weight": {
+            "$value": "500",
+            "$type": "fontWeight",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-button-1-weight-desktop: 500"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-button-1-weight-desktop: 500"
+                }
+              ]
+            }
+          },
+          "lineHeight": {
+            "$value": "1",
+            "$type": "number",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-button-1-line-height-desktop: 1"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-button-1-line-height-desktop: 1"
+                }
+              ]
+            }
+          },
+          "letterSpacing": {
+            "$value": "0",
+            "$type": "dimension",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-button-1-letter-spacing-desktop:0"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-button-1-letter-spacing-desktop:0"
+                }
+              ]
+            }
+          }
+        },
+        "tablet": {
+          "size": {
+            "$value": "16px",
+            "$type": "dimension",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-button-1-size-tablet: 16px"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-button-1-size-tablet: 16px"
+                }
+              ]
+            }
+          },
+          "weight": {
+            "$value": "500",
+            "$type": "fontWeight",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-button-1-weight-tablet: 500"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-button-1-weight-tablet: 500"
+                }
+              ]
+            }
+          },
+          "lineHeight": {
+            "$value": "1.5",
+            "$type": "number",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-button-1-line-height-tablet: 1.5"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-button-1-line-height-tablet: 1.5"
+                }
+              ]
+            }
+          },
+          "letterSpacing": {
+            "$value": "0",
+            "$type": "dimension",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-button-1-letter-spacing-tablet:0"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-button-1-letter-spacing-tablet:0"
+                }
+              ]
+            }
+          }
+        },
+        "mobile": {
+          "size": {
+            "$value": "16px",
+            "$type": "dimension",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-button-1-size-mobile: 16px"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-button-1-size-mobile: 16px"
+                }
+              ]
+            }
+          },
+          "weight": {
+            "$value": "500",
+            "$type": "fontWeight",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-button-1-weight-mobile: 500"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-button-1-weight-mobile: 500"
+                }
+              ]
+            }
+          },
+          "lineHeight": {
+            "$value": "1.5",
+            "$type": "number",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-button-1-line-height-mobile: 1.5"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-button-1-line-height-mobile: 1.5"
+                }
+              ]
+            }
+          },
+          "letterSpacing": {
+            "$value": "0",
+            "$type": "dimension",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-button-1-letter-spacing-mobile:0"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-button-1-letter-spacing-mobile:0"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "button-2": {
+        "desktop": {
+          "size": {
+            "$value": "16px",
+            "$type": "dimension",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-button-2-size-desktop: 16px"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-button-2-size-desktop: 16px"
+                }
+              ]
+            }
+          },
+          "weight": {
+            "$value": "500",
+            "$type": "fontWeight",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-button-2-weight-desktop: 500"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-button-2-weight-desktop: 500"
+                }
+              ]
+            }
+          },
+          "lineHeight": {
+            "$value": "1",
+            "$type": "number",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-button-2-line-height-desktop: 1"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-button-2-line-height-desktop: 1"
+                }
+              ]
+            }
+          },
+          "letterSpacing": {
+            "$value": "0",
+            "$type": "dimension",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-button-2-letter-spacing-desktop:0"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-button-2-letter-spacing-desktop:0"
+                }
+              ]
+            }
+          }
+        },
+        "tablet": {
+          "size": {
+            "$value": "14px",
+            "$type": "dimension",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-button-2-size-tablet: 14px"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-button-2-size-tablet: 14px"
+                }
+              ]
+            }
+          },
+          "weight": {
+            "$value": "500",
+            "$type": "fontWeight",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-button-2-weight-tablet: 500"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-button-2-weight-tablet: 500"
+                }
+              ]
+            }
+          },
+          "lineHeight": {
+            "$value": "1.429",
+            "$type": "number",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-button-2-line-height-tablet: 1.429"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-button-2-line-height-tablet: 1.429"
+                }
+              ]
+            }
+          },
+          "letterSpacing": {
+            "$value": "0",
+            "$type": "dimension",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-button-2-letter-spacing-tablet:0"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-button-2-letter-spacing-tablet:0"
+                }
+              ]
+            }
+          }
+        },
+        "mobile": {
+          "size": {
+            "$value": "14px",
+            "$type": "dimension",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-button-2-size-mobile: 14px"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-button-2-size-mobile: 14px"
+                }
+              ]
+            }
+          },
+          "weight": {
+            "$value": "500",
+            "$type": "fontWeight",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-button-2-weight-mobile: 500"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-button-2-weight-mobile: 500"
+                }
+              ]
+            }
+          },
+          "lineHeight": {
+            "$value": "1.429",
+            "$type": "number",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-button-2-line-height-mobile: 1.429"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-button-2-line-height-mobile: 1.429"
+                }
+              ]
+            }
+          },
+          "letterSpacing": {
+            "$value": "0",
+            "$type": "dimension",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-button-2-letter-spacing-mobile:0"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-button-2-letter-spacing-mobile:0"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "caption-1": {
+        "desktop": {
+          "size": {
+            "$value": "10px",
+            "$type": "dimension",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-caption-1-size-desktop: 10px"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-caption-1-size-desktop: 10px"
+                }
+              ]
+            }
+          },
+          "weight": {
+            "$value": "500",
+            "$type": "fontWeight",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-caption-1-weight-desktop: 500"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-caption-1-weight-desktop: 500"
+                }
+              ]
+            }
+          },
+          "lineHeight": {
+            "$value": "1.333",
+            "$type": "number",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-caption-1-line-height-desktop: 1.333"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-caption-1-line-height-desktop: 1.333"
+                }
+              ]
+            }
+          },
+          "letterSpacing": {
+            "$value": "0",
+            "$type": "dimension",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-caption-1-letter-spacing-desktop:0"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-caption-1-letter-spacing-desktop:0"
+                }
+              ]
+            }
+          }
+        },
+        "tablet": {
+          "size": {
+            "$value": "10px",
+            "$type": "dimension",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-caption-1-size-tablet: 10px"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-caption-1-size-tablet: 10px"
+                }
+              ]
+            }
+          },
+          "weight": {
+            "$value": "500",
+            "$type": "fontWeight",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-caption-1-weight-tablet: 500"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-caption-1-weight-tablet: 500"
+                }
+              ]
+            }
+          },
+          "lineHeight": {
+            "$value": "1.333",
+            "$type": "number",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-caption-1-line-height-tablet: 1.333"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-caption-1-line-height-tablet: 1.333"
+                }
+              ]
+            }
+          },
+          "letterSpacing": {
+            "$value": "0",
+            "$type": "dimension",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-caption-1-letter-spacing-tablet:0"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-caption-1-letter-spacing-tablet:0"
+                }
+              ]
+            }
+          }
+        },
+        "mobile": {
+          "size": {
+            "$value": "10px",
+            "$type": "dimension",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-caption-1-size-mobile: 10px"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-caption-1-size-mobile: 10px"
+                }
+              ]
+            }
+          },
+          "weight": {
+            "$value": "500",
+            "$type": "fontWeight",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-caption-1-weight-mobile: 500"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-caption-1-weight-mobile: 500"
+                }
+              ]
+            }
+          },
+          "lineHeight": {
+            "$value": "1.333",
+            "$type": "number",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-caption-1-line-height-mobile: 1.333"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-caption-1-line-height-mobile: 1.333"
+                }
+              ]
+            }
+          },
+          "letterSpacing": {
+            "$value": "0",
+            "$type": "dimension",
+            "$extensions": {
+              "measuredFrom": [
+                {
+                  "cite": "src/index.css:23",
+                  "expect": "--font-caption-1-letter-spacing-mobile:0"
+                },
+                {
+                  "cite": "@original/index-D4COY28s.css",
+                  "quote": "--font-caption-1-letter-spacing-mobile:0"
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

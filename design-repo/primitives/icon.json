@@ -1,0 +1,21 @@
+{
+  "id": "icon",
+  "kind": "primitive",
+  "purpose": "Inline SVG glyph slot (figma glyph, check, chevron, folder, logos) rendered from a registered asset role.",
+  "implementedBy": [
+    "src/lib/icons.js"
+  ],
+  "assetRoles": [
+    "icon.figma-glyph",
+    "icon.ui-check",
+    "icon.ui-chevron",
+    "icon.preset-folder",
+    "logo.third-party-tool"
+  ],
+  "measuredFrom": [
+    {
+      "cite": "src/lib/icons.js:1",
+      "expect": "// Inline SVG markup extracted from the original page (recon-assets/svg)."
+    }
+  ]
+}

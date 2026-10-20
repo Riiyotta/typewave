@@ -1,0 +1,91 @@
+{
+  "radius": {
+    "xs": {
+      "$value": "2px",
+      "$type": "dimension",
+      "$description": "Tag, simulator select.",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "src/index.css:23",
+            "expect": "--radius-xs: 2px"
+          },
+          {
+            "cite": "@original/index-D4COY28s.css",
+            "quote": "--radius-xs: 2px"
+          }
+        ]
+      }
+    },
+    "sm": {
+      "$value": "4px",
+      "$type": "dimension",
+      "$description": "Buttons, badge, media wells, FAQ image, inspector badge.",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "src/index.css:23",
+            "expect": "--radius-sm: 4px"
+          },
+          {
+            "cite": "@original/index-D4COY28s.css",
+            "quote": "--radius-sm: 4px"
+          }
+        ]
+      }
+    },
+    "md": {
+      "$value": "8px",
+      "$type": "dimension",
+      "$description": "Cards, pricing, footer hero, hero video, floating CTA.",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "src/index.css:23",
+            "expect": "--radius-md: 8px"
+          },
+          {
+            "cite": "@original/index-D4COY28s.css",
+            "quote": "--radius-md: 8px"
+          }
+        ]
+      }
+    },
+    "lg": {
+      "$value": "16px",
+      "$type": "dimension",
+      "$description": "Declared, unused.",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "src/index.css:23",
+            "expect": "--radius-lg: 16px"
+          },
+          {
+            "cite": "@original/index-D4COY28s.css",
+            "quote": "--radius-lg: 16px"
+          }
+        ],
+        "usage": "declared-unused"
+      }
+    },
+    "full": {
+      "$value": "9999px",
+      "$type": "dimension",
+      "$description": "Declared, unused.",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "src/index.css:23",
+            "expect": "--radius-full: 9999px"
+          },
+          {
+            "cite": "@original/index-D4COY28s.css",
+            "quote": "--radius-full: 9999px"
+          }
+        ],
+        "usage": "declared-unused"
+      }
+    }
+  }
+}

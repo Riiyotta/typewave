@@ -1,0 +1,16 @@
+{
+  "id": "export-card",
+  "kind": "component",
+  "purpose": "12-column media/text card with optional tag and tool-logo row.",
+  "composes": [
+    "media-image",
+    "tag",
+    "icon"
+  ],
+  "measuredFrom": [
+    {
+      "cite": "src/index.css:301",
+      "expect": ".exports__card-logos{display:flex;align-items:center;gap:16px;margin-top:24px}"
+    }
+  ]
+}

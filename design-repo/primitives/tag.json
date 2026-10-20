@@ -1,0 +1,24 @@
+{
+  "id": "tag",
+  "kind": "primitive",
+  "purpose": "\"NEW\" caption tag, brand background.",
+  "implementedBy": [
+    "src/components/Navbar.jsx",
+    "src/components/Exports.jsx",
+    "src/components/Pricing.jsx"
+  ],
+  "tokens": [
+    "component.tag.padding",
+    "component.tag.bg"
+  ],
+  "measuredFrom": [
+    {
+      "cite": "src/index.css:110",
+      "expect": ".tag{display:inline-flex"
+    },
+    {
+      "cite": "CLONE_SPEC.md:124",
+      "expect": "### Tag `.tag.caption-1` (\"NEW\")"
+    }
+  ]
+}

@@ -1,0 +1,168 @@
+{
+  "id": "form.newsletter-inline",
+  "kind": "section",
+  "category": "form",
+  "purpose": "Capture an email for product updates with an oversized inline field and an arrow submit.",
+  "implementedBy": [
+    "src/components/Newsletter.jsx"
+  ],
+  "variants": [],
+  "constraints": {
+    "onePerPage": true,
+    "maxPerPage": 1
+  },
+  "content": {
+    "schemaRef": "#/definitions/content.form.newsletter-inline",
+    "schema": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "title",
+        "placeholder",
+        "submitLabel",
+        "form"
+      ],
+      "properties": {
+        "title": {
+          "$ref": "#/definitions/title"
+        },
+        "placeholder": {
+          "$ref": "#/definitions/text"
+        },
+        "submitLabel": {
+          "$ref": "#/definitions/text"
+        },
+        "form": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "action",
+            "method"
+          ],
+          "properties": {
+            "action": {
+              "$ref": "#/definitions/href"
+            },
+            "method": {
+              "const": "post"
+            }
+          }
+        }
+      }
+    },
+    "wordBudgets": [
+      {
+        "path": "title",
+        "observedMaxWords": 2,
+        "specWords": 2,
+        "maxWords": 3,
+        "measuredFrom": [
+          {
+            "cite": "CLONE_SPEC.md:560",
+            "expect": "(2 words: 1 plain + 1 in span.newsletter__title--brand; 12ch)"
+          }
+        ]
+      },
+      {
+        "path": "placeholder",
+        "observedMaxWords": 1,
+        "maxWords": 2
+      },
+      {
+        "path": "submitLabel",
+        "observedMaxWords": 1,
+        "maxWords": 2
+      }
+    ]
+  },
+  "assetRoles": [],
+  "motion": {
+    "allowedPatterns": [
+      "char-reveal-scroll-linked",
+      "fade-up"
+    ],
+    "reducedMotionFallback": "instant-visible",
+    "reducedMotionEvidence": "prescribed-not-in-source",
+    "observedRevealDelaysMs": [
+      0,
+      150
+    ],
+    "patternEvidence": {
+      "char-reveal-scroll-linked": [
+        {
+          "cite": "src/lib/compose.jsx:54",
+          "expect": "export function initScrollCompose() {"
+        },
+        {
+          "cite": "CLONE_SPEC.md:653",
+          "expect": "| M4 | Scroll-composed characters"
+        }
+      ],
+      "fade-up": [
+        {
+          "cite": "src/index.css:91",
+          "expect": ".reveal{opacity:0;transform:translateY(32px);transition:opacity .7s ease,transform .7s ease"
+        },
+        {
+          "cite": "CLONE_SPEC.md:651",
+          "expect": "| M2 | Reveal (fade-up)"
+        }
+      ]
+    }
+  },
+  "responsive": [
+    {
+      "breakpoint": "desktop",
+      "query": "(min-width: 1025px)",
+      "changes": {
+        "inputHeightPx": 86,
+        "inputType": "display-2 72px"
+      },
+      "measuredFrom": [
+        {
+          "cite": "CLONE_SPEC.md:576",
+          "expect": "Rendered height is **86** at desktop, 58 at 768 and 39 at 375"
+        }
+      ]
+    },
+    {
+      "breakpoint": "tablet",
+      "query": "(max-width: 1024px)",
+      "changes": {
+        "inputHeightPx": 58,
+        "inputType": "display-2 48px"
+      },
+      "measuredFrom": [
+        {
+          "cite": "CLONE_SPEC.md:576",
+          "expect": "Rendered height is **86** at desktop, 58 at 768 and 39 at 375"
+        }
+      ]
+    },
+    {
+      "breakpoint": "mobile",
+      "query": "(max-width: 767px)",
+      "changes": {
+        "inputHeightPx": 39,
+        "inputType": "display-2 32px"
+      },
+      "measuredFrom": [
+        {
+          "cite": "CLONE_SPEC.md:576",
+          "expect": "Rendered height is **86** at desktop, 58 at 768 and 39 at 375"
+        }
+      ]
+    }
+  ],
+  "accessibility": "The input has aria-label \"Email address\"; the arrow button has aria-label \"Subscribe\".",
+  "measuredFrom": [
+    {
+      "cite": "src/App.jsx:44",
+      "expect": "<Newsletter />"
+    },
+    {
+      "cite": "CLONE_SPEC.md:555",
+      "expect": "## 12. Newsletter `section.newsletter`"
+    }
+  ]
+}

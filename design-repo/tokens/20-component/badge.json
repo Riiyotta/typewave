@@ -1,0 +1,32 @@
+{
+  "component.badge": {
+    "size": {
+      "$value": "32px",
+      "$type": "dimension",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "src/index.css:109",
+            "expect": ".badge{width:32px;height:32px"
+          }
+        ]
+      }
+    },
+    "radius": {
+      "$value": "{radius.sm}",
+      "$type": "alias"
+    },
+    "tone-1": {
+      "$value": "{color-roles.accent.brand}",
+      "$type": "alias"
+    },
+    "tone-2": {
+      "$value": "{color-roles.accent.step-2}",
+      "$type": "alias"
+    },
+    "tone-3": {
+      "$value": "{color-roles.accent.step-3}",
+      "$type": "alias"
+    }
+  }
+}

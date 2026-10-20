@@ -1,0 +1,31 @@
+{
+  "motion-roles": {
+    "reveal": {
+      "$value": "{motion.duration.reveal}",
+      "$type": "alias",
+      "$description": "fade-up reveal (opacity + 32px)"
+    },
+    "ui-state": {
+      "$value": "{motion.duration.standard}",
+      "$type": "alias",
+      "$description": "nav hide, accordion, chevron, sticky-lead offset"
+    },
+    "ui-easing": {
+      "$value": "{motion.easing.standard}",
+      "$type": "alias"
+    },
+    "accordion-easing": {
+      "$value": "{motion.easing.decel}",
+      "$type": "alias"
+    },
+    "hover": {
+      "$value": "{motion.duration.hover}",
+      "$type": "alias"
+    },
+    "smooth-scroll": {
+      "$value": "{motion.duration.lenis}",
+      "$type": "alias",
+      "$description": "desktop only"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "id": "mobile-menu",
+  "kind": "component",
+  "purpose": "Full-screen menu (<=1024): centred 24px nav buttons + full-width 56px CTA; opacity/scale .96 in .3s.",
+  "composes": [
+    "button",
+    "icon"
+  ],
+  "measuredFrom": [
+    {
+      "cite": "src/index.css:134",
+      "expect": ".navbar__mobile-menu{flex:1;display:flex;flex-direction:column;justify-content:space-between"
+    }
+  ]
+}

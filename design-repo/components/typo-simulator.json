@@ -1,0 +1,18 @@
+{
+  "id": "typo-simulator",
+  "kind": "component",
+  "purpose": "Desktop size select + derived tablet/mobile tokens: calcRaw(t,k)=t<=16?t:t*(1-k*sqrt((t-16)/80)), k tablet .25 / mobile .6, snapped to 29 tokens; default 96 -> 72 / 40.",
+  "composes": [
+    "select"
+  ],
+  "measuredFrom": [
+    {
+      "cite": "src/components/TypoSimulator.jsx:5",
+      "expect": "const calcRaw = (t, k) => (t <= 16 ? t : t * (1 - k * Math.sqrt((t - 16) / 80)))"
+    },
+    {
+      "cite": "@original/index-B7zdGq3H.js",
+      "quote": "K={tablet:.25,mobile:.6}"
+    }
+  ]
+}

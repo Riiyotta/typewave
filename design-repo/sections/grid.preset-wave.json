@@ -1,0 +1,175 @@
+{
+  "id": "grid.preset-wave",
+  "kind": "section",
+  "category": "grid",
+  "purpose": "Signal saved presets as a row of colour-cycled folders that ripple with a single travelling sine bump as the grid scrolls into view.",
+  "implementedBy": [
+    "src/components/Presets.jsx"
+  ],
+  "variants": [],
+  "constraints": {
+    "onePerPage": true,
+    "maxPerPage": 1
+  },
+  "content": {
+    "schemaRef": "#/definitions/content.grid.preset-wave",
+    "schema": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "title",
+        "labelPrefix"
+      ],
+      "properties": {
+        "title": {
+          "$ref": "#/definitions/title"
+        },
+        "labelPrefix": {
+          "$ref": "#/definitions/text"
+        }
+      }
+    },
+    "wordBudgets": [
+      {
+        "path": "title",
+        "observedMaxWords": 10,
+        "specWords": 10,
+        "maxWords": 12,
+        "measuredFrom": [
+          {
+            "cite": "CLONE_SPEC.md:382",
+            "expect": "**h2:** 57ch/10w in 3 forced lines"
+          }
+        ]
+      },
+      {
+        "path": "labelPrefix",
+        "observedMaxWords": 1,
+        "maxWords": 2
+      }
+    ]
+  },
+  "assetRoles": [],
+  "motion": {
+    "allowedPatterns": [
+      "char-reveal-scroll-linked",
+      "fade-up",
+      "sine-wave-bump"
+    ],
+    "reducedMotionFallback": "static-folders",
+    "reducedMotionEvidence": "source-implemented",
+    "observedRevealDelaysMs": [],
+    "patternEvidence": {
+      "char-reveal-scroll-linked": [
+        {
+          "cite": "src/lib/compose.jsx:54",
+          "expect": "export function initScrollCompose() {"
+        },
+        {
+          "cite": "CLONE_SPEC.md:653",
+          "expect": "| M4 | Scroll-composed characters"
+        }
+      ],
+      "fade-up": [
+        {
+          "cite": "src/index.css:91",
+          "expect": ".reveal{opacity:0;transform:translateY(32px);transition:opacity .7s ease,transform .7s ease"
+        },
+        {
+          "cite": "CLONE_SPEC.md:651",
+          "expect": "| M2 | Reveal (fade-up)"
+        }
+      ],
+      "sine-wave-bump": [
+        {
+          "cite": "src/components/Presets.jsx:37",
+          "expect": "// M11: single travelling sine bump, left -> right."
+        },
+        {
+          "cite": "CLONE_SPEC.md:662",
+          "expect": "| M11 | Preset folder wave"
+        }
+      ]
+    }
+  },
+  "responsive": [
+    {
+      "breakpoint": "desktop",
+      "query": "(min-width: 1025px)",
+      "changes": {
+        "columns": 12,
+        "folderCount": 12,
+        "waveAmplitudePx": 88,
+        "gridPaddingTopPx": 104
+      },
+      "measuredFrom": [
+        {
+          "cite": "src/index.css:272",
+          "expect": ".presets__grid{display:grid;grid-template-columns:repeat(12,1fr)"
+        },
+        {
+          "cite": "src/components/Presets.jsx:18",
+          "expect": "desktop: { count: 12, amp: 88 },"
+        }
+      ]
+    },
+    {
+      "breakpoint": "tablet",
+      "query": "(max-width: 1024px)",
+      "changes": {
+        "columns": 8,
+        "folderCount": 8,
+        "waveAmplitudePx": 50,
+        "folderMaxWidthPx": 80,
+        "gridPaddingTopPx": 72
+      },
+      "measuredFrom": [
+        {
+          "cite": "src/index.css:278",
+          "expect": ".presets__grid{grid-template-columns:repeat(8,1fr)"
+        },
+        {
+          "cite": "src/components/Presets.jsx:17",
+          "expect": "tablet: { count: 8, amp: 50 },"
+        }
+      ]
+    },
+    {
+      "breakpoint": "mobile",
+      "query": "(max-width: 767px)",
+      "changes": {
+        "columns": 5,
+        "folderCount": 5,
+        "waveAmplitudePx": 22,
+        "folderMaxWidthPx": 56,
+        "labelFontPx": 12,
+        "gridPaddingTopPx": 40
+      },
+      "measuredFrom": [
+        {
+          "cite": "src/index.css:282",
+          "expect": ".presets__grid{grid-template-columns:repeat(5,1fr)"
+        },
+        {
+          "cite": "src/components/Presets.jsx:16",
+          "expect": "mobile: { count: 5, amp: 22 },"
+        }
+      ]
+    }
+  ],
+  "accessibility": "",
+  "measuredFrom": [
+    {
+      "cite": "src/App.jsx:40",
+      "expect": "<Presets />"
+    },
+    {
+      "cite": "CLONE_SPEC.md:369",
+      "expect": "## 8. Presets `section.presets` (no id)"
+    },
+    {
+      "cite": "src/components/Presets.jsx:39",
+      "expect": "if (prefersReducedMotion()) return"
+    }
+  ]
+}

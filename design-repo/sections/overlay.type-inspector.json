@@ -1,0 +1,73 @@
+{
+  "id": "overlay.type-inspector",
+  "kind": "section",
+  "category": "overlay",
+  "purpose": "Demonstrate the type system itself: on fine pointers a cursor badge names the type-scale class under the pointer.",
+  "implementedBy": [
+    "src/components/TypeInspector.jsx"
+  ],
+  "variants": [],
+  "constraints": {
+    "onePerPage": true,
+    "maxPerPage": 1,
+    "mustFollowFooter": true
+  },
+  "content": {
+    "schemaRef": "#/definitions/content.overlay.type-inspector",
+    "schema": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [],
+      "properties": {}
+    },
+    "wordBudgets": []
+  },
+  "assetRoles": [],
+  "motion": {
+    "allowedPatterns": [
+      "cursor-follow-badge"
+    ],
+    "reducedMotionFallback": "instant-opacity",
+    "reducedMotionEvidence": "prescribed-not-in-source",
+    "observedRevealDelaysMs": [],
+    "patternEvidence": {
+      "cursor-follow-badge": [
+        {
+          "cite": "src/components/TypeInspector.jsx:3",
+          "expect": "// M18: cursor badge naming the type-scale class"
+        },
+        {
+          "cite": "CLONE_SPEC.md:669",
+          "expect": "| M18 | Type-inspector badge"
+        }
+      ]
+    }
+  },
+  "responsive": [
+    {
+      "breakpoint": "pointer-fine",
+      "query": "(pointer: fine)",
+      "changes": {
+        "enabled": true,
+        "touch": "not mounted"
+      },
+      "measuredFrom": [
+        {
+          "cite": "src/components/TypeInspector.jsx:17",
+          "expect": "if (!window.matchMedia('(pointer: fine)').matches) return"
+        }
+      ]
+    }
+  ],
+  "accessibility": "aria-hidden; purely decorative.",
+  "measuredFrom": [
+    {
+      "cite": "src/App.jsx:48",
+      "expect": "<TypeInspector />"
+    },
+    {
+      "cite": "CLONE_SPEC.md:637",
+      "expect": "### Type-inspector cursor badge (desktop pointers only)"
+    }
+  ]
+}

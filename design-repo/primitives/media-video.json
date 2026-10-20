@@ -1,0 +1,19 @@
+{
+  "id": "media-video",
+  "kind": "primitive",
+  "purpose": "Muted inline video; no controls, no poster.",
+  "implementedBy": [
+    "src/components/Hero.jsx",
+    "src/components/HowItWorks.jsx"
+  ],
+  "assetRoles": [
+    "media.hero-video",
+    "media.step-video"
+  ],
+  "measuredFrom": [
+    {
+      "cite": "CLONE_SPEC.md:706",
+      "expect": "No poster attributes anywhere."
+    }
+  ]
+}

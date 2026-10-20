@@ -1,0 +1,249 @@
+{
+  "id": "hero.video-scale",
+  "kind": "section",
+  "category": "hero",
+  "purpose": "Land the one-line promise (type scale without the math) and convert to install, then hand off to a product video that scales from 0.8 to full width as the visitor scrolls.",
+  "implementedBy": [
+    "src/components/Hero.jsx"
+  ],
+  "variants": [],
+  "constraints": {
+    "onePerPage": true,
+    "maxPerPage": 1,
+    "mustFollowNav": true
+  },
+  "content": {
+    "schemaRef": "#/definitions/content.hero.video-scale",
+    "schema": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "title",
+        "subtitle",
+        "cta",
+        "video"
+      ],
+      "properties": {
+        "title": {
+          "$ref": "#/definitions/title"
+        },
+        "subtitle": {
+          "$ref": "#/definitions/text"
+        },
+        "cta": {
+          "$ref": "#/definitions/figmaCta"
+        },
+        "video": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "assetRole",
+            "assetRef"
+          ],
+          "properties": {
+            "assetRole": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/assetRole"
+                },
+                {
+                  "const": "media.hero-video"
+                }
+              ]
+            },
+            "assetRef": {
+              "$ref": "#/definitions/assetRef"
+            }
+          }
+        }
+      }
+    },
+    "wordBudgets": [
+      {
+        "path": "title",
+        "observedMaxWords": 8,
+        "specWords": 8,
+        "maxWords": 10,
+        "measuredFrom": [
+          {
+            "cite": "CLONE_SPEC.md:197",
+            "expect": "**h1:** 48 chars / 8 words"
+          }
+        ]
+      },
+      {
+        "path": "subtitle",
+        "observedMaxWords": 29,
+        "specWords": 27,
+        "maxWords": 35,
+        "measuredFrom": [
+          {
+            "cite": "CLONE_SPEC.md:198",
+            "expect": "**Subtitle:** 178 chars / 27 words"
+          }
+        ]
+      },
+      {
+        "path": "cta.label",
+        "observedMaxWords": 3,
+        "maxWords": 4
+      }
+    ]
+  },
+  "assetRoles": [
+    "media.hero-video",
+    "icon.figma-glyph"
+  ],
+  "motion": {
+    "allowedPatterns": [
+      "char-reveal-scroll-linked",
+      "fade-up",
+      "parallax",
+      "hero-video-scale",
+      "video-play-once"
+    ],
+    "reducedMotionFallback": "static-full-scale-video",
+    "reducedMotionEvidence": "prescribed-not-in-source",
+    "observedRevealDelaysMs": [
+      0,
+      150,
+      300,
+      450
+    ],
+    "patternEvidence": {
+      "char-reveal-scroll-linked": [
+        {
+          "cite": "src/lib/compose.jsx:54",
+          "expect": "export function initScrollCompose() {"
+        },
+        {
+          "cite": "CLONE_SPEC.md:653",
+          "expect": "| M4 | Scroll-composed characters"
+        }
+      ],
+      "fade-up": [
+        {
+          "cite": "src/index.css:91",
+          "expect": ".reveal{opacity:0;transform:translateY(32px);transition:opacity .7s ease,transform .7s ease"
+        },
+        {
+          "cite": "CLONE_SPEC.md:651",
+          "expect": "| M2 | Reveal (fade-up)"
+        }
+      ],
+      "parallax": [
+        {
+          "cite": "src/lib/parallax.js:5",
+          "expect": "export function initParallax(lenis) {"
+        },
+        {
+          "cite": "CLONE_SPEC.md:654",
+          "expect": "| M5 | Parallax"
+        }
+      ],
+      "hero-video-scale": [
+        {
+          "cite": "src/components/Hero.jsx:13",
+          "expect": "// M6: hero video scale-up 0.8 -> 1"
+        },
+        {
+          "cite": "CLONE_SPEC.md:655",
+          "expect": "| M6 | Hero video scale-up"
+        }
+      ],
+      "video-play-once": [
+        {
+          "cite": "src/components/Hero.jsx:57",
+          "expect": "// M7: play once per viewport entry"
+        },
+        {
+          "cite": "CLONE_SPEC.md:656",
+          "expect": "| M7 | Hero video playback"
+        }
+      ]
+    }
+  },
+  "responsive": [
+    {
+      "breakpoint": "desktop",
+      "query": "(min-width: 1025px)",
+      "changes": {
+        "videoPosition": "absolute, js-computed top (6% peek)",
+        "videoScale": [
+          0.8,
+          1
+        ],
+        "heroMinHeight": "js-computed",
+        "wrapperGapPx": 160,
+        "parallax": true
+      },
+      "measuredFrom": [
+        {
+          "cite": "src/index.css:151",
+          "expect": ".hero__video-scale{position:absolute;left:0;top:94vh"
+        },
+        {
+          "cite": "src/index.css:146",
+          "expect": ".hero__wrapper{display:flex;flex-direction:column;gap:160px}"
+        }
+      ]
+    },
+    {
+      "breakpoint": "tablet",
+      "query": "(max-width: 1024px)",
+      "changes": {
+        "videoPosition": "in-flow",
+        "videoScale": [
+          1,
+          1
+        ],
+        "wrapperGapPx": 80,
+        "paddingTopPx": 160,
+        "parallax": false
+      },
+      "measuredFrom": [
+        {
+          "cite": "src/index.css:154",
+          "expect": ".hero{padding-top:calc(var(--navbar-height-mobile) + 80px)}"
+        },
+        {
+          "cite": "src/index.css:155",
+          "expect": ".hero__wrapper{gap:80px}"
+        },
+        {
+          "cite": "src/lib/parallax.js:12",
+          "expect": "if (!isDesktop() || lenis.isShim) {"
+        }
+      ]
+    },
+    {
+      "breakpoint": "mobile",
+      "query": "(max-width: 767px)",
+      "changes": {
+        "titleForcedBreaks": "hidden",
+        "subtitleMaxWidth": "100%"
+      },
+      "measuredFrom": [
+        {
+          "cite": "src/index.css:88",
+          "expect": ".title-break{display:none}"
+        },
+        {
+          "cite": "src/index.css:161",
+          "expect": "@media (max-width: 767px){.hero__subtitle{max-width:100%}}"
+        }
+      ]
+    }
+  ],
+  "accessibility": "The video is decorative (muted, no controls); the h1 carries the message.",
+  "measuredFrom": [
+    {
+      "cite": "src/App.jsx:36",
+      "expect": "<Hero />"
+    },
+    {
+      "cite": "CLONE_SPEC.md:181",
+      "expect": "## 4. Hero `section.hero`"
+    }
+  ]
+}

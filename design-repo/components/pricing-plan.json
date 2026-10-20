@@ -1,0 +1,18 @@
+{
+  "id": "pricing-plan",
+  "kind": "component",
+  "purpose": "Ticket: content panel (radius bottom), 12px seam with 12px semicircle notches, CTA stub (radius top).",
+  "composes": [
+    "button"
+  ],
+  "measuredFrom": [
+    {
+      "cite": "src/index.css:331",
+      "expect": ".pricing-plan__seam-notch:before{left:0;transform:translate(-50%,-50%)}"
+    },
+    {
+      "cite": "src/index.css:332",
+      "expect": ".pricing-plan__seam-notch:after{right:0;transform:translate(50%,-50%)}"
+    }
+  ]
+}

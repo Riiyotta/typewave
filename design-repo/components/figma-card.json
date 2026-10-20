@@ -1,0 +1,14 @@
+{
+  "id": "figma-card",
+  "kind": "component",
+  "purpose": "Raised card: 4:3 media well, heading-1 title, muted body.",
+  "composes": [
+    "media-image"
+  ],
+  "measuredFrom": [
+    {
+      "cite": "src/index.css:203",
+      "expect": ".figma-card{background:var(--color-surface);border-radius:var(--radius-md);padding:32px"
+    }
+  ]
+}

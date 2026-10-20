@@ -1,0 +1,45 @@
+{
+  "component.faq": {
+    "lead-top": {
+      "$value": "calc(88px + 32px)",
+      "$type": "calc",
+      "$description": "Sticky lead offset while navbar visible (120px).",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "src/index.css:357",
+            "expect": "top:calc(var(--navbar-height) + 32px)"
+          }
+        ]
+      }
+    },
+    "lead-top-nav-hidden": {
+      "$value": "32px",
+      "$type": "dimension",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "src/index.css:358",
+            "expect": ":root.navbar-hidden .faq__lead{top:32px}"
+          }
+        ]
+      }
+    },
+    "question-padding-y": {
+      "$value": "24px",
+      "$type": "dimension",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "src/index.css:368",
+            "expect": "gap:16px;padding:24px 0"
+          }
+        ]
+      }
+    },
+    "border": {
+      "$value": "{color-roles.border.subtle}",
+      "$type": "alias"
+    }
+  }
+}

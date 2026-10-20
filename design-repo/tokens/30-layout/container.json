@@ -1,0 +1,58 @@
+{
+  "layout.container": {
+    "max-width": {
+      "$value": "1344px",
+      "$type": "dimension",
+      "$description": "Container max width.",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "src/index.css:23",
+            "expect": "--grid-container-max: 1344px"
+          },
+          {
+            "cite": "@original/index-D4COY28s.css",
+            "quote": "--grid-container-max: 1344px"
+          }
+        ]
+      }
+    },
+    "padding-inline": {
+      "$value": "48px",
+      "$type": "dimension",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "src/index.css:84",
+            "expect": ".container{width:100%;max-width:var(--grid-container-max);margin-inline:auto;padding-inline:48px}"
+          }
+        ]
+      }
+    },
+    "padding-inline-mobile": {
+      "$value": "24px",
+      "$type": "dimension",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "src/index.css:85",
+            "expect": "@media (max-width: 767px){.container{padding-inline:24px}}"
+          }
+        ]
+      }
+    },
+    "content-width-1440": {
+      "$value": "1248px",
+      "$type": "dimension",
+      "$description": "min(vw,1344) - 96 at 1440.",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "CLONE_SPEC.md:25",
+            "expect": "which gives **1248** at 1440"
+          }
+        ]
+      }
+    }
+  }
+}

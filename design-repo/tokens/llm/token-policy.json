@@ -1,0 +1,47 @@
+{
+  "version": "1.0.0",
+  "resolutionOrder": [
+    "00-foundation",
+    "themes/typewave-dark",
+    "10-semantic",
+    "20-component",
+    "30-layout"
+  ],
+  "enforced": {
+    "pageSpecTokenOverrides": "NONE EXIST. The PageSpec schema has no style or token field: styling is owned entirely by section/component contracts, so there is nothing token-related to validate at the PageSpec layer (MASTER-GUIDE 3.21). Token drift is checked at the catalog layer by extraction/verify_all.py (catalog == token leaves; every {ref} resolves; theme == foundation; policy keys are real catalog keys)."
+  },
+  "convention": {
+    "referenceSemanticFirst": "Contracts reference color-roles.* / typography-roles.* before foundation values.",
+    "noNewColours": "No colour outside tokens/00-foundation/color.json.",
+    "declaredUnused": "Tokens with $extensions.usage = declared-unused (accent, danger, radius lg/full, space.declared.*, Vesterbro) exist in the original :root but are never rendered; do not use them for new UI.",
+    "fixedPxPerBreakpoint": "Type is fixed px per breakpoint (desktop/tablet/mobile); never introduce clamp() or vw sizing.",
+    "fontsLicensed": "typography.family.primary/secondary are commercial fonts (licence required); font files are not part of this design-repo."
+  },
+  "rawValueRestrictions": {
+    "breakpoint": "reference-only",
+    "color": "reference-only",
+    "color-roles": "reference-only",
+    "component.badge": "reference-only",
+    "component.button": "reference-only",
+    "component.card": "reference-only",
+    "component.faq": "reference-only",
+    "component.floating-cta": "reference-only",
+    "component.navbar": "reference-only",
+    "component.pricing": "reference-only",
+    "component.tag": "reference-only",
+    "component.type-inspector": "reference-only",
+    "component.typo-sim": "reference-only",
+    "elevation": "reference-only",
+    "icon-size": "reference-only",
+    "layout.container": "reference-only",
+    "layout.grid": "reference-only",
+    "layout.section-spacing": "reference-only",
+    "layout.z-index": "reference-only",
+    "motion": "reference-only",
+    "motion-roles": "reference-only",
+    "radius": "reference-only",
+    "space": "reference-only",
+    "typography": "reference-only",
+    "typography-roles": "reference-only"
+  }
+}

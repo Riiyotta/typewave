@@ -1,0 +1,355 @@
+{
+  "space": {
+    "$description": "Measured gap/padding steps actually used by the component CSS. The declared --space-* scale is effectively unused (CLONE_SPEC 1).",
+    "declared": {
+      "xs": {
+        "$value": ".25rem",
+        "$type": "dimension",
+        "$description": "Declared, effectively unused.",
+        "$extensions": {
+          "measuredFrom": [
+            {
+              "cite": "src/index.css:23",
+              "expect": "--space-xs: .25rem"
+            },
+            {
+              "cite": "@original/index-D4COY28s.css",
+              "quote": "--space-xs: .25rem"
+            }
+          ],
+          "usage": "declared-unused"
+        }
+      },
+      "sm": {
+        "$value": ".5rem",
+        "$type": "dimension",
+        "$description": "Declared, effectively unused.",
+        "$extensions": {
+          "measuredFrom": [
+            {
+              "cite": "src/index.css:23",
+              "expect": "--space-sm: .5rem"
+            },
+            {
+              "cite": "@original/index-D4COY28s.css",
+              "quote": "--space-sm: .5rem"
+            }
+          ],
+          "usage": "declared-unused"
+        }
+      },
+      "md": {
+        "$value": "1rem",
+        "$type": "dimension",
+        "$description": "Declared, effectively unused.",
+        "$extensions": {
+          "measuredFrom": [
+            {
+              "cite": "src/index.css:23",
+              "expect": "--space-md: 1rem"
+            },
+            {
+              "cite": "@original/index-D4COY28s.css",
+              "quote": "--space-md: 1rem"
+            }
+          ],
+          "usage": "declared-unused"
+        }
+      },
+      "lg": {
+        "$value": "2rem",
+        "$type": "dimension",
+        "$description": "Declared, effectively unused.",
+        "$extensions": {
+          "measuredFrom": [
+            {
+              "cite": "src/index.css:23",
+              "expect": "--space-lg: 2rem"
+            },
+            {
+              "cite": "@original/index-D4COY28s.css",
+              "quote": "--space-lg: 2rem"
+            }
+          ],
+          "usage": "declared-unused"
+        }
+      },
+      "xl": {
+        "$value": "4rem",
+        "$type": "dimension",
+        "$description": "Declared, effectively unused.",
+        "$extensions": {
+          "measuredFrom": [
+            {
+              "cite": "src/index.css:23",
+              "expect": "--space-xl: 4rem"
+            },
+            {
+              "cite": "@original/index-D4COY28s.css",
+              "quote": "--space-xl: 4rem"
+            }
+          ],
+          "usage": "declared-unused"
+        }
+      }
+    },
+    "step": {
+      "4": {
+        "$value": "4px",
+        "$type": "dimension",
+        "$extensions": {
+          "measuredFrom": [
+            {
+              "cite": "src/index.css:122",
+              "expect": "gap:4px"
+            },
+            {
+              "cite": "@original/index-D4COY28s.css",
+              "quote": "gap:4px"
+            }
+          ]
+        }
+      },
+      "6": {
+        "$value": "6px",
+        "$type": "dimension",
+        "$extensions": {
+          "measuredFrom": [
+            {
+              "cite": "src/index.css:124",
+              "expect": "gap:6px"
+            },
+            {
+              "cite": "@original/index-D4COY28s.css",
+              "quote": "gap:6px"
+            }
+          ]
+        }
+      },
+      "8": {
+        "$value": "8px",
+        "$type": "dimension",
+        "$extensions": {
+          "measuredFrom": [
+            {
+              "cite": "src/index.css:99",
+              "expect": "gap:8px"
+            },
+            {
+              "cite": "@original/index-D4COY28s.css",
+              "quote": "gap:8px"
+            }
+          ]
+        }
+      },
+      "12": {
+        "$value": "12px",
+        "$type": "dimension",
+        "$extensions": {
+          "measuredFrom": [
+            {
+              "cite": "src/index.css:273",
+              "expect": "gap:12px"
+            },
+            {
+              "cite": "@original/index-D4COY28s.css",
+              "quote": "gap:12px"
+            }
+          ]
+        }
+      },
+      "16": {
+        "$value": "16px",
+        "$type": "dimension",
+        "$extensions": {
+          "measuredFrom": [
+            {
+              "cite": "src/index.css:171",
+              "expect": "gap:16px"
+            },
+            {
+              "cite": "@original/index-D4COY28s.css",
+              "quote": "gap:16px"
+            }
+          ]
+        }
+      },
+      "24": {
+        "$value": "24px",
+        "$type": "dimension",
+        "$extensions": {
+          "measuredFrom": [
+            {
+              "cite": "src/index.css:174",
+              "expect": "gap:24px"
+            },
+            {
+              "cite": "@original/index-D4COY28s.css",
+              "quote": "gap:24px"
+            }
+          ]
+        }
+      },
+      "32": {
+        "$value": "32px",
+        "$type": "dimension",
+        "$extensions": {
+          "measuredFrom": [
+            {
+              "cite": "src/index.css:157",
+              "expect": "gap:32px"
+            },
+            {
+              "cite": "@original/index-D4COY28s.css",
+              "quote": "gap:32px"
+            }
+          ]
+        }
+      },
+      "40": {
+        "$value": "40px",
+        "$type": "dimension",
+        "$extensions": {
+          "measuredFrom": [
+            {
+              "cite": "src/index.css:175",
+              "expect": "gap:40px"
+            },
+            {
+              "cite": "@original/index-D4COY28s.css",
+              "quote": "gap:40px"
+            }
+          ]
+        }
+      },
+      "48": {
+        "$value": "48px",
+        "$type": "dimension",
+        "$extensions": {
+          "measuredFrom": [
+            {
+              "cite": "src/index.css:379",
+              "expect": "gap:48px"
+            },
+            {
+              "cite": "@original/index-D4COY28s.css",
+              "quote": "gap:48px"
+            }
+          ]
+        }
+      },
+      "60": {
+        "$value": "60px",
+        "$type": "dimension",
+        "$extensions": {
+          "measuredFrom": [
+            {
+              "cite": "src/index.css:174",
+              "expect": "gap:60px"
+            },
+            {
+              "cite": "@original/index-D4COY28s.css",
+              "quote": "gap:60px"
+            }
+          ]
+        }
+      },
+      "72": {
+        "$value": "72px",
+        "$type": "dimension",
+        "$extensions": {
+          "measuredFrom": [
+            {
+              "cite": "src/index.css:170",
+              "expect": "gap:72px"
+            },
+            {
+              "cite": "@original/index-D4COY28s.css",
+              "quote": "gap:72px"
+            }
+          ]
+        }
+      },
+      "80": {
+        "$value": "80px",
+        "$type": "dimension",
+        "$extensions": {
+          "measuredFrom": [
+            {
+              "cite": "src/index.css:155",
+              "expect": "gap:80px"
+            },
+            {
+              "cite": "@original/index-D4COY28s.css",
+              "quote": "gap:80px"
+            }
+          ]
+        }
+      },
+      "88": {
+        "$value": "88px",
+        "$type": "dimension",
+        "$extensions": {
+          "measuredFrom": [
+            {
+              "cite": "src/index.css:341",
+              "expect": "gap:16px 88px"
+            },
+            {
+              "cite": "@original/index-D4COY28s.css",
+              "quote": "gap:16px 88px"
+            }
+          ]
+        }
+      },
+      "96": {
+        "$value": "96px",
+        "$type": "dimension",
+        "$extensions": {
+          "measuredFrom": [
+            {
+              "cite": "src/index.css:402",
+              "expect": "padding-top:96px"
+            },
+            {
+              "cite": "@original/index-D4COY28s.css",
+              "quote": "padding-top:96px"
+            }
+          ]
+        }
+      },
+      "104": {
+        "$value": "104px",
+        "$type": "dimension",
+        "$extensions": {
+          "measuredFrom": [
+            {
+              "cite": "src/index.css:272",
+              "expect": "padding-top:104px"
+            },
+            {
+              "cite": "@original/index-D4COY28s.css",
+              "quote": "padding-top:104px"
+            }
+          ]
+        }
+      },
+      "160": {
+        "$value": "160px",
+        "$type": "dimension",
+        "$extensions": {
+          "measuredFrom": [
+            {
+              "cite": "src/index.css:146",
+              "expect": "gap:160px"
+            },
+            {
+              "cite": "@original/index-D4COY28s.css",
+              "quote": "gap:160px"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

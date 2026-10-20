@@ -1,0 +1,225 @@
+{
+  "id": "cards.feature-carousel",
+  "kind": "section",
+  "category": "cards",
+  "purpose": "Show what lands in the Figma file (frames, styles, variables) as three equal cards; becomes a swipeable snap carousel on touch widths.",
+  "implementedBy": [
+    "src/components/FigmaOrg.jsx"
+  ],
+  "variants": [],
+  "constraints": {
+    "onePerPage": true,
+    "maxPerPage": 1
+  },
+  "content": {
+    "schemaRef": "#/definitions/content.cards.feature-carousel",
+    "schema": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "title",
+        "cards"
+      ],
+      "properties": {
+        "title": {
+          "$ref": "#/definitions/title"
+        },
+        "cards": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "image",
+              "title",
+              "text"
+            ],
+            "properties": {
+              "image": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "assetRole",
+                  "assetRef",
+                  "alt"
+                ],
+                "properties": {
+                  "assetRole": {
+                    "allOf": [
+                      {
+                        "$ref": "#/definitions/assetRole"
+                      },
+                      {
+                        "const": "media.figma-panel"
+                      }
+                    ]
+                  },
+                  "assetRef": {
+                    "$ref": "#/definitions/assetRef"
+                  },
+                  "alt": {
+                    "$ref": "#/definitions/text"
+                  }
+                }
+              },
+              "title": {
+                "$ref": "#/definitions/text"
+              },
+              "text": {
+                "$ref": "#/definitions/text"
+              }
+            }
+          }
+        }
+      }
+    },
+    "wordBudgets": [
+      {
+        "path": "title",
+        "observedMaxWords": 6,
+        "specWords": 6,
+        "maxWords": 8,
+        "measuredFrom": [
+          {
+            "cite": "CLONE_SPEC.md:283",
+            "expect": "**h2:** 40ch/6w in 2 lines"
+          }
+        ]
+      },
+      {
+        "path": "cards[].title",
+        "observedMaxWords": 1,
+        "maxWords": 2
+      },
+      {
+        "path": "cards[].text",
+        "observedMaxWords": 29,
+        "specWords": 28,
+        "maxWords": 35,
+        "measuredFrom": [
+          {
+            "cite": "CLONE_SPEC.md:284",
+            "expect": "**Card texts:** 166ch/27w, 165ch/28w, 148ch/23w"
+          }
+        ]
+      },
+      {
+        "path": "cards[].image.alt",
+        "observedMaxWords": 13,
+        "maxWords": 16
+      }
+    ]
+  },
+  "assetRoles": [
+    "media.figma-panel"
+  ],
+  "motion": {
+    "allowedPatterns": [
+      "char-reveal-scroll-linked",
+      "fade-up",
+      "swipe-carousel"
+    ],
+    "reducedMotionFallback": "instant-visible",
+    "reducedMotionEvidence": "prescribed-not-in-source",
+    "observedRevealDelaysMs": [
+      0,
+      100,
+      200
+    ],
+    "patternEvidence": {
+      "char-reveal-scroll-linked": [
+        {
+          "cite": "src/lib/compose.jsx:54",
+          "expect": "export function initScrollCompose() {"
+        },
+        {
+          "cite": "CLONE_SPEC.md:653",
+          "expect": "| M4 | Scroll-composed characters"
+        }
+      ],
+      "fade-up": [
+        {
+          "cite": "src/index.css:91",
+          "expect": ".reveal{opacity:0;transform:translateY(32px);transition:opacity .7s ease,transform .7s ease"
+        },
+        {
+          "cite": "CLONE_SPEC.md:651",
+          "expect": "| M2 | Reveal (fade-up)"
+        }
+      ],
+      "swipe-carousel": [
+        {
+          "cite": "src/index.css:210",
+          "expect": ".figma-org__cards{display:flex;flex-wrap:nowrap;overflow-x:auto;scroll-snap-type:x mandatory"
+        },
+        {
+          "cite": "CLONE_SPEC.md:292",
+          "expect": "**≤1024 horizontal carousel:**"
+        }
+      ]
+    }
+  },
+  "responsive": [
+    {
+      "breakpoint": "desktop",
+      "query": "(min-width: 1025px)",
+      "changes": {
+        "layout": "grid",
+        "columns": 3,
+        "gapPx": 24,
+        "cardsOutsideContainer": true
+      },
+      "measuredFrom": [
+        {
+          "cite": "src/index.css:202",
+          "expect": ".figma-org__cards{display:grid;grid-template-columns:repeat(3,1fr)"
+        }
+      ]
+    },
+    {
+      "breakpoint": "tablet",
+      "query": "(max-width: 1024px)",
+      "changes": {
+        "layout": "swipe-carousel",
+        "cardBasis": "80%",
+        "snap": "x mandatory",
+        "reveal": "forced visible",
+        "edgeMarginPx": 48
+      },
+      "measuredFrom": [
+        {
+          "cite": "src/index.css:212",
+          "expect": ".figma-org__cards .figma-card{flex:0 0 80%;scroll-snap-align:start;opacity:1!important;transform:none!important}"
+        }
+      ]
+    },
+    {
+      "breakpoint": "mobile",
+      "query": "(max-width: 767px)",
+      "changes": {
+        "cardBasis": "75%",
+        "edgeMarginPx": 24,
+        "cardPaddingPx": 24
+      },
+      "measuredFrom": [
+        {
+          "cite": "src/index.css:219",
+          "expect": ".figma-org__cards .figma-card{flex-basis:75%}"
+        }
+      ]
+    }
+  ],
+  "accessibility": "",
+  "measuredFrom": [
+    {
+      "cite": "src/App.jsx:38",
+      "expect": "<FigmaOrg />"
+    },
+    {
+      "cite": "CLONE_SPEC.md:269",
+      "expect": "## 6. Figma organization `section.figma-org` (no id)"
+    }
+  ]
+}

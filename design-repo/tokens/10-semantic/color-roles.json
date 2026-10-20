@@ -1,0 +1,115 @@
+{
+  "color-roles": {
+    "$description": "Intent layer. Contracts reference these, never foundation hex values.",
+    "text": {
+      "primary": {
+        "$value": "{color.text}",
+        "$type": "alias"
+      },
+      "secondary": {
+        "$value": "{color.text-muted}",
+        "$type": "alias",
+        "$description": "Card body, captions, legal, placeholders."
+      },
+      "brand": {
+        "$value": "{color.brand}",
+        "$type": "alias",
+        "$description": "The [bracketed] span in headings."
+      },
+      "inverse": {
+        "$value": "{color.bg}",
+        "$type": "alias",
+        "$description": "Text on light buttons/tags/badges."
+      },
+      "mockup": {
+        "$value": "{color.mock-text}",
+        "$type": "alias"
+      }
+    },
+    "surface": {
+      "page": {
+        "$value": "{color.bg}",
+        "$type": "alias"
+      },
+      "raised": {
+        "$value": "{color.surface}",
+        "$type": "alias"
+      },
+      "chrome": {
+        "$value": "{color.chrome}",
+        "$type": "alias"
+      },
+      "floating": {
+        "$value": "{color.floating-bg}",
+        "$type": "alias"
+      },
+      "fade-end": {
+        "$value": "{color.bg-transparent}",
+        "$type": "alias"
+      }
+    },
+    "border": {
+      "subtle": {
+        "$value": "{color.surface}",
+        "$type": "alias",
+        "$description": "FAQ item and newsletter top borders."
+      },
+      "divider": {
+        "$value": "{color.divider}",
+        "$type": "alias"
+      },
+      "chrome": {
+        "$value": "{color.chrome}",
+        "$type": "alias"
+      }
+    },
+    "accent": {
+      "brand": {
+        "$value": "{color.brand}",
+        "$type": "alias"
+      },
+      "step-2": {
+        "$value": "{color.badge-2}",
+        "$type": "alias"
+      },
+      "step-3": {
+        "$value": "{color.badge-3}",
+        "$type": "alias"
+      },
+      "preset-pink": {
+        "$value": "{color.preset-pink}",
+        "$type": "alias"
+      }
+    },
+    "action": {
+      "primary-bg": {
+        "$value": "{color.text}",
+        "$type": "alias"
+      },
+      "primary-bg-hover": {
+        "$value": "{color.text-muted}",
+        "$type": "alias"
+      },
+      "primary-text": {
+        "$value": "{color.bg}",
+        "$type": "alias"
+      },
+      "brand-bg": {
+        "$value": "{color.brand}",
+        "$type": "alias"
+      },
+      "brand-text": {
+        "$value": "{color.bg}",
+        "$type": "alias"
+      },
+      "ghost-text": {
+        "$value": "{color.text}",
+        "$type": "alias"
+      },
+      "ghost-text-hover": {
+        "$value": "{color.text-muted}",
+        "$type": "alias"
+      }
+    }
+  }
+}

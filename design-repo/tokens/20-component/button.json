@@ -1,0 +1,98 @@
+{
+  "component.button": {
+    "height-sm": {
+      "$value": "40px",
+      "$type": "dimension",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "src/index.css:100",
+            "expect": ".btn--sm{height:40px;padding:0 16px;border-radius:var(--radius-sm)}"
+          }
+        ]
+      }
+    },
+    "padding-x-sm": {
+      "$value": "16px",
+      "$type": "dimension",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "src/index.css:100",
+            "expect": ".btn--sm{height:40px;padding:0 16px"
+          }
+        ]
+      }
+    },
+    "gap": {
+      "$value": "8px",
+      "$type": "dimension",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "src/index.css:99",
+            "expect": ".btn{display:inline-flex;align-items:center;gap:8px"
+          }
+        ]
+      }
+    },
+    "radius": {
+      "$value": "{radius.sm}",
+      "$type": "alias"
+    },
+    "height-plan": {
+      "$value": "48px",
+      "$type": "dimension",
+      "$description": "Full-width plan CTA.",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "src/index.css:334",
+            "expect": ".pricing-plan__cta .btn{width:100%;justify-content:center;height:48px}"
+          }
+        ]
+      }
+    },
+    "height-mobile-menu": {
+      "$value": "56px",
+      "$type": "dimension",
+      "$description": "Full-width CTA in the mobile menu.",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "src/index.css:139",
+            "expect": ".navbar__mobile-cta .btn{width:100%;justify-content:center;height:56px}"
+          }
+        ]
+      }
+    },
+    "primary-bg": {
+      "$value": "{color-roles.action.primary-bg}",
+      "$type": "alias"
+    },
+    "primary-bg-hover": {
+      "$value": "{color-roles.action.primary-bg-hover}",
+      "$type": "alias"
+    },
+    "primary-text": {
+      "$value": "{color-roles.action.primary-text}",
+      "$type": "alias"
+    },
+    "brand-bg": {
+      "$value": "{color-roles.action.brand-bg}",
+      "$type": "alias"
+    },
+    "brand-text": {
+      "$value": "{color-roles.action.brand-text}",
+      "$type": "alias"
+    },
+    "ghost-text": {
+      "$value": "{color-roles.action.ghost-text}",
+      "$type": "alias"
+    },
+    "ghost-text-hover": {
+      "$value": "{color-roles.action.ghost-text-hover}",
+      "$type": "alias"
+    }
+  }
+}

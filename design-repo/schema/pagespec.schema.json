@@ -1,0 +1,1837 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "typewave-design-repo/pagespec.schema.json",
+  "title": "Typewave PageSpec",
+  "description": "Machine contract for one generated page. Closed template and section enums, additionalProperties:false everywhere, per-section content and motion contracts. What JSON Schema cannot express is enforced by semantic_validate.py.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "pageSpecVersion",
+    "template",
+    "route",
+    "theme",
+    "meta",
+    "nodes"
+  ],
+  "properties": {
+    "pageSpecVersion": {
+      "const": "1.0.0"
+    },
+    "template": {
+      "enum": [
+        "template.home"
+      ]
+    },
+    "route": {
+      "type": "string",
+      "pattern": "^/[a-z0-9/-]*$"
+    },
+    "theme": {
+      "enum": [
+        "typewave-dark"
+      ]
+    },
+    "meta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "title",
+        "description"
+      ],
+      "properties": {
+        "title": {
+          "$ref": "#/definitions/text"
+        },
+        "description": {
+          "$ref": "#/definitions/text"
+        },
+        "ogImage": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "assetRole",
+            "assetRef"
+          ],
+          "properties": {
+            "assetRole": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/assetRole"
+                },
+                {
+                  "const": "meta.og-image"
+                }
+              ]
+            },
+            "assetRef": {
+              "$ref": "#/definitions/assetRef"
+            }
+          }
+        },
+        "favicon": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "assetRole",
+            "assetRef"
+          ],
+          "properties": {
+            "assetRole": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/assetRole"
+                },
+                {
+                  "const": "meta.favicon"
+                }
+              ]
+            },
+            "assetRef": {
+              "$ref": "#/definitions/assetRef"
+            }
+          }
+        }
+      }
+    },
+    "nodes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/definitions/node"
+      }
+    }
+  },
+  "definitions": {
+    "text": {
+      "type": "string",
+      "minLength": 1
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?:[^\\[\\]|]+|\\||\\[[^\\[\\]|]+\\])+$",
+      "$comment": "Clone mini-syntax: | forced break, [..] brand span (src/lib/compose.jsx)."
+    },
+    "href": {
+      "type": "string",
+      "pattern": "^(#[a-z][a-z0-9-]*|/[^\\s]*|https://[^\\s]+|mailto:[^\\s@]+@[^\\s@]+)$"
+    },
+    "anchorTarget": {
+      "type": "string",
+      "pattern": "^#[a-z][a-z0-9-]*$"
+    },
+    "anchorId": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]*$"
+    },
+    "assetRole": {
+      "enum": [
+        "brand.logo-mark",
+        "brand.logo-wordmark",
+        "icon.figma-glyph",
+        "logo.third-party-tool",
+        "media.export-screenshot",
+        "media.faq-screenshot",
+        "media.figma-panel",
+        "media.hero-video",
+        "media.step-video",
+        "meta.favicon",
+        "meta.og-image"
+      ]
+    },
+    "assetRef": {
+      "type": "string",
+      "pattern": "^(asset|generated|owner-supplied):[a-z0-9][a-z0-9-]*$"
+    },
+    "figmaCta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "label",
+        "href"
+      ],
+      "properties": {
+        "label": {
+          "$ref": "#/definitions/text"
+        },
+        "href": {
+          "$ref": "#/definitions/href"
+        },
+        "icon": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "assetRole",
+            "assetRef"
+          ],
+          "properties": {
+            "assetRole": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/assetRole"
+                },
+                {
+                  "const": "icon.figma-glyph"
+                }
+              ]
+            },
+            "assetRef": {
+              "$ref": "#/definitions/assetRef"
+            }
+          }
+        }
+      }
+    },
+    "content.shell.navbar": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "logo",
+        "logoLabel",
+        "links",
+        "cta"
+      ],
+      "properties": {
+        "logo": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "assetRole",
+            "assetRef"
+          ],
+          "properties": {
+            "assetRole": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/assetRole"
+                },
+                {
+                  "const": "brand.logo-wordmark"
+                }
+              ]
+            },
+            "assetRef": {
+              "$ref": "#/definitions/assetRef"
+            }
+          }
+        },
+        "logoLabel": {
+          "$ref": "#/definitions/text"
+        },
+        "links": {
+          "type": "array",
+          "minItems": 0,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "label",
+              "target"
+            ],
+            "properties": {
+              "label": {
+                "$ref": "#/definitions/text"
+              },
+              "target": {
+                "$ref": "#/definitions/anchorTarget"
+              },
+              "tag": {
+                "enum": [
+                  "NEW"
+                ]
+              }
+            }
+          }
+        },
+        "cta": {
+          "$ref": "#/definitions/figmaCta"
+        }
+      }
+    },
+    "motion.shell.navbar": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "patterns",
+        "reducedMotionFallback"
+      ],
+      "properties": {
+        "patterns": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "nav-hide-on-scroll",
+              "mobile-menu"
+            ]
+          }
+        },
+        "reducedMotionFallback": {
+          "const": "instant-hide-show"
+        },
+        "revealDelaysMs": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              0,
+              100,
+              150,
+              200,
+              300,
+              450
+            ]
+          }
+        }
+      }
+    },
+    "content.hero.video-scale": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "title",
+        "subtitle",
+        "cta",
+        "video"
+      ],
+      "properties": {
+        "title": {
+          "$ref": "#/definitions/title"
+        },
+        "subtitle": {
+          "$ref": "#/definitions/text"
+        },
+        "cta": {
+          "$ref": "#/definitions/figmaCta"
+        },
+        "video": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "assetRole",
+            "assetRef"
+          ],
+          "properties": {
+            "assetRole": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/assetRole"
+                },
+                {
+                  "const": "media.hero-video"
+                }
+              ]
+            },
+            "assetRef": {
+              "$ref": "#/definitions/assetRef"
+            }
+          }
+        }
+      }
+    },
+    "motion.hero.video-scale": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "patterns",
+        "reducedMotionFallback"
+      ],
+      "properties": {
+        "patterns": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "char-reveal-scroll-linked",
+              "fade-up",
+              "parallax",
+              "hero-video-scale",
+              "video-play-once"
+            ]
+          }
+        },
+        "reducedMotionFallback": {
+          "const": "static-full-scale-video"
+        },
+        "revealDelaysMs": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              0,
+              100,
+              150,
+              200,
+              300,
+              450
+            ]
+          }
+        }
+      }
+    },
+    "content.steps.sticky-stack": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "title",
+        "cards"
+      ],
+      "properties": {
+        "title": {
+          "$ref": "#/definitions/title"
+        },
+        "cards": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 3,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "badge",
+              "badgeTone",
+              "title",
+              "text",
+              "video"
+            ],
+            "properties": {
+              "badge": {
+                "type": "string",
+                "pattern": "^[1-9]$"
+              },
+              "badgeTone": {
+                "enum": [
+                  "brand",
+                  "step-2",
+                  "step-3"
+                ]
+              },
+              "title": {
+                "$ref": "#/definitions/text"
+              },
+              "text": {
+                "$ref": "#/definitions/text"
+              },
+              "video": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "assetRole",
+                  "assetRef"
+                ],
+                "properties": {
+                  "assetRole": {
+                    "allOf": [
+                      {
+                        "$ref": "#/definitions/assetRole"
+                      },
+                      {
+                        "const": "media.step-video"
+                      }
+                    ]
+                  },
+                  "assetRef": {
+                    "$ref": "#/definitions/assetRef"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "motion.steps.sticky-stack": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "patterns",
+        "reducedMotionFallback"
+      ],
+      "properties": {
+        "patterns": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "char-reveal-scroll-linked",
+              "fade-up",
+              "parallax",
+              "sticky-stack-scale"
+            ]
+          }
+        },
+        "reducedMotionFallback": {
+          "const": "static-unscaled-stack"
+        },
+        "revealDelaysMs": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              0,
+              100,
+              150,
+              200,
+              300,
+              450
+            ]
+          }
+        }
+      }
+    },
+    "content.cards.feature-carousel": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "title",
+        "cards"
+      ],
+      "properties": {
+        "title": {
+          "$ref": "#/definitions/title"
+        },
+        "cards": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "image",
+              "title",
+              "text"
+            ],
+            "properties": {
+              "image": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "assetRole",
+                  "assetRef",
+                  "alt"
+                ],
+                "properties": {
+                  "assetRole": {
+                    "allOf": [
+                      {
+                        "$ref": "#/definitions/assetRole"
+                      },
+                      {
+                        "const": "media.figma-panel"
+                      }
+                    ]
+                  },
+                  "assetRef": {
+                    "$ref": "#/definitions/assetRef"
+                  },
+                  "alt": {
+                    "$ref": "#/definitions/text"
+                  }
+                }
+              },
+              "title": {
+                "$ref": "#/definitions/text"
+              },
+              "text": {
+                "$ref": "#/definitions/text"
+              }
+            }
+          }
+        }
+      }
+    },
+    "motion.cards.feature-carousel": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "patterns",
+        "reducedMotionFallback"
+      ],
+      "properties": {
+        "patterns": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "char-reveal-scroll-linked",
+              "fade-up",
+              "swipe-carousel"
+            ]
+          }
+        },
+        "reducedMotionFallback": {
+          "const": "instant-visible"
+        },
+        "revealDelaysMs": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              0,
+              100,
+              150,
+              200,
+              300,
+              450
+            ]
+          }
+        }
+      }
+    },
+    "content.showcase.breakpoint-scrub": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "title",
+        "caption",
+        "mockup",
+        "simulator"
+      ],
+      "properties": {
+        "title": {
+          "$ref": "#/definitions/title"
+        },
+        "caption": {
+          "$ref": "#/definitions/text"
+        },
+        "mockup": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "headlineLines",
+            "paragraph",
+            "buttonLabel"
+          ],
+          "properties": {
+            "headlineLines": {
+              "type": "array",
+              "minItems": 2,
+              "maxItems": 2,
+              "items": {
+                "$ref": "#/definitions/text"
+              }
+            },
+            "paragraph": {
+              "$ref": "#/definitions/text"
+            },
+            "buttonLabel": {
+              "$ref": "#/definitions/text"
+            }
+          }
+        },
+        "simulator": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "defaultDesktopPx"
+          ],
+          "properties": {
+            "defaultDesktopPx": {
+              "enum": [
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                20,
+                22,
+                24,
+                26,
+                28,
+                30,
+                32,
+                36,
+                40,
+                44,
+                48,
+                52,
+                56,
+                60,
+                64,
+                68,
+                72,
+                80,
+                88,
+                96
+              ]
+            }
+          }
+        }
+      }
+    },
+    "motion.showcase.breakpoint-scrub": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "patterns",
+        "reducedMotionFallback"
+      ],
+      "properties": {
+        "patterns": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "char-reveal-scroll-linked",
+              "fade-up",
+              "scrub-progress",
+              "caption-slide-up"
+            ]
+          }
+        },
+        "reducedMotionFallback": {
+          "const": "static-final-frame"
+        },
+        "revealDelaysMs": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              0,
+              100,
+              150,
+              200,
+              300,
+              450
+            ]
+          }
+        }
+      }
+    },
+    "content.grid.preset-wave": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "title",
+        "labelPrefix"
+      ],
+      "properties": {
+        "title": {
+          "$ref": "#/definitions/title"
+        },
+        "labelPrefix": {
+          "$ref": "#/definitions/text"
+        }
+      }
+    },
+    "motion.grid.preset-wave": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "patterns",
+        "reducedMotionFallback"
+      ],
+      "properties": {
+        "patterns": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "char-reveal-scroll-linked",
+              "fade-up",
+              "sine-wave-bump"
+            ]
+          }
+        },
+        "reducedMotionFallback": {
+          "const": "static-folders"
+        },
+        "revealDelaysMs": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              0,
+              100,
+              150,
+              200,
+              300,
+              450
+            ]
+          }
+        }
+      }
+    },
+    "content.split.export-cards": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "title",
+        "cards"
+      ],
+      "properties": {
+        "title": {
+          "$ref": "#/definitions/title"
+        },
+        "cards": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "layout",
+              "title",
+              "text",
+              "image",
+              "logos"
+            ],
+            "properties": {
+              "layout": {
+                "enum": [
+                  "media-left",
+                  "media-right"
+                ]
+              },
+              "title": {
+                "$ref": "#/definitions/text"
+              },
+              "tag": {
+                "enum": [
+                  "NEW"
+                ]
+              },
+              "text": {
+                "$ref": "#/definitions/text"
+              },
+              "image": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "assetRole",
+                  "assetRef",
+                  "alt"
+                ],
+                "properties": {
+                  "assetRole": {
+                    "allOf": [
+                      {
+                        "$ref": "#/definitions/assetRole"
+                      },
+                      {
+                        "const": "media.export-screenshot"
+                      }
+                    ]
+                  },
+                  "assetRef": {
+                    "$ref": "#/definitions/assetRef"
+                  },
+                  "alt": {
+                    "$ref": "#/definitions/text"
+                  }
+                }
+              },
+              "logos": {
+                "type": "array",
+                "minItems": 0,
+                "maxItems": 4,
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "assetRole",
+                    "assetRef",
+                    "label"
+                  ],
+                  "properties": {
+                    "assetRole": {
+                      "allOf": [
+                        {
+                          "$ref": "#/definitions/assetRole"
+                        },
+                        {
+                          "const": "logo.third-party-tool"
+                        }
+                      ]
+                    },
+                    "assetRef": {
+                      "$ref": "#/definitions/assetRef"
+                    },
+                    "label": {
+                      "$ref": "#/definitions/text"
+                    }
+                  }
+                }
+              },
+              "anchorId": {
+                "$ref": "#/definitions/anchorId"
+              }
+            }
+          }
+        }
+      }
+    },
+    "motion.split.export-cards": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "patterns",
+        "reducedMotionFallback"
+      ],
+      "properties": {
+        "patterns": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "char-reveal-scroll-linked",
+              "fade-up"
+            ]
+          }
+        },
+        "reducedMotionFallback": {
+          "const": "instant-visible"
+        },
+        "revealDelaysMs": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              0,
+              100,
+              150,
+              200,
+              300,
+              450
+            ]
+          }
+        }
+      }
+    },
+    "content.pricing.ticket-plans": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "title",
+        "plans",
+        "includes"
+      ],
+      "properties": {
+        "title": {
+          "$ref": "#/definitions/title"
+        },
+        "plans": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "name",
+              "subtitle",
+              "license",
+              "price",
+              "featured",
+              "cta"
+            ],
+            "properties": {
+              "name": {
+                "$ref": "#/definitions/text"
+              },
+              "subtitle": {
+                "$ref": "#/definitions/text"
+              },
+              "license": {
+                "$ref": "#/definitions/text"
+              },
+              "price": {
+                "$ref": "#/definitions/text"
+              },
+              "featured": {
+                "type": "boolean"
+              },
+              "cta": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "label",
+                  "href",
+                  "variant"
+                ],
+                "properties": {
+                  "label": {
+                    "$ref": "#/definitions/text"
+                  },
+                  "href": {
+                    "$ref": "#/definitions/href"
+                  },
+                  "variant": {
+                    "enum": [
+                      "brand",
+                      "primary"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "includes": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "title",
+            "columns"
+          ],
+          "properties": {
+            "title": {
+              "$ref": "#/definitions/text"
+            },
+            "columns": {
+              "type": "array",
+              "minItems": 2,
+              "maxItems": 2,
+              "items": {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 4,
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "text"
+                  ],
+                  "properties": {
+                    "text": {
+                      "$ref": "#/definitions/text"
+                    },
+                    "tag": {
+                      "enum": [
+                        "NEW"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "motion.pricing.ticket-plans": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "patterns",
+        "reducedMotionFallback"
+      ],
+      "properties": {
+        "patterns": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "char-reveal-scroll-linked",
+              "fade-up"
+            ]
+          }
+        },
+        "reducedMotionFallback": {
+          "const": "instant-visible"
+        },
+        "revealDelaysMs": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              0,
+              100,
+              150,
+              200,
+              300,
+              450
+            ]
+          }
+        }
+      }
+    },
+    "content.faq.sticky-accordion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "title",
+        "email",
+        "items"
+      ],
+      "properties": {
+        "title": {
+          "$ref": "#/definitions/title"
+        },
+        "email": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "label",
+            "href"
+          ],
+          "properties": {
+            "label": {
+              "$ref": "#/definitions/text"
+            },
+            "href": {
+              "$ref": "#/definitions/href"
+            }
+          }
+        },
+        "items": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 7,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "question"
+            ],
+            "properties": {
+              "question": {
+                "$ref": "#/definitions/text"
+              },
+              "paragraphs": {
+                "type": "array",
+                "minItems": 0,
+                "maxItems": 2,
+                "items": {
+                  "$ref": "#/definitions/text"
+                }
+              },
+              "linkParagraph": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "before",
+                  "after"
+                ],
+                "properties": {
+                  "before": {
+                    "$ref": "#/definitions/text"
+                  },
+                  "after": {
+                    "$ref": "#/definitions/text"
+                  }
+                }
+              },
+              "image": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "assetRole",
+                  "assetRef",
+                  "alt"
+                ],
+                "properties": {
+                  "assetRole": {
+                    "allOf": [
+                      {
+                        "$ref": "#/definitions/assetRole"
+                      },
+                      {
+                        "const": "media.faq-screenshot"
+                      }
+                    ]
+                  },
+                  "assetRef": {
+                    "$ref": "#/definitions/assetRef"
+                  },
+                  "alt": {
+                    "$ref": "#/definitions/text"
+                  }
+                }
+              }
+            },
+            "anyOf": [
+              {
+                "required": [
+                  "linkParagraph"
+                ]
+              },
+              {
+                "required": [
+                  "paragraphs"
+                ],
+                "properties": {
+                  "paragraphs": {
+                    "minItems": 1
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    "motion.faq.sticky-accordion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "patterns",
+        "reducedMotionFallback"
+      ],
+      "properties": {
+        "patterns": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "char-reveal-scroll-linked",
+              "fade-up",
+              "accordion",
+              "sticky-lead-offset"
+            ]
+          }
+        },
+        "reducedMotionFallback": {
+          "const": "instant-toggle"
+        },
+        "revealDelaysMs": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              0,
+              100,
+              150,
+              200,
+              300,
+              450
+            ]
+          }
+        }
+      }
+    },
+    "content.form.newsletter-inline": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "title",
+        "placeholder",
+        "submitLabel",
+        "form"
+      ],
+      "properties": {
+        "title": {
+          "$ref": "#/definitions/title"
+        },
+        "placeholder": {
+          "$ref": "#/definitions/text"
+        },
+        "submitLabel": {
+          "$ref": "#/definitions/text"
+        },
+        "form": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "action",
+            "method"
+          ],
+          "properties": {
+            "action": {
+              "$ref": "#/definitions/href"
+            },
+            "method": {
+              "const": "post"
+            }
+          }
+        }
+      }
+    },
+    "motion.form.newsletter-inline": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "patterns",
+        "reducedMotionFallback"
+      ],
+      "properties": {
+        "patterns": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "char-reveal-scroll-linked",
+              "fade-up"
+            ]
+          }
+        },
+        "reducedMotionFallback": {
+          "const": "instant-visible"
+        },
+        "revealDelaysMs": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              0,
+              100,
+              150,
+              200,
+              300,
+              450
+            ]
+          }
+        }
+      }
+    },
+    "content.shell.footer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "logo",
+        "title",
+        "cta",
+        "copyright",
+        "legalLinks"
+      ],
+      "properties": {
+        "logo": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "assetRole",
+            "assetRef"
+          ],
+          "properties": {
+            "assetRole": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/assetRole"
+                },
+                {
+                  "const": "brand.logo-mark"
+                }
+              ]
+            },
+            "assetRef": {
+              "$ref": "#/definitions/assetRef"
+            }
+          }
+        },
+        "title": {
+          "$ref": "#/definitions/title"
+        },
+        "cta": {
+          "$ref": "#/definitions/figmaCta"
+        },
+        "copyright": {
+          "$ref": "#/definitions/text"
+        },
+        "legalLinks": {
+          "type": "array",
+          "minItems": 0,
+          "maxItems": 2,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "label",
+              "href"
+            ],
+            "properties": {
+              "label": {
+                "$ref": "#/definitions/text"
+              },
+              "href": {
+                "$ref": "#/definitions/href"
+              }
+            }
+          }
+        }
+      }
+    },
+    "motion.shell.footer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "patterns",
+        "reducedMotionFallback"
+      ],
+      "properties": {
+        "patterns": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "fade-up"
+            ]
+          }
+        },
+        "reducedMotionFallback": {
+          "const": "instant-visible"
+        },
+        "revealDelaysMs": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              0,
+              100,
+              150,
+              200,
+              300,
+              450
+            ]
+          }
+        }
+      }
+    },
+    "content.overlay.floating-cta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "cta",
+        "secondary"
+      ],
+      "properties": {
+        "cta": {
+          "$ref": "#/definitions/figmaCta"
+        },
+        "secondary": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "label",
+            "target"
+          ],
+          "properties": {
+            "label": {
+              "$ref": "#/definitions/text"
+            },
+            "target": {
+              "$ref": "#/definitions/anchorTarget"
+            }
+          }
+        }
+      }
+    },
+    "motion.overlay.floating-cta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "patterns",
+        "reducedMotionFallback"
+      ],
+      "properties": {
+        "patterns": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "floating-cta-visibility"
+            ]
+          }
+        },
+        "reducedMotionFallback": {
+          "const": "instant-hide-show"
+        },
+        "revealDelaysMs": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              0,
+              100,
+              150,
+              200,
+              300,
+              450
+            ]
+          }
+        }
+      }
+    },
+    "content.overlay.type-inspector": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [],
+      "properties": {}
+    },
+    "motion.overlay.type-inspector": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "patterns",
+        "reducedMotionFallback"
+      ],
+      "properties": {
+        "patterns": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "cursor-follow-badge"
+            ]
+          }
+        },
+        "reducedMotionFallback": {
+          "const": "instant-opacity"
+        },
+        "revealDelaysMs": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              0,
+              100,
+              150,
+              200,
+              300,
+              450
+            ]
+          }
+        }
+      }
+    },
+    "node": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "section",
+        "content",
+        "motion"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]*$"
+        },
+        "section": {
+          "enum": [
+            "shell.navbar",
+            "hero.video-scale",
+            "steps.sticky-stack",
+            "cards.feature-carousel",
+            "showcase.breakpoint-scrub",
+            "grid.preset-wave",
+            "split.export-cards",
+            "pricing.ticket-plans",
+            "faq.sticky-accordion",
+            "form.newsletter-inline",
+            "shell.footer",
+            "overlay.floating-cta",
+            "overlay.type-inspector"
+          ]
+        },
+        "anchorId": {
+          "$ref": "#/definitions/anchorId"
+        },
+        "content": {
+          "type": "object"
+        },
+        "motion": {
+          "type": "object"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "section": {
+                "const": "shell.navbar"
+              }
+            },
+            "required": [
+              "section"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.shell.navbar"
+              },
+              "motion": {
+                "$ref": "#/definitions/motion.shell.navbar"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "section": {
+                "const": "hero.video-scale"
+              }
+            },
+            "required": [
+              "section"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.hero.video-scale"
+              },
+              "motion": {
+                "$ref": "#/definitions/motion.hero.video-scale"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "section": {
+                "const": "steps.sticky-stack"
+              }
+            },
+            "required": [
+              "section"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.steps.sticky-stack"
+              },
+              "motion": {
+                "$ref": "#/definitions/motion.steps.sticky-stack"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "section": {
+                "const": "cards.feature-carousel"
+              }
+            },
+            "required": [
+              "section"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.cards.feature-carousel"
+              },
+              "motion": {
+                "$ref": "#/definitions/motion.cards.feature-carousel"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "section": {
+                "const": "showcase.breakpoint-scrub"
+              }
+            },
+            "required": [
+              "section"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.showcase.breakpoint-scrub"
+              },
+              "motion": {
+                "$ref": "#/definitions/motion.showcase.breakpoint-scrub"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "section": {
+                "const": "grid.preset-wave"
+              }
+            },
+            "required": [
+              "section"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.grid.preset-wave"
+              },
+              "motion": {
+                "$ref": "#/definitions/motion.grid.preset-wave"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "section": {
+                "const": "split.export-cards"
+              }
+            },
+            "required": [
+              "section"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.split.export-cards"
+              },
+              "motion": {
+                "$ref": "#/definitions/motion.split.export-cards"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "section": {
+                "const": "pricing.ticket-plans"
+              }
+            },
+            "required": [
+              "section"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.pricing.ticket-plans"
+              },
+              "motion": {
+                "$ref": "#/definitions/motion.pricing.ticket-plans"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "section": {
+                "const": "faq.sticky-accordion"
+              }
+            },
+            "required": [
+              "section"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.faq.sticky-accordion"
+              },
+              "motion": {
+                "$ref": "#/definitions/motion.faq.sticky-accordion"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "section": {
+                "const": "form.newsletter-inline"
+              }
+            },
+            "required": [
+              "section"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.form.newsletter-inline"
+              },
+              "motion": {
+                "$ref": "#/definitions/motion.form.newsletter-inline"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "section": {
+                "const": "shell.footer"
+              }
+            },
+            "required": [
+              "section"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.shell.footer"
+              },
+              "motion": {
+                "$ref": "#/definitions/motion.shell.footer"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "section": {
+                "const": "overlay.floating-cta"
+              }
+            },
+            "required": [
+              "section"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.overlay.floating-cta"
+              },
+              "motion": {
+                "$ref": "#/definitions/motion.overlay.floating-cta"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "section": {
+                "const": "overlay.type-inspector"
+              }
+            },
+            "required": [
+              "section"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.overlay.type-inspector"
+              },
+              "motion": {
+                "$ref": "#/definitions/motion.overlay.type-inspector"
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

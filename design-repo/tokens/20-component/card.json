@@ -1,0 +1,53 @@
+{
+  "component.card": {
+    "radius": {
+      "$value": "{radius.md}",
+      "$type": "alias"
+    },
+    "bg": {
+      "$value": "{color-roles.surface.raised}",
+      "$type": "alias"
+    },
+    "padding": {
+      "$value": "32px",
+      "$type": "dimension",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "src/index.css:178",
+            "expect": ".card__body{width:calc(25% + 24px);flex-shrink:0;padding:32px"
+          }
+        ]
+      }
+    },
+    "padding-mobile": {
+      "$value": "24px",
+      "$type": "dimension",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "src/index.css:191",
+            "expect": ".card__body,.card__media{padding:24px}"
+          }
+        ]
+      }
+    },
+    "body-width": {
+      "$value": "calc(25% + 24px)",
+      "$type": "calc",
+      "$description": "Step-card text column.",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "src/index.css:178",
+            "expect": ".card__body{width:calc(25% + 24px)"
+          }
+        ]
+      }
+    },
+    "media-radius": {
+      "$value": "{radius.sm}",
+      "$type": "alias"
+    }
+  }
+}

@@ -1,0 +1,590 @@
+{
+  "pageSpecVersion": "1.0.0",
+  "template": "template.home",
+  "route": "/",
+  "theme": "typewave-dark",
+  "meta": {
+    "title": "Typewave – Craft a balanced type scale",
+    "description": "Typewave is a Figma plugin that turns one base size into a responsive type ramp with frames, text styles, variables and CSS or AI Prompt exports, ready in a single click for any team.",
+    "ogImage": {
+      "assetRole": "meta.og-image",
+      "assetRef": "generated:og-cover"
+    },
+    "favicon": {
+      "assetRole": "meta.favicon",
+      "assetRef": "owner-supplied:favicon"
+    }
+  },
+  "nodes": [
+    {
+      "id": "nav",
+      "section": "shell.navbar",
+      "content": {
+        "logo": {
+          "assetRole": "brand.logo-wordmark",
+          "assetRef": "owner-supplied:wordmark"
+        },
+        "logoLabel": "Typewave homepage",
+        "links": [
+          {
+            "label": "How it works",
+            "target": "#how-it-works"
+          },
+          {
+            "label": "AI Prompt",
+            "target": "#ai-prompt",
+            "tag": "NEW"
+          },
+          {
+            "label": "Pricing",
+            "target": "#pricing"
+          },
+          {
+            "label": "FAQ",
+            "target": "#faq"
+          }
+        ],
+        "cta": {
+          "label": "Try it now",
+          "href": "https://example.com/install",
+          "icon": {
+            "assetRole": "icon.figma-glyph",
+            "assetRef": "owner-supplied:figma-glyph-official"
+          }
+        }
+      },
+      "motion": {
+        "patterns": [
+          "nav-hide-on-scroll",
+          "mobile-menu"
+        ],
+        "reducedMotionFallback": "instant-hide-show"
+      }
+    },
+    {
+      "id": "hero",
+      "section": "hero.video-scale",
+      "content": {
+        "title": "Craft a balanced|type scale|[without any math.]",
+        "subtitle": "Typewave reads a single base size and drafts a responsive type ramp, with Figma frames, text styles, variables and handoff exports included, so font sizing never stalls the work.",
+        "cta": {
+          "label": "Try it now",
+          "href": "https://example.com/install",
+          "icon": {
+            "assetRole": "icon.figma-glyph",
+            "assetRef": "owner-supplied:figma-glyph-official"
+          }
+        },
+        "video": {
+          "assetRole": "media.hero-video",
+          "assetRef": "generated:hero-product-loop"
+        }
+      },
+      "motion": {
+        "patterns": [
+          "char-reveal-scroll-linked",
+          "fade-up",
+          "parallax",
+          "hero-video-scale",
+          "video-play-once"
+        ],
+        "reducedMotionFallback": "static-full-scale-video",
+        "revealDelaysMs": [
+          0,
+          150,
+          300,
+          450
+        ]
+      }
+    },
+    {
+      "id": "how-it-works",
+      "section": "steps.sticky-stack",
+      "anchorId": "how-it-works",
+      "content": {
+        "title": "Manual ramps take hours.|Ours arrive [before your coffee cools!]",
+        "cards": [
+          {
+            "badge": "1",
+            "badgeTone": "brand",
+            "title": "Split text into up to five distinct roles",
+            "text": "Assign each typeface in your document to a dedicated role, whether display, headline, paragraph or caption, and every role keeps its individual rhythm and spacing throughout.",
+            "video": {
+              "assetRole": "media.step-video",
+              "assetRef": "generated:step-loop-1"
+            }
+          },
+          {
+            "badge": "2",
+            "badgeTone": "step-2",
+            "title": "Shape the ramp for each product",
+            "text": "Begin with a ready-made starting point tuned for marketing websites, then drag the base size, ratio and step count until the ramp feels right. Every adjustment previews instantly, so you can compare alternatives before committing.",
+            "video": {
+              "assetRole": "media.step-video",
+              "assetRef": "generated:step-loop-2"
+            }
+          },
+          {
+            "badge": "3",
+            "badgeTone": "step-3",
+            "title": "Generate a complete typographic system in Figma",
+            "text": "One click lays out the preview frames, writes the text styles, sets up the variables and gets the code and prompt exports ready for you, all named in a way that your whole team can read at a glance.",
+            "video": {
+              "assetRole": "media.step-video",
+              "assetRef": "generated:step-loop-3"
+            }
+          }
+        ]
+      },
+      "motion": {
+        "patterns": [
+          "char-reveal-scroll-linked",
+          "fade-up",
+          "parallax",
+          "sticky-stack-scale"
+        ],
+        "reducedMotionFallback": "static-unscaled-stack",
+        "revealDelaysMs": [
+          150
+        ]
+      }
+    },
+    {
+      "id": "figma-org",
+      "section": "cards.feature-carousel",
+      "content": {
+        "title": "Every layer filed,|[named and categorised]",
+        "cards": [
+          {
+            "image": {
+              "assetRole": "media.figma-panel",
+              "assetRef": "generated:figma-panel-frames",
+              "alt": "Labelled preview frames laid out for each step of a generated type ramp"
+            },
+            "title": "Frames",
+            "text": "Each step of the ramp receives its own labelled preview frame, so you can inspect sizes, line heights and spacing in context before sharing the file with your teammates."
+          },
+          {
+            "image": {
+              "assetRole": "media.figma-panel",
+              "assetRef": "generated:figma-panel-styles",
+              "alt": "Figma text styles panel grouped by role and breakpoint"
+            },
+            "title": "Styles",
+            "text": "A matching text style is generated for every level of the ramp, grouped by role and breakpoint so designers can choose the right one from the panel without guessing."
+          },
+          {
+            "image": {
+              "assetRole": "media.figma-panel",
+              "assetRef": "generated:figma-panel-variables",
+              "alt": "Figma variables table holding font sizes and line heights per mode"
+            },
+            "title": "Variables",
+            "text": "Font sizes, line heights and letter spacing are stored as variables, so you can bind them to your components and switch modes whenever the layout shifts."
+          }
+        ]
+      },
+      "motion": {
+        "patterns": [
+          "char-reveal-scroll-linked",
+          "fade-up",
+          "swipe-carousel"
+        ],
+        "reducedMotionFallback": "instant-visible",
+        "revealDelaysMs": [
+          0,
+          100,
+          200
+        ]
+      }
+    },
+    {
+      "id": "breakpoint",
+      "section": "showcase.breakpoint-scrub",
+      "content": {
+        "title": "All devices covered|[with zero extra work.]",
+        "caption": "Large headings shrink the most on narrow screens, while body text and captions barely move, because small sizes already sit close to the limit of comfortable reading. The plugin follows that curve for you and scales each step by its own amount per breakpoint. Choose any desktop size in the panel beside this note to see how tablet and mobile will follow along instantly.",
+        "mockup": {
+          "headlineLines": [
+            "Type that adapts",
+            "to any screen"
+          ],
+          "paragraph": "Set every size once on desktop and let the ramp settle itself on tablets and phones, keeping headings bold, body copy calm and spacing consistent on any device.",
+          "buttonLabel": "Browse styles"
+        },
+        "simulator": {
+          "defaultDesktopPx": 96
+        }
+      },
+      "motion": {
+        "patterns": [
+          "char-reveal-scroll-linked",
+          "fade-up",
+          "scrub-progress",
+          "caption-slide-up"
+        ],
+        "reducedMotionFallback": "static-final-frame"
+      }
+    },
+    {
+      "id": "presets",
+      "section": "grid.preset-wave",
+      "content": {
+        "title": "Store your setups|reuse them across files|[in any project.]",
+        "labelPrefix": "Preset"
+      },
+      "motion": {
+        "patterns": [
+          "char-reveal-scroll-linked",
+          "fade-up",
+          "sine-wave-bump"
+        ],
+        "reducedMotionFallback": "static-folders"
+      }
+    },
+    {
+      "id": "exports",
+      "section": "split.export-cards",
+      "content": {
+        "title": "Design and engineering|finally [share one language.]",
+        "cards": [
+          {
+            "layout": "media-left",
+            "title": "CSS",
+            "text": "Every size, line height and spacing value in your ramp can be exported as a tidy block of CSS custom properties, grouped by breakpoint and ready to paste into any stylesheet. Developers get the exact numbers you approved in Figma, with readable names that map onto your text styles, so nothing slips at handoff.",
+            "image": {
+              "assetRole": "media.export-screenshot",
+              "assetRef": "generated:css-export-shot",
+              "alt": "CSS custom properties exported from a generated type ramp"
+            },
+            "logos": [
+              {
+                "assetRole": "logo.third-party-tool",
+                "assetRef": "owner-supplied:logo-cursor-official",
+                "label": "Cursor"
+              },
+              {
+                "assetRole": "logo.third-party-tool",
+                "assetRef": "owner-supplied:logo-vscode-official",
+                "label": "VS Code"
+              }
+            ]
+          },
+          {
+            "layout": "media-right",
+            "title": "AI Prompt",
+            "tag": "NEW",
+            "text": "Coding assistants work better when they understand your typography. The AI Prompt export packs every role, size, weight and breakpoint into a short, structured brief that you can drop into Claude, Cursor, ChatGPT or Lovable. The model then knows which style belongs to a page title, which one suits a caption and how each should respond on smaller screens, so the components it writes follow your system from the first draft instead of inventing values.",
+            "anchorId": "ai-prompt",
+            "image": {
+              "assetRole": "media.export-screenshot",
+              "assetRef": "generated:ai-prompt-shot",
+              "alt": "Structured typography brief generated for AI coding assistants"
+            },
+            "logos": [
+              {
+                "assetRole": "logo.third-party-tool",
+                "assetRef": "owner-supplied:logo-claude-official",
+                "label": "Claude"
+              },
+              {
+                "assetRole": "logo.third-party-tool",
+                "assetRef": "owner-supplied:logo-cursor-official",
+                "label": "Cursor"
+              },
+              {
+                "assetRole": "logo.third-party-tool",
+                "assetRef": "owner-supplied:logo-openai-official",
+                "label": "OpenAI"
+              },
+              {
+                "assetRole": "logo.third-party-tool",
+                "assetRef": "owner-supplied:logo-lovable-official",
+                "label": "Lovable"
+              }
+            ]
+          }
+        ]
+      },
+      "motion": {
+        "patterns": [
+          "char-reveal-scroll-linked",
+          "fade-up"
+        ],
+        "reducedMotionFallback": "instant-visible",
+        "revealDelaysMs": [
+          0,
+          100
+        ]
+      }
+    },
+    {
+      "id": "pricing",
+      "section": "pricing.ticket-plans",
+      "anchorId": "pricing",
+      "content": {
+        "title": "One fee, no [renewals.]",
+        "plans": [
+          {
+            "name": "Freelancer",
+            "subtitle": "For solo designers",
+            "license": "Single License",
+            "price": "€39,99",
+            "featured": true,
+            "cta": {
+              "label": "Get Plan",
+              "href": "https://example.com/checkout/freelancer",
+              "variant": "brand"
+            }
+          },
+          {
+            "name": "Studio",
+            "subtitle": "For small design teams",
+            "license": "5 Licenses",
+            "price": "€159,99",
+            "featured": false,
+            "cta": {
+              "label": "Get Plan",
+              "href": "https://example.com/checkout/studio",
+              "variant": "brand"
+            }
+          },
+          {
+            "name": "Enterprise",
+            "subtitle": "Larger rollout planned?",
+            "license": "Custom Licenses",
+            "price": "Let's talk",
+            "featured": false,
+            "cta": {
+              "label": "Contact Us",
+              "href": "mailto:sales@example.com",
+              "variant": "primary"
+            }
+          }
+        ],
+        "includes": {
+          "title": "Everything included",
+          "columns": [
+            [
+              {
+                "text": "Preset Library"
+              },
+              {
+                "text": "Frame Generation"
+              },
+              {
+                "text": "Text Style Output"
+              },
+              {
+                "text": "Primitive & Semantic Variable Sets"
+              }
+            ],
+            [
+              {
+                "text": "Fully Editable Tokens"
+              },
+              {
+                "text": "Three Responsive Breakpoints Built In"
+              },
+              {
+                "text": "CSS Variable Output"
+              },
+              {
+                "text": "AI Prompt Export",
+                "tag": "NEW"
+              }
+            ]
+          ]
+        }
+      },
+      "motion": {
+        "patterns": [
+          "char-reveal-scroll-linked",
+          "fade-up"
+        ],
+        "reducedMotionFallback": "instant-visible",
+        "revealDelaysMs": [
+          0,
+          150,
+          300
+        ]
+      }
+    },
+    {
+      "id": "faq",
+      "section": "faq.sticky-accordion",
+      "anchorId": "faq",
+      "content": {
+        "title": "Questions|[& Answers]",
+        "email": {
+          "label": "hello@example.com",
+          "href": "mailto:hello@example.com"
+        },
+        "items": [
+          {
+            "question": "What does Typewave actually produce?",
+            "paragraphs": [
+              "Typewave builds a complete typographic system inside your file: preview frames for every step, text styles for each role and breakpoint, variables for sizes and line heights, plus CSS and AI Prompt exports. All of them read from one shared set of values.",
+              "Change a value once and every output stays in sync, with nothing to update by hand."
+            ]
+          },
+          {
+            "question": "How is the tablet and mobile scaling worked out?",
+            "paragraphs": [
+              "You choose the desktop size for each level and the plugin works out tablet and mobile for you. Instead of shrinking every step by the same percentage, it applies a square-root curve, so large display sizes drop noticeably while body copy and captions stay almost untouched. Each result is then snapped to the nearest value in a fixed token list, which keeps the numbers clean and predictable. You can try the same logic in the small simulator in the breakpoint section above."
+            ]
+          },
+          {
+            "question": "Can the role hierarchy be changed later?",
+            "paragraphs": [
+              "Yes. Every role can be renamed, reordered or removed, and you can adjust its size, weight, line height and letter spacing at any time. A single project supports up to five font families, so you can pair a display face with a text face and still keep monospace or accent fonts in their own clearly separated groups within the scale."
+            ]
+          },
+          {
+            "question": "How much control do I have over design tokens?",
+            "paragraphs": [
+              "Quite a lot. The settings panel lists every token the plugin uses, from the base size and ratio to the individual values assigned to each breakpoint. You can overwrite any of them by hand, lock the ones you want to keep, and regenerate the rest without losing your edits. Changes flow straight into all styles and variables.",
+              "If your team already has naming conventions, you can also rename the token groups so they match the structure developers expect in code. The screenshot below shows the token editor with a customised setup."
+            ],
+            "image": {
+              "assetRole": "media.faq-screenshot",
+              "assetRef": "generated:token-editor-shot",
+              "alt": "Token editor in the plugin settings showing editable size and line-height values per role"
+            }
+          },
+          {
+            "question": "What goes into the AI Prompt export file?",
+            "paragraphs": [
+              "The AI Prompt is a compact description of your typography written for coding assistants. Paste it into tools like Claude or Cursor and they will reuse your roles, sizes and breakpoints when they generate new interfaces, rather than guessing at values that drift away from the design."
+            ]
+          },
+          {
+            "question": "Why is the plugin a paid tool?",
+            "paragraphs": [
+              "Typewave is built and maintained by a small independent studio. A one-time licence pays for the hours spent fixing bugs, keeping up with Figma API changes and shipping new exports. It also means there are no ads, no tracking and no subscription reminders waiting in your inbox every single month."
+            ]
+          },
+          {
+            "question": "Found a bug or want a feature?",
+            "linkParagraph": {
+              "before": "Just send a note to ",
+              "after": " with a description of the issue or the feature you have in mind. Screenshots really help a lot. We read every single message, reply as quickly as we can and use all of the feedback to decide what goes into the next update of the plugin."
+            }
+          }
+        ]
+      },
+      "motion": {
+        "patterns": [
+          "char-reveal-scroll-linked",
+          "fade-up",
+          "accordion",
+          "sticky-lead-offset"
+        ],
+        "reducedMotionFallback": "instant-toggle",
+        "revealDelaysMs": [
+          0,
+          150
+        ]
+      }
+    },
+    {
+      "id": "newsletter",
+      "section": "form.newsletter-inline",
+      "content": {
+        "title": "Stay [current]",
+        "placeholder": "your@email.com",
+        "submitLabel": "Subscribe",
+        "form": {
+          "action": "https://example.com/newsletter",
+          "method": "post"
+        }
+      },
+      "motion": {
+        "patterns": [
+          "char-reveal-scroll-linked",
+          "fade-up"
+        ],
+        "reducedMotionFallback": "instant-visible",
+        "revealDelaysMs": [
+          0,
+          150
+        ]
+      }
+    },
+    {
+      "id": "footer",
+      "section": "shell.footer",
+      "content": {
+        "logo": {
+          "assetRole": "brand.logo-mark",
+          "assetRef": "owner-supplied:mark"
+        },
+        "title": "The [firm footing] for|every launch ahead.",
+        "cta": {
+          "label": "Try it now",
+          "href": "https://example.com/install",
+          "icon": {
+            "assetRole": "icon.figma-glyph",
+            "assetRef": "owner-supplied:figma-glyph-official"
+          }
+        },
+        "copyright": "© 2026 Studio Name",
+        "legalLinks": [
+          {
+            "label": "Privacy policy",
+            "href": "https://example.com/privacy"
+          },
+          {
+            "label": "Terms & conditions",
+            "href": "https://example.com/terms"
+          }
+        ]
+      },
+      "motion": {
+        "patterns": [
+          "fade-up"
+        ],
+        "reducedMotionFallback": "instant-visible",
+        "revealDelaysMs": [
+          0,
+          150
+        ]
+      }
+    },
+    {
+      "id": "floating-cta",
+      "section": "overlay.floating-cta",
+      "content": {
+        "cta": {
+          "label": "Try it now",
+          "href": "https://example.com/install",
+          "icon": {
+            "assetRole": "icon.figma-glyph",
+            "assetRef": "owner-supplied:figma-glyph-official"
+          }
+        },
+        "secondary": {
+          "label": "Pricing",
+          "target": "#pricing"
+        }
+      },
+      "motion": {
+        "patterns": [
+          "floating-cta-visibility"
+        ],
+        "reducedMotionFallback": "instant-hide-show"
+      }
+    },
+    {
+      "id": "type-inspector",
+      "section": "overlay.type-inspector",
+      "content": {},
+      "motion": {
+        "patterns": [
+          "cursor-follow-badge"
+        ],
+        "reducedMotionFallback": "instant-opacity"
+      }
+    }
+  ]
+}

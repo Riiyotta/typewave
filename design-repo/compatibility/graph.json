@@ -1,0 +1,291 @@
+{
+  "version": "1.0.0",
+  "$description": "Rhythm/position/dependency/compliance rules JSON Schema cannot express. Every rule id has exactly one implementation in schema/semantic_validate.py (verify_all.py checks parity both ways, and runs the validator over a PageSpec synthesised from every template to prove no rule rejects the real structure). Severity: error = invalid, warn = non-fatal notice.",
+  "rules": [
+    {
+      "id": "TEMPLATE_NODE_SEQUENCE",
+      "severity": "error",
+      "description": "Cross-references the PageSpec's declared template against THAT template's node list: every node's (section, variant) must match a template node in template order, non-repeatable nodes appear once, every required template node is present.",
+      "measuredFrom": [
+        {
+          "cite": "@repo/templates/templates.json:11",
+          "expect": "\"orderRule\""
+        }
+      ]
+    },
+    {
+      "id": "ROUTE_ALLOWED",
+      "severity": "error",
+      "description": "template.home is homeRouteOnly: route must be one of its routes (\"/\").",
+      "measuredFrom": [
+        {
+          "cite": "@repo/templates/templates.json:10",
+          "expect": "\"homeRouteOnly\": true"
+        }
+      ]
+    },
+    {
+      "id": "NAV_FIRST",
+      "severity": "error",
+      "description": "shell.navbar is nodes[0].",
+      "templateCheck": "templates.json nodes[0] = shell.navbar",
+      "measuredFrom": [
+        {
+          "cite": "src/App.jsx:34",
+          "expect": "<Navbar />"
+        }
+      ]
+    },
+    {
+      "id": "HERO_FOLLOWS_NAV",
+      "severity": "error",
+      "description": "The hero is nodes[1], directly after the navbar.",
+      "exemptTemplates": [],
+      "exemptionNote": "No exemption: the only template requires its hero.",
+      "templateCheck": "templates.json nodes[1] = hero.video-scale (required)",
+      "measuredFrom": [
+        {
+          "cite": "src/App.jsx:36",
+          "expect": "<Hero />"
+        }
+      ]
+    },
+    {
+      "id": "ONE_HERO",
+      "severity": "error",
+      "description": "Exactly one hero.* node.",
+      "exemptTemplates": [],
+      "exemptionNote": "No hero-less template exists (templates.json: hero required).",
+      "measuredFrom": [
+        {
+          "cite": "src/components/Hero.jsx:94",
+          "expect": "<section className=\"hero\" ref={sectionRef}>"
+        }
+      ]
+    },
+    {
+      "id": "FOOTER_CLOSES_MAIN",
+      "severity": "error",
+      "description": "shell.footer follows every <main> section; only overlay.* nodes may come after it.",
+      "templateCheck": "templates.json: footer at index 10, followed only by the two overlays",
+      "measuredFrom": [
+        {
+          "cite": "src/App.jsx:45",
+          "expect": "</main>"
+        },
+        {
+          "cite": "src/App.jsx:46",
+          "expect": "<Footer />"
+        }
+      ]
+    },
+    {
+      "id": "OVERLAYS_AFTER_FOOTER",
+      "severity": "error",
+      "description": "overlay.* nodes are rendered after the footer (siblings of <main>/<footer>).",
+      "measuredFrom": [
+        {
+          "cite": "src/App.jsx:47",
+          "expect": "<FloatingCta />"
+        },
+        {
+          "cite": "src/App.jsx:48",
+          "expect": "<TypeInspector />"
+        }
+      ]
+    },
+    {
+      "id": "FLOATING_CTA_DEPENDENCIES",
+      "severity": "error",
+      "description": "overlay.floating-cta reads the hero video, the newsletter field and the navbar hidden state; it is invalid without them.",
+      "params": {
+        "requires": [
+          "hero.video-scale",
+          "form.newsletter-inline",
+          "shell.navbar"
+        ]
+      },
+      "measuredFrom": [
+        {
+          "cite": "src/components/FloatingCta.jsx:18",
+          "expect": "const video = document.querySelector('.hero__image')"
+        },
+        {
+          "cite": "src/components/FloatingCta.jsx:19",
+          "expect": "const field = document.querySelector('.newsletter__field')"
+        },
+        {
+          "cite": "src/components/FloatingCta.jsx:20",
+          "expect": "const navHidden = !!document.querySelector('.navbar--hidden')"
+        }
+      ]
+    },
+    {
+      "id": "ANCHOR_TARGETS_RESOLVE",
+      "severity": "error",
+      "description": "Every #target / #href (navbar links, floating CTA secondary) resolves to an anchorId on a node or inside node content (e.g. the AI Prompt export card).",
+      "measuredFrom": [
+        {
+          "cite": "src/components/Navbar.jsx:8",
+          "expect": "{ label: 'AI Prompt', target: '#ai-prompt', tag: 'NEW' },"
+        },
+        {
+          "cite": "src/components/Exports.jsx:27",
+          "expect": "id=\"ai-prompt\""
+        }
+      ]
+    },
+    {
+      "id": "ANCHOR_IDS_UNIQUE",
+      "severity": "error",
+      "description": "anchorIds are unique on the page (they become DOM ids).",
+      "measuredFrom": [
+        {
+          "cite": "src/components/Pricing.jsx:7",
+          "expect": "id=\"pricing\""
+        }
+      ]
+    },
+    {
+      "id": "NO_CONSECUTIVE_SCROLL_STAGES",
+      "severity": "warn",
+      "description": "Two pinned scroll stages (sticky card stack, sticky scrub stage) should not be adjacent: the observed page separates them with the feature cards.",
+      "params": {
+        "scrollStages": [
+          "steps.sticky-stack",
+          "showcase.breakpoint-scrub"
+        ]
+      },
+      "templateCheck": "templates.json: steps.sticky-stack (2) and showcase.breakpoint-scrub (4) are separated by cards.feature-carousel (3); the hero video scales in place and is not pinned.",
+      "measuredFrom": [
+        {
+          "cite": "src/index.css:176",
+          "expect": ".card{display:flex;background:var(--color-surface);border-radius:var(--radius-md);overflow:hidden;position:sticky"
+        },
+        {
+          "cite": "src/index.css:230",
+          "expect": ".breakpoint__sticky{position:sticky"
+        }
+      ]
+    },
+    {
+      "id": "NO_ADJACENT_SAME_CATEGORY",
+      "severity": "warn",
+      "description": "Adjacent nodes should not share a category (section contract `category`).",
+      "namedExceptions": [
+        {
+          "pair": [
+            "overlay.floating-cta",
+            "overlay.type-inspector"
+          ],
+          "reason": "Both overlays are fixed-position siblings rendered after the footer; adjacency in the node list has no visual rhythm meaning.",
+          "measuredFrom": [
+            {
+              "cite": "src/App.jsx:47",
+              "expect": "<FloatingCta />"
+            }
+          ]
+        }
+      ],
+      "templateCheck": "templates.json: the only same-category adjacency is the overlay pair (named exception); shell.navbar and shell.footer are never adjacent.",
+      "measuredFrom": [
+        {
+          "cite": "@repo/templates/templates.json:175",
+          "expect": "\"overlay.type-inspector\""
+        }
+      ]
+    },
+    {
+      "id": "REDUCED_MOTION_FALLBACK",
+      "severity": "error",
+      "description": "Every node carries motion.reducedMotionFallback equal to its section contract's const.",
+      "measuredFrom": [
+        {
+          "cite": "src/lib/compose.jsx:55",
+          "expect": "if (prefersReducedMotion()) return () => {}"
+        }
+      ]
+    },
+    {
+      "id": "MOTION_PATTERNS_ALLOWED",
+      "severity": "error",
+      "description": "motion.patterns is non-empty and a subset of the section's evidenced allowedPatterns.",
+      "measuredFrom": [
+        {
+          "cite": "CLONE_SPEC.md:646",
+          "expect": "## 15. Motion inventory"
+        }
+      ]
+    },
+    {
+      "id": "MAX_WORDS",
+      "severity": "error",
+      "description": "Per-instance word budgets from each section contract (and template page budgets) hold for every node in THIS PageSpec.",
+      "measuredFrom": [
+        {
+          "cite": "CLONE_SPEC.md:9",
+          "expect": "**Content rule:** long copy is not transcribed."
+        }
+      ]
+    },
+    {
+      "id": "ASSET_ROLE_CLOSED",
+      "severity": "error",
+      "description": "Every assetRole is in the closed vocabulary and settable.",
+      "measuredFrom": [
+        {
+          "cite": "@repo/assets/asset-roles.json:83",
+          "expect": "\"roles\": {"
+        }
+      ]
+    },
+    {
+      "id": "ASSET_REF_POLICY",
+      "severity": "error",
+      "description": "assetRef prefix is allowed by the role's generationPolicy (proprietary media: generated: only; marks/trademarks: owner-supplied: only; original asset: ids never).",
+      "measuredFrom": [
+        {
+          "cite": "@repo/assets/asset-roles.json:17",
+          "expect": "\"policies\": {"
+        }
+      ]
+    },
+    {
+      "id": "ASSET_ROLE_PINNED",
+      "severity": "error",
+      "description": "Repository integrity: compliance-critical roles keep their PINNED generationPolicy (a different-but-valid policy is rejected, not just an invalid one).",
+      "measuredFrom": [
+        {
+          "cite": "@repo/assets/asset-roles.json:56",
+          "expect": "\"pinnedPolicies\": {"
+        }
+      ]
+    },
+    {
+      "id": "LIVE_ENDPOINT_NOT_REUSED",
+      "severity": "error",
+      "description": "No string in the PageSpec contains a live endpoint of the real site (role liveValues: checkout, newsletter POST, plugin listing, company mailbox, Lemon Squeezy legal, affiliate.js).",
+      "measuredFrom": [
+        {
+          "cite": "@repo/assets/asset-roles.json:454",
+          "expect": "\"liveValues\": ["
+        }
+      ]
+    },
+    {
+      "id": "PRICING_FEATURED_SINGLE",
+      "severity": "warn",
+      "description": "At most one featured plan, and it is the first plan (pricing-plan--featured carries no extra CSS but marks plan 1).",
+      "measuredFrom": [
+        {
+          "cite": "src/content.js:102",
+          "expect": "featured: true,"
+        },
+        {
+          "cite": "CLONE_SPEC.md:446",
+          "expect": "div.pricing-plan.pricing-plan--featured.reveal (delay 0ms)   [--featured has no extra CSS]"
+        }
+      ]
+    }
+  ]
+}

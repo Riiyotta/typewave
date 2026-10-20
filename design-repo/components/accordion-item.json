@@ -1,0 +1,20 @@
+{
+  "id": "accordion-item",
+  "kind": "component",
+  "purpose": "Question button + chevron, answer grid-rows 0fr->1fr .35s decel; single-open.",
+  "composes": [
+    "icon",
+    "text-link",
+    "media-image"
+  ],
+  "measuredFrom": [
+    {
+      "cite": "src/index.css:373",
+      "expect": ".faq__answer{display:grid;grid-template-rows:0fr;overflow:hidden"
+    },
+    {
+      "cite": "src/components/Faq.jsx:61",
+      "expect": "onClick={() => setOpenIndex(open ? -1 : i)}"
+    }
+  ]
+}

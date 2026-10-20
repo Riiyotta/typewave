@@ -1,0 +1,40 @@
+{
+  "layout.z-index": {
+    "navbar": {
+      "$value": 100,
+      "$type": "number",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "src/index.css:115",
+            "expect": ".navbar{position:fixed;top:0;left:0;width:100%;z-index:100"
+          }
+        ]
+      }
+    },
+    "floating-cta": {
+      "$value": 90,
+      "$type": "number",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "src/index.css:417",
+            "expect": "left:50%;z-index:90"
+          }
+        ]
+      }
+    },
+    "type-inspector": {
+      "$value": 99999,
+      "$type": "number",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "src/index.css:421",
+            "expect": ".type-inspector-badge{position:fixed;top:0;left:0;z-index:99999"
+          }
+        ]
+      }
+    }
+  }
+}

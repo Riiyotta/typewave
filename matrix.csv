@@ -1,0 +1,15 @@
+section,category,templates,routes,Home (single-page marketing site)
+chrome.navbar,CHROME,1,1,x
+hero.product-intro,HERO,1,1,x
+features.how-it-works-stack,FEATURES,1,1,x
+features.figma-organization-cards,FEATURES,1,1,x
+features.breakpoint-scrub,FEATURES,1,1,x
+features.preset-folders,FEATURES,1,1,x
+features.export-cards,FEATURES,1,1,x
+commerce.pricing-plans,COMMERCE,1,1,x
+support.faq-accordion,SUPPORT,1,1,x
+conversion.newsletter-signup,CONVERSION,1,1,x
+chrome.footer,CHROME,1,1,x
+conversion.floating-cta,CONVERSION,1,1,x
+overlay.type-inspector,OVERLAY,1,1,x
+ROUTE COUNT,,,1,1

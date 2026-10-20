@@ -1,0 +1,52 @@
+{
+  "component.floating-cta": {
+    "bottom": {
+      "$value": "24px",
+      "$type": "dimension",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "src/index.css:417",
+            "expect": ".floating-cta{position:fixed;bottom:24px"
+          }
+        ]
+      }
+    },
+    "padding": {
+      "$value": "8px 24px 8px 8px",
+      "$type": "dimension",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "src/index.css:417",
+            "expect": "padding:8px 24px 8px 8px"
+          }
+        ]
+      }
+    },
+    "gap": {
+      "$value": "24px",
+      "$type": "dimension",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "src/index.css:417",
+            "expect": "z-index:90;display:flex;align-items:center;gap:24px"
+          }
+        ]
+      }
+    },
+    "bg": {
+      "$value": "{color-roles.surface.floating}",
+      "$type": "alias"
+    },
+    "blur": {
+      "$value": "{elevation.blur-floating}",
+      "$type": "alias"
+    },
+    "radius": {
+      "$value": "{radius.md}",
+      "$type": "alias"
+    }
+  }
+}

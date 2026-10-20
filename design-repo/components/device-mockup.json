@@ -1,0 +1,18 @@
+{
+  "id": "device-mockup",
+  "kind": "component",
+  "purpose": "HTML/CSS rebuild of the 1280x728 breakpoint composition, scaled to fit; frame-driven geometry tables. Replaces the original Lottie (never reuse it).",
+  "composes": [
+    "title-text"
+  ],
+  "measuredFrom": [
+    {
+      "cite": "src/components/BreakpointMock.jsx:7",
+      "expect": "const COMP_W = 1280"
+    },
+    {
+      "cite": "src/index.css:246",
+      "expect": ".bp-mock{position:relative;width:100%;aspect-ratio:1280 / 728;overflow:hidden}"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "id": "step-card",
+  "kind": "component",
+  "purpose": "Sticky step card: badge + title + muted text | 4:3 video.",
+  "composes": [
+    "badge",
+    "media-video"
+  ],
+  "measuredFrom": [
+    {
+      "cite": "src/index.css:178",
+      "expect": ".card__body{width:calc(25% + 24px)"
+    }
+  ]
+}

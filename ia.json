@@ -1,0 +1,125 @@
+{
+  "$comment": "Built from the clone's src/App.jsx render order and src/components/*, cross-checked against CLONE_SPEC.md (Playwright recon of the live site). Structure only — no original site copy is recorded here.",
+  "meta": {
+    "source": "https://typewave.blendmodes.com/ (local React clone in this folder)",
+    "status": "measured-from-clone",
+    "productionApproved": false,
+    "totalRoutes": 1,
+    "totalTemplates": 1,
+    "generatedBy": "ia-builder skill"
+  },
+  "categories": {
+    "CHROME": "Persistent page furniture rendered outside <main>: top navigation and footer.",
+    "HERO": "Page-opening block above and just below the fold.",
+    "FEATURES": "Product explanation modules showing what the plugin generates and how.",
+    "COMMERCE": "Plans, prices and checkout entry points.",
+    "SUPPORT": "Question-and-answer content that resolves buyer objections.",
+    "CONVERSION": "Lead capture and persistent call-to-action surfaces outside the main narrative.",
+    "OVERLAY": "Pointer-following or fixed UI layered over the page, not part of the document flow."
+  },
+  "sections": {
+    "chrome.navbar": {
+      "category": "CHROME",
+      "description": "Fixed 88px top bar (80px on mobile): brand mark, three in-page anchor links, and a Figma call-to-action button. Hides on scroll-down past 80px and returns on scroll-up; collapses to a hamburger with a full-height overlay menu at 1024px and below.",
+      "scope": "Present on the single route (/), rendered before <main>.",
+      "implementedBy": "src/components/Navbar.jsx"
+    },
+    "hero.product-intro": {
+      "category": "HERO",
+      "description": "Centered three-line display-1 headline (last line in the brand colour), a short subtitle and a Figma button, followed by a product demo video that peeks above the fold and scales from 0.8 to 1 as the page scrolls; the video plays once on scroll-down and rewinds on exit.",
+      "scope": "Opens <main> on the single route (/).",
+      "implementedBy": "src/components/Hero.jsx"
+    },
+    "features.how-it-works-stack": {
+      "category": "FEATURES",
+      "description": "Three-step explainer: a parallax section header above three sticky full-width video cards that scale between 0.75 and 1 as each arrives and is covered by the next; each card's video starts once it reaches 0.98 scale. Plain stacked autoplaying cards on mobile.",
+      "scope": "Second block of <main> on the single route (/), anchor target #how-it-works.",
+      "implementedBy": "src/components/HowItWorks.jsx"
+    },
+    "features.figma-organization-cards": {
+      "category": "FEATURES",
+      "description": "Three image cards showing the Figma artefacts the plugin creates (frames, text styles, variables), laid out as a 3-column grid on desktop and a horizontal swipe carousel at 1024px and below.",
+      "scope": "Third block of <main> on the single route (/).",
+      "implementedBy": "src/components/FigmaOrg.jsx"
+    },
+    "features.breakpoint-scrub": {
+      "category": "FEATURES",
+      "description": "Tall scroll stage (100vh + 400px) with a sticky device mockup that morphs desktop → tablet → phone across the middle 60% of its scroll, two captions that slide up over the second half, and an interactive type-size simulator panel. The mockup is an HTML/CSS rebuild; the original Lottie is not reused.",
+      "scope": "Fourth block of <main> on the single route (/).",
+      "implementedBy": "src/components/Breakpoint.jsx > BreakpointMock, TypoSimulator"
+    },
+    "features.preset-folders": {
+      "category": "FEATURES",
+      "description": "Row of coloured preset folder icons (12 / 8 / 5 per desktop / tablet / mobile) with a single sine-wave lift that travels left to right as the section scrolls through view.",
+      "scope": "Fifth block of <main> on the single route (/).",
+      "implementedBy": "src/components/Presets.jsx"
+    },
+    "features.export-cards": {
+      "category": "FEATURES",
+      "description": "Two side-by-side cards, each a screenshot plus title and paragraph, covering the CSS export and the AI-prompt export (the second card carries id ai-prompt).",
+      "scope": "Sixth block of <main> on the single route (/).",
+      "implementedBy": "src/components/Exports.jsx"
+    },
+    "commerce.pricing-plans": {
+      "category": "COMMERCE",
+      "description": "Section title, three plan cards (two with checkout links, one enterprise mailto) each split by a 12px notched 'ticket' seam between price and button, then an 'everything included' feature list with one tagged item.",
+      "scope": "Seventh block of <main> on the single route (/), anchor target #pricing.",
+      "implementedBy": "src/components/Pricing.jsx"
+    },
+    "support.faq-accordion": {
+      "category": "SUPPORT",
+      "description": "Two-column FAQ: a sticky lead column (title, contact link, illustration) whose top offset moves between 120px and 32px with the navbar, beside a single-open accordion list with rotating chevrons.",
+      "scope": "Eighth block of <main> on the single route (/), anchor target #faq.",
+      "implementedBy": "src/components/Faq.jsx"
+    },
+    "conversion.newsletter-signup": {
+      "category": "CONVERSION",
+      "description": "Centered title, short text and an email field with an inline submit button that posts to an external newsletter endpoint in a new tab.",
+      "scope": "Last block of <main> on the single route (/).",
+      "implementedBy": "src/components/Newsletter.jsx"
+    },
+    "chrome.footer": {
+      "category": "CHROME",
+      "description": "Large closing title with the brand logo and a Figma button, then a bottom row with copyright and legal links.",
+      "scope": "Present on the single route (/), rendered after <main>.",
+      "implementedBy": "src/components/Footer.jsx"
+    },
+    "conversion.floating-cta": {
+      "category": "CONVERSION",
+      "description": "Fixed bottom-centre pill holding a Figma button; slides in only while the navbar is hidden, the hero video has scrolled past, and the newsletter is not yet in view.",
+      "scope": "Rendered after the footer on the single route (/).",
+      "implementedBy": "src/components/FloatingCta.jsx"
+    },
+    "overlay.type-inspector": {
+      "category": "OVERLAY",
+      "description": "Small monospace badge that follows the mouse and names the type-scale class of the text under the cursor; fine-pointer devices only, hidden on scroll.",
+      "scope": "Mounted last on the single route (/).",
+      "implementedBy": "src/components/TypeInspector.jsx"
+    }
+  },
+  "templates": [
+    {
+      "id": "template.home",
+      "name": "Home (single-page marketing site)",
+      "routeCount": 1,
+      "routes": ["/"],
+      "routePattern": null,
+      "chrome": "full",
+      "sections": [
+        "chrome.navbar",
+        "hero.product-intro",
+        "features.how-it-works-stack",
+        "features.figma-organization-cards",
+        "features.breakpoint-scrub",
+        "features.preset-folders",
+        "features.export-cards",
+        "commerce.pricing-plans",
+        "support.faq-accordion",
+        "conversion.newsletter-signup",
+        "chrome.footer",
+        "conversion.floating-cta",
+        "overlay.type-inspector"
+      ]
+    }
+  ]
+}

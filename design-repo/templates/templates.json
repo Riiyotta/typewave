@@ -1,0 +1,257 @@
+{
+  "version": "1.0.0",
+  "$description": "One template per distinct PAGE SHAPE. The source has exactly ONE real route (/) and one page shape: App.jsx mounts no router; main.jsx renders <App /> directly.",
+  "templates": {
+    "template.home": {
+      "description": "The Typewave one-page marketing landing: fixed navbar, hero with scale-on-scroll video, 8 content sections inside <main>, footer, then two fixed overlays.",
+      "routes": [
+        "/"
+      ],
+      "homeRouteOnly": true,
+      "orderRule": "PageSpec nodes must be an ordered subsequence of this node list. Required nodes must be present; optional nodes may be omitted but never reordered, inserted elsewhere or repeated.",
+      "requiredRationale": "navbar (only navigation), hero (only opener; FloatingCta reads its video) and footer (final CTA + legal) are structural. Every content section is optional for generation; the observed page contains all of them.",
+      "nodes": [
+        {
+          "key": "nav",
+          "section": "shell.navbar",
+          "required": true,
+          "repeatable": false,
+          "component": "Navbar",
+          "measuredFrom": [
+            {
+              "cite": "src/App.jsx:34",
+              "expect": "<Navbar />"
+            }
+          ]
+        },
+        {
+          "key": "hero",
+          "section": "hero.video-scale",
+          "required": true,
+          "repeatable": false,
+          "component": "Hero",
+          "measuredFrom": [
+            {
+              "cite": "src/App.jsx:36",
+              "expect": "<Hero />"
+            }
+          ]
+        },
+        {
+          "key": "how-it-works",
+          "section": "steps.sticky-stack",
+          "required": false,
+          "repeatable": false,
+          "component": "HowItWorks",
+          "anchorId": "how-it-works",
+          "measuredFrom": [
+            {
+              "cite": "src/App.jsx:37",
+              "expect": "<HowItWorks />"
+            }
+          ]
+        },
+        {
+          "key": "figma-org",
+          "section": "cards.feature-carousel",
+          "required": false,
+          "repeatable": false,
+          "component": "FigmaOrg",
+          "measuredFrom": [
+            {
+              "cite": "src/App.jsx:38",
+              "expect": "<FigmaOrg />"
+            }
+          ]
+        },
+        {
+          "key": "breakpoint",
+          "section": "showcase.breakpoint-scrub",
+          "required": false,
+          "repeatable": false,
+          "component": "Breakpoint",
+          "measuredFrom": [
+            {
+              "cite": "src/App.jsx:39",
+              "expect": "<Breakpoint />"
+            }
+          ]
+        },
+        {
+          "key": "presets",
+          "section": "grid.preset-wave",
+          "required": false,
+          "repeatable": false,
+          "component": "Presets",
+          "measuredFrom": [
+            {
+              "cite": "src/App.jsx:40",
+              "expect": "<Presets />"
+            }
+          ]
+        },
+        {
+          "key": "exports",
+          "section": "split.export-cards",
+          "required": false,
+          "repeatable": false,
+          "component": "Exports",
+          "measuredFrom": [
+            {
+              "cite": "src/App.jsx:41",
+              "expect": "<Exports />"
+            }
+          ]
+        },
+        {
+          "key": "pricing",
+          "section": "pricing.ticket-plans",
+          "required": false,
+          "repeatable": false,
+          "component": "Pricing",
+          "anchorId": "pricing",
+          "measuredFrom": [
+            {
+              "cite": "src/App.jsx:42",
+              "expect": "<Pricing />"
+            }
+          ]
+        },
+        {
+          "key": "faq",
+          "section": "faq.sticky-accordion",
+          "required": false,
+          "repeatable": false,
+          "component": "Faq",
+          "anchorId": "faq",
+          "measuredFrom": [
+            {
+              "cite": "src/App.jsx:43",
+              "expect": "<Faq />"
+            }
+          ]
+        },
+        {
+          "key": "newsletter",
+          "section": "form.newsletter-inline",
+          "required": false,
+          "repeatable": false,
+          "component": "Newsletter",
+          "measuredFrom": [
+            {
+              "cite": "src/App.jsx:44",
+              "expect": "<Newsletter />"
+            }
+          ]
+        },
+        {
+          "key": "footer",
+          "section": "shell.footer",
+          "required": true,
+          "repeatable": false,
+          "component": "Footer",
+          "measuredFrom": [
+            {
+              "cite": "src/App.jsx:46",
+              "expect": "<Footer />"
+            }
+          ]
+        },
+        {
+          "key": "floating-cta",
+          "section": "overlay.floating-cta",
+          "required": false,
+          "repeatable": false,
+          "component": "FloatingCta",
+          "measuredFrom": [
+            {
+              "cite": "src/App.jsx:47",
+              "expect": "<FloatingCta />"
+            }
+          ]
+        },
+        {
+          "key": "type-inspector",
+          "section": "overlay.type-inspector",
+          "required": false,
+          "repeatable": false,
+          "component": "TypeInspector",
+          "measuredFrom": [
+            {
+              "cite": "src/App.jsx:48",
+              "expect": "<TypeInspector />"
+            }
+          ]
+        }
+      ],
+      "pageWordBudgets": [
+        {
+          "path": "meta.title",
+          "specWords": 7,
+          "observedMaxWords": 7,
+          "maxWords": 10,
+          "measuredFrom": [
+            {
+              "cite": "CLONE_SPEC.md:41",
+              "expect": "- `<title>`:"
+            }
+          ]
+        },
+        {
+          "path": "meta.description",
+          "observedMaxWords": 34,
+          "maxWords": 41,
+          "measuredFrom": [
+            {
+              "cite": "index.html:7",
+              "expect": "<meta name=\"description\" content=\"Typewave is a Figma plugin"
+            }
+          ]
+        }
+      ],
+      "pageMotion": {
+        "smoothScroll": "Lenis {duration 1.4, easing 1-(1-t)^5, smoothWheel} created once at load only when (max-width: 1024px) does not match; otherwise a native smooth-scroll shim.",
+        "measuredFrom": [
+          {
+            "cite": "src/lib/scroll.js:48",
+            "expect": "export function initSmoothScroll() {"
+          },
+          {
+            "cite": "src/lib/scroll.js:55",
+            "expect": "duration: 1.4,"
+          },
+          {
+            "cite": "@original/index-B7zdGq3H.js",
+            "quote": "duration:1.4,easing:t=>1-Math.pow(1-t,5),smoothWheel:!0"
+          }
+        ]
+      },
+      "measuredFrom": [
+        {
+          "cite": "src/App.jsx:34-48",
+          "expect": "<Navbar />"
+        },
+        {
+          "cite": "src/main.jsx:10",
+          "expect": "ReactDOM.createRoot(document.getElementById('root')).render(<App />)"
+        }
+      ]
+    }
+  },
+  "routes": [
+    {
+      "path": "/",
+      "template": "template.home",
+      "measuredFrom": [
+        {
+          "cite": "src/main.jsx:10",
+          "expect": "ReactDOM.createRoot(document.getElementById('root')).render(<App />)"
+        },
+        {
+          "cite": "CLONE_SPEC.md:7",
+          "expect": "The original site is a single static HTML page"
+        }
+      ]
+    }
+  ]
+}

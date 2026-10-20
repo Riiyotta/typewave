@@ -1,0 +1,280 @@
+{
+  "id": "showcase.breakpoint-scrub",
+  "kind": "section",
+  "category": "showcase",
+  "purpose": "Prove responsive scaling: a device mockup morphs desktop -> tablet -> phone as the visitor scrubs through a pinned 100vh+400px stage, beside a live type-size simulator.",
+  "implementedBy": [
+    "src/components/Breakpoint.jsx",
+    "src/components/BreakpointMock.jsx",
+    "src/components/TypoSimulator.jsx"
+  ],
+  "variants": [],
+  "constraints": {
+    "onePerPage": true,
+    "maxPerPage": 1
+  },
+  "content": {
+    "schemaRef": "#/definitions/content.showcase.breakpoint-scrub",
+    "schema": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "title",
+        "caption",
+        "mockup",
+        "simulator"
+      ],
+      "properties": {
+        "title": {
+          "$ref": "#/definitions/title"
+        },
+        "caption": {
+          "$ref": "#/definitions/text"
+        },
+        "mockup": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "headlineLines",
+            "paragraph",
+            "buttonLabel"
+          ],
+          "properties": {
+            "headlineLines": {
+              "type": "array",
+              "minItems": 2,
+              "maxItems": 2,
+              "items": {
+                "$ref": "#/definitions/text"
+              }
+            },
+            "paragraph": {
+              "$ref": "#/definitions/text"
+            },
+            "buttonLabel": {
+              "$ref": "#/definitions/text"
+            }
+          }
+        },
+        "simulator": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "defaultDesktopPx"
+          ],
+          "properties": {
+            "defaultDesktopPx": {
+              "enum": [
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                20,
+                22,
+                24,
+                26,
+                28,
+                30,
+                32,
+                36,
+                40,
+                44,
+                48,
+                52,
+                56,
+                60,
+                64,
+                68,
+                72,
+                80,
+                88,
+                96
+              ]
+            }
+          }
+        }
+      }
+    },
+    "wordBudgets": [
+      {
+        "path": "title",
+        "observedMaxWords": 7,
+        "specWords": 7,
+        "maxWords": 9,
+        "measuredFrom": [
+          {
+            "cite": "CLONE_SPEC.md:316",
+            "expect": "**h2:** 40ch/7w in 2 lines"
+          }
+        ]
+      },
+      {
+        "path": "caption",
+        "observedMaxWords": 64,
+        "specWords": 62,
+        "maxWords": 77,
+        "measuredFrom": [
+          {
+            "cite": "CLONE_SPEC.md:317",
+            "expect": "**caption-left:** 361ch/62w"
+          }
+        ]
+      },
+      {
+        "path": "mockup.headlineLines[]",
+        "observedMaxWords": 3,
+        "maxWords": 4
+      },
+      {
+        "path": "mockup.paragraph",
+        "observedMaxWords": 28,
+        "maxWords": 34,
+        "measuredFrom": [
+          {
+            "cite": "CLONE_SPEC.md:365",
+            "expect": "a ~160-char paragraph"
+          }
+        ]
+      },
+      {
+        "path": "mockup.buttonLabel",
+        "observedMaxWords": 2,
+        "maxWords": 3
+      }
+    ]
+  },
+  "assetRoles": [],
+  "motion": {
+    "allowedPatterns": [
+      "char-reveal-scroll-linked",
+      "fade-up",
+      "scrub-progress",
+      "caption-slide-up"
+    ],
+    "reducedMotionFallback": "static-final-frame",
+    "reducedMotionEvidence": "prescribed-not-in-source",
+    "observedRevealDelaysMs": [],
+    "patternEvidence": {
+      "char-reveal-scroll-linked": [
+        {
+          "cite": "src/lib/compose.jsx:54",
+          "expect": "export function initScrollCompose() {"
+        },
+        {
+          "cite": "CLONE_SPEC.md:653",
+          "expect": "| M4 | Scroll-composed characters"
+        }
+      ],
+      "fade-up": [
+        {
+          "cite": "src/index.css:91",
+          "expect": ".reveal{opacity:0;transform:translateY(32px);transition:opacity .7s ease,transform .7s ease"
+        },
+        {
+          "cite": "CLONE_SPEC.md:651",
+          "expect": "| M2 | Reveal (fade-up)"
+        }
+      ],
+      "scrub-progress": [
+        {
+          "cite": "src/components/Breakpoint.jsx:17",
+          "expect": "// M9 / M9b scrub + M10 caption slide-up"
+        },
+        {
+          "cite": "CLONE_SPEC.md:659",
+          "expect": "| M9 | Lottie scrub (desktop)"
+        }
+      ],
+      "caption-slide-up": [
+        {
+          "cite": "src/components/Breakpoint.jsx:31",
+          "expect": "const ty = (1 - clamp01((progress - 0.5) / 0.5)) * vh * 0.6"
+        },
+        {
+          "cite": "CLONE_SPEC.md:660",
+          "expect": "| M10 | Caption slide-up"
+        }
+      ]
+    }
+  },
+  "responsive": [
+    {
+      "breakpoint": "desktop",
+      "query": "(min-width: 1025px)",
+      "changes": {
+        "sectionHeight": "calc(100vh + 400px)",
+        "stage": "sticky 100vh",
+        "scrub": "section progress, frames over 0.2-0.8",
+        "captions": "absolute, slide up 0.6vh over 2nd half",
+        "simulatorSizePx": [
+          312,
+          424
+        ]
+      },
+      "measuredFrom": [
+        {
+          "cite": "src/components/Breakpoint.jsx:51",
+          "expect": "style={{ height: `calc(100vh + ${TOTAL_FRAMES * 8}px)` }}"
+        },
+        {
+          "cite": "src/index.css:230",
+          "expect": ".breakpoint__sticky{position:sticky;top:0;width:100%;height:100vh"
+        },
+        {
+          "cite": "CLONE_SPEC.md:348",
+          "expect": "Size at 1440: 312x424"
+        }
+      ]
+    },
+    {
+      "breakpoint": "tablet",
+      "query": "(max-width: 1024px)",
+      "changes": {
+        "sectionHeight": "auto",
+        "stage": "static",
+        "scrub": "mockup in-view progress",
+        "captions": "static, stacked below",
+        "gapPx": 60
+      },
+      "measuredFrom": [
+        {
+          "cite": "src/index.css:238",
+          "expect": ".breakpoint{height:auto!important"
+        },
+        {
+          "cite": "src/index.css:240",
+          "expect": ".breakpoint__caption,.breakpoint__caption-left{position:static;width:100%;transform:none!important;margin-top:24px}"
+        }
+      ]
+    },
+    {
+      "breakpoint": "mobile",
+      "query": "(max-width: 767px)",
+      "changes": {
+        "gapPx": 40
+      },
+      "measuredFrom": [
+        {
+          "cite": "src/index.css:242",
+          "expect": "@media (max-width: 767px){.breakpoint{gap:40px}}"
+        }
+      ]
+    }
+  ],
+  "accessibility": "The mockup is aria-hidden; the simulator select has an accessible label (\"Desktop font size\").",
+  "measuredFrom": [
+    {
+      "cite": "src/App.jsx:39",
+      "expect": "<Breakpoint />"
+    },
+    {
+      "cite": "CLONE_SPEC.md:301",
+      "expect": "## 7. Breakpoint (Lottie scrub) `section.breakpoint` (no id)"
+    }
+  ]
+}

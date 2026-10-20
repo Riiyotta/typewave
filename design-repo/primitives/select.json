@@ -1,0 +1,14 @@
+{
+  "id": "select",
+  "kind": "primitive",
+  "purpose": "Transparent select in brand colour with a muted chevron (typo simulator).",
+  "implementedBy": [
+    "src/components/TypoSimulator.jsx"
+  ],
+  "measuredFrom": [
+    {
+      "cite": "src/index.css:262",
+      "expect": ".typo-sim__select{"
+    }
+  ]
+}

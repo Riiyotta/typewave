@@ -1,0 +1,33 @@
+{
+  "component.type-inspector": {
+    "font": {
+      "$value": "{typography.family.mono}",
+      "$type": "alias"
+    },
+    "bg": {
+      "$value": "{color-roles.surface.raised}",
+      "$type": "alias"
+    },
+    "text": {
+      "$value": "{color-roles.text.brand}",
+      "$type": "alias"
+    },
+    "border": {
+      "$value": "{color-roles.border.chrome}",
+      "$type": "alias"
+    },
+    "offset": {
+      "$value": "16px",
+      "$type": "dimension",
+      "$description": "Badge sits at cursor +16/+16.",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "src/components/TypeInspector.jsx:23",
+            "expect": "badge.style.left = `${x + 16}px`"
+          }
+        ]
+      }
+    }
+  }
+}

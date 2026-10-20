@@ -1,0 +1,103 @@
+{
+  "theme": "typewave-dark",
+  "mode": "dark",
+  "$description": "The only theme (the site has no light mode). Resolves every semantic colour role to its foundation value; verify_all.py checks each value against tokens/00-foundation/color.json.",
+  "resolves": {
+    "color-roles.text.primary": {
+      "ref": "{color.text}",
+      "value": "#E6E3DA"
+    },
+    "color-roles.text.secondary": {
+      "ref": "{color.text-muted}",
+      "value": "#7E7C77"
+    },
+    "color-roles.text.brand": {
+      "ref": "{color.brand}",
+      "value": "#E6F490"
+    },
+    "color-roles.text.inverse": {
+      "ref": "{color.bg}",
+      "value": "#0F0F0E"
+    },
+    "color-roles.text.mockup": {
+      "ref": "{color.mock-text}",
+      "value": "#EBEBEB"
+    },
+    "color-roles.surface.page": {
+      "ref": "{color.bg}",
+      "value": "#0F0F0E"
+    },
+    "color-roles.surface.raised": {
+      "ref": "{color.surface}",
+      "value": "#191918"
+    },
+    "color-roles.surface.chrome": {
+      "ref": "{color.chrome}",
+      "value": "#2A2928"
+    },
+    "color-roles.surface.floating": {
+      "ref": "{color.floating-bg}",
+      "value": "#0f0f0ecc"
+    },
+    "color-roles.surface.fade-end": {
+      "ref": "{color.bg-transparent}",
+      "value": "#0f0f0e00"
+    },
+    "color-roles.border.subtle": {
+      "ref": "{color.surface}",
+      "value": "#191918"
+    },
+    "color-roles.border.divider": {
+      "ref": "{color.divider}",
+      "value": "rgba(230,227,218,.08)"
+    },
+    "color-roles.border.chrome": {
+      "ref": "{color.chrome}",
+      "value": "#2A2928"
+    },
+    "color-roles.accent.brand": {
+      "ref": "{color.brand}",
+      "value": "#E6F490"
+    },
+    "color-roles.accent.step-2": {
+      "ref": "{color.badge-2}",
+      "value": "#FE8A3D"
+    },
+    "color-roles.accent.step-3": {
+      "ref": "{color.badge-3}",
+      "value": "#0469FF"
+    },
+    "color-roles.accent.preset-pink": {
+      "ref": "{color.preset-pink}",
+      "value": "#DCBDC2"
+    },
+    "color-roles.action.primary-bg": {
+      "ref": "{color.text}",
+      "value": "#E6E3DA"
+    },
+    "color-roles.action.primary-bg-hover": {
+      "ref": "{color.text-muted}",
+      "value": "#7E7C77"
+    },
+    "color-roles.action.primary-text": {
+      "ref": "{color.bg}",
+      "value": "#0F0F0E"
+    },
+    "color-roles.action.brand-bg": {
+      "ref": "{color.brand}",
+      "value": "#E6F490"
+    },
+    "color-roles.action.brand-text": {
+      "ref": "{color.bg}",
+      "value": "#0F0F0E"
+    },
+    "color-roles.action.ghost-text": {
+      "ref": "{color.text}",
+      "value": "#E6E3DA"
+    },
+    "color-roles.action.ghost-text-hover": {
+      "ref": "{color.text-muted}",
+      "value": "#7E7C77"
+    }
+  }
+}

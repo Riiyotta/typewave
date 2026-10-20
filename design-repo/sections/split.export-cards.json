@@ -1,0 +1,269 @@
+{
+  "id": "split.export-cards",
+  "kind": "section",
+  "category": "split",
+  "purpose": "Bridge design and engineering: two alternating media/text cards for the CSS export and the AI Prompt export, each with the tools it targets.",
+  "implementedBy": [
+    "src/components/Exports.jsx"
+  ],
+  "variants": [],
+  "constraints": {
+    "onePerPage": true,
+    "maxPerPage": 1
+  },
+  "content": {
+    "schemaRef": "#/definitions/content.split.export-cards",
+    "schema": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "title",
+        "cards"
+      ],
+      "properties": {
+        "title": {
+          "$ref": "#/definitions/title"
+        },
+        "cards": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "layout",
+              "title",
+              "text",
+              "image",
+              "logos"
+            ],
+            "properties": {
+              "layout": {
+                "enum": [
+                  "media-left",
+                  "media-right"
+                ]
+              },
+              "title": {
+                "$ref": "#/definitions/text"
+              },
+              "tag": {
+                "enum": [
+                  "NEW"
+                ]
+              },
+              "text": {
+                "$ref": "#/definitions/text"
+              },
+              "image": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "assetRole",
+                  "assetRef",
+                  "alt"
+                ],
+                "properties": {
+                  "assetRole": {
+                    "allOf": [
+                      {
+                        "$ref": "#/definitions/assetRole"
+                      },
+                      {
+                        "const": "media.export-screenshot"
+                      }
+                    ]
+                  },
+                  "assetRef": {
+                    "$ref": "#/definitions/assetRef"
+                  },
+                  "alt": {
+                    "$ref": "#/definitions/text"
+                  }
+                }
+              },
+              "logos": {
+                "type": "array",
+                "minItems": 0,
+                "maxItems": 4,
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "assetRole",
+                    "assetRef",
+                    "label"
+                  ],
+                  "properties": {
+                    "assetRole": {
+                      "allOf": [
+                        {
+                          "$ref": "#/definitions/assetRole"
+                        },
+                        {
+                          "const": "logo.third-party-tool"
+                        }
+                      ]
+                    },
+                    "assetRef": {
+                      "$ref": "#/definitions/assetRef"
+                    },
+                    "label": {
+                      "$ref": "#/definitions/text"
+                    }
+                  }
+                }
+              },
+              "anchorId": {
+                "$ref": "#/definitions/anchorId"
+              }
+            }
+          }
+        }
+      }
+    },
+    "wordBudgets": [
+      {
+        "path": "title",
+        "observedMaxWords": 7,
+        "specWords": 8,
+        "maxWords": 10,
+        "measuredFrom": [
+          {
+            "cite": "CLONE_SPEC.md:419",
+            "expect": "**h2:** 50ch/8w in 2 lines"
+          }
+        ]
+      },
+      {
+        "path": "cards[].title",
+        "observedMaxWords": 2,
+        "maxWords": 3
+      },
+      {
+        "path": "cards[].text",
+        "observedMaxWords": 75,
+        "specWords": 77,
+        "maxWords": 93,
+        "measuredFrom": [
+          {
+            "cite": "CLONE_SPEC.md:421",
+            "expect": "**AI text:** 468ch/77w"
+          }
+        ]
+      },
+      {
+        "path": "cards[].image.alt",
+        "observedMaxWords": 9,
+        "maxWords": 11
+      },
+      {
+        "path": "cards[].logos[].label",
+        "observedMaxWords": 2,
+        "maxWords": 3
+      }
+    ]
+  },
+  "assetRoles": [
+    "media.export-screenshot",
+    "logo.third-party-tool"
+  ],
+  "motion": {
+    "allowedPatterns": [
+      "char-reveal-scroll-linked",
+      "fade-up"
+    ],
+    "reducedMotionFallback": "instant-visible",
+    "reducedMotionEvidence": "prescribed-not-in-source",
+    "observedRevealDelaysMs": [
+      0,
+      100
+    ],
+    "patternEvidence": {
+      "char-reveal-scroll-linked": [
+        {
+          "cite": "src/lib/compose.jsx:54",
+          "expect": "export function initScrollCompose() {"
+        },
+        {
+          "cite": "CLONE_SPEC.md:653",
+          "expect": "| M4 | Scroll-composed characters"
+        }
+      ],
+      "fade-up": [
+        {
+          "cite": "src/index.css:91",
+          "expect": ".reveal{opacity:0;transform:translateY(32px);transition:opacity .7s ease,transform .7s ease"
+        },
+        {
+          "cite": "CLONE_SPEC.md:651",
+          "expect": "| M2 | Reveal (fade-up)"
+        }
+      ]
+    }
+  },
+  "responsive": [
+    {
+      "breakpoint": "desktop",
+      "query": "(min-width: 1025px)",
+      "changes": {
+        "cardGrid": "12 columns: media 6 / text 5 (reverse card mirrors)",
+        "gapPx": 80
+      },
+      "measuredFrom": [
+        {
+          "cite": "src/index.css:293",
+          "expect": ".exports__card{display:grid;grid-template-columns:repeat(12,1fr)"
+        },
+        {
+          "cite": "src/index.css:298",
+          "expect": ".exports__card--reverse .exports__media{grid-column:7 / span 6}"
+        }
+      ]
+    },
+    {
+      "breakpoint": "tablet",
+      "query": "(max-width: 1024px)",
+      "changes": {
+        "cardGrid": "single column",
+        "mediaFirst": true,
+        "gapPx": 60
+      },
+      "measuredFrom": [
+        {
+          "cite": "src/index.css:305",
+          "expect": ".exports__card,.exports__card--reverse{grid-template-columns:1fr;gap:24px}"
+        },
+        {
+          "cite": "src/index.css:307",
+          "expect": ".exports__card--reverse .exports__media{order:-1}"
+        }
+      ]
+    },
+    {
+      "breakpoint": "mobile",
+      "query": "(max-width: 767px)",
+      "changes": {
+        "gapPx": 40
+      },
+      "measuredFrom": [
+        {
+          "cite": "src/index.css:309",
+          "expect": "@media (max-width: 767px){.exports__wrapper,.exports__cards{gap:40px}}"
+        }
+      ]
+    }
+  ],
+  "accessibility": "",
+  "measuredFrom": [
+    {
+      "cite": "src/App.jsx:41",
+      "expect": "<Exports />"
+    },
+    {
+      "cite": "CLONE_SPEC.md:397",
+      "expect": "## 9. Exports `section.exports` (no id; the second card has `id=\"ai-prompt\"`)"
+    }
+  ]
+}

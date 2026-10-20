@@ -1,0 +1,288 @@
+{
+  "color": {
+    "$description": "Every colour the page renders. Source of truth: the original :root block, copied verbatim into src/index.css:23 (plus documented extras on src/index.css:28). Nothing outside this file may be emitted.",
+    "bg": {
+      "$value": "#0F0F0E",
+      "$type": "color",
+      "$description": "Page background; pricing-plan outer shell and seam; media wells; inverse text on light buttons.",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "src/index.css:23",
+            "expect": "--color-bg: #0F0F0E"
+          },
+          {
+            "cite": "@original/index-D4COY28s.css",
+            "quote": "--color-bg: #0F0F0E"
+          }
+        ]
+      }
+    },
+    "surface": {
+      "$value": "#191918",
+      "$type": "color",
+      "$description": "Raised panels: cards, pricing panels, footer hero; also the 1px FAQ/newsletter borders.",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "src/index.css:23",
+            "expect": "--color-surface: #191918"
+          },
+          {
+            "cite": "@original/index-D4COY28s.css",
+            "quote": "--color-surface: #191918"
+          }
+        ]
+      }
+    },
+    "text": {
+      "$value": "#E6E3DA",
+      "$type": "color",
+      "$description": "Primary text; primary button background.",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "src/index.css:23",
+            "expect": "--color-text: #E6E3DA"
+          },
+          {
+            "cite": "@original/index-D4COY28s.css",
+            "quote": "--color-text: #E6E3DA"
+          }
+        ]
+      }
+    },
+    "text-muted": {
+      "$value": "#7E7C77",
+      "$type": "color",
+      "$description": "Body copy in cards, captions, placeholders; primary button hover.",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "src/index.css:23",
+            "expect": "--color-text-muted: #7E7C77"
+          },
+          {
+            "cite": "@original/index-D4COY28s.css",
+            "quote": "--color-text-muted: #7E7C77"
+          }
+        ]
+      }
+    },
+    "brand": {
+      "$value": "#E6F490",
+      "$type": "color",
+      "$description": "Brand highlight in headings ([...] spans), tags, step-1 badge, brand buttons, simulator select.",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "src/index.css:23",
+            "expect": "--color-brand: #E6F490"
+          },
+          {
+            "cite": "@original/index-D4COY28s.css",
+            "quote": "--color-brand: #E6F490"
+          }
+        ]
+      }
+    },
+    "accent": {
+      "$value": "#D99F50",
+      "$type": "color",
+      "$description": "Declared in the original :root but never rendered. Do not use for new UI.",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "src/index.css:23",
+            "expect": "--color-accent: #D99F50"
+          },
+          {
+            "cite": "@original/index-D4COY28s.css",
+            "quote": "--color-accent: #D99F50"
+          }
+        ],
+        "usage": "declared-unused"
+      }
+    },
+    "danger": {
+      "$value": "#DF3535",
+      "$type": "color",
+      "$description": "Only referenced by .newsletter__feedback.is-error, an element that never exists on the page.",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "src/index.css:23",
+            "expect": "--color-danger: #DF3535"
+          },
+          {
+            "cite": "@original/index-D4COY28s.css",
+            "quote": "--color-danger: #DF3535"
+          }
+        ],
+        "usage": "declared-unused"
+      }
+    },
+    "chrome": {
+      "$value": "#2A2928",
+      "$type": "color",
+      "$description": "Device-mockup chrome, type-inspector border; original --btn-secondary-bg.",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "src/index.css:28",
+            "expect": "--color-chrome: #2A2928"
+          },
+          {
+            "cite": "@original/index-D4COY28s.css",
+            "quote": "--btn-secondary-bg: #2A2928"
+          }
+        ]
+      }
+    },
+    "chrome-raised": {
+      "$value": "#3a3937",
+      "$type": "color",
+      "$description": "Secondary-button hover (button unused on the page).",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "src/index.css:23",
+            "expect": "--btn-secondary-bg-hover: #3a3937"
+          },
+          {
+            "cite": "@original/index-D4COY28s.css",
+            "quote": "--btn-secondary-bg-hover: #3a3937"
+          }
+        ],
+        "usage": "declared-unused"
+      }
+    },
+    "badge-2": {
+      "$value": "#FE8A3D",
+      "$type": "color",
+      "$description": "Step-2 badge and preset folder colour.",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "src/index.css:28",
+            "expect": "--color-badge-2: #FE8A3D"
+          },
+          {
+            "cite": "CLONE_SPEC.md:65",
+            "expect": "| Badge color 2 | `#FE8A3D`"
+          },
+          {
+            "cite": "@original/index-B7zdGq3H.js",
+            "quote": "COLORS=[\"#E6F490\",\"#0469FF\",\"#DCBDC2\",\"#FE8A3D\",\"#E6E3DA\"]"
+          }
+        ]
+      }
+    },
+    "badge-3": {
+      "$value": "#0469FF",
+      "$type": "color",
+      "$description": "Step-3 badge and preset folder colour.",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "src/index.css:28",
+            "expect": "--color-badge-3: #0469FF"
+          },
+          {
+            "cite": "CLONE_SPEC.md:66",
+            "expect": "| Badge color 3 | `#0469FF`"
+          },
+          {
+            "cite": "@original/index-B7zdGq3H.js",
+            "quote": "COLORS=[\"#E6F490\",\"#0469FF\",\"#DCBDC2\",\"#FE8A3D\",\"#E6E3DA\"]"
+          }
+        ]
+      }
+    },
+    "preset-pink": {
+      "$value": "#DCBDC2",
+      "$type": "color",
+      "$description": "Preset folder colour (cycle position 3).",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "src/index.css:28",
+            "expect": "--color-preset-pink: #DCBDC2"
+          },
+          {
+            "cite": "@original/index-B7zdGq3H.js",
+            "quote": "COLORS=[\"#E6F490\",\"#0469FF\",\"#DCBDC2\",\"#FE8A3D\",\"#E6E3DA\"]"
+          }
+        ]
+      }
+    },
+    "divider": {
+      "$value": "rgba(230,227,218,.08)",
+      "$type": "color",
+      "$description": "Typo-simulator row divider (1px).",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "src/index.css:28",
+            "expect": "--color-divider: rgba(230,227,218,.08)"
+          },
+          {
+            "cite": "@original/index-D4COY28s.css",
+            "quote": "rgba(230,227,218,.08)"
+          }
+        ]
+      }
+    },
+    "floating-bg": {
+      "$value": "#0f0f0ecc",
+      "$type": "color",
+      "$description": "Floating CTA bar background (bg at 80% alpha) behind blur(12px).",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "src/index.css:28",
+            "expect": "--color-floating-bg: #0f0f0ecc"
+          },
+          {
+            "cite": "@original/index-D4COY28s.css",
+            "quote": "#0f0f0ecc"
+          }
+        ]
+      }
+    },
+    "bg-transparent": {
+      "$value": "#0f0f0e00",
+      "$type": "color",
+      "$description": "End stop of the 120px navbar fade gradient.",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "src/index.css:117",
+            "expect": "linear-gradient(180deg,var(--color-bg),#0f0f0e00)"
+          },
+          {
+            "cite": "@original/index-D4COY28s.css",
+            "quote": "#0f0f0e00"
+          }
+        ]
+      }
+    },
+    "mock-text": {
+      "$value": "#EBEBEB",
+      "$type": "color",
+      "$description": "Text/pill colour inside the HTML/CSS device-mockup rebuild (the Lottie used 0.922 grey = #EBEBEB). Clone-only token; the original expressed it inside the Lottie JSON.",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "src/index.css:28",
+            "expect": "--color-mock-text: #EBEBEB"
+          },
+          {
+            "cite": "CLONE_SPEC.md:363",
+            "expect": "a paragraph (Roobert Medium 16, color 0.922 gray)"
+          }
+        ]
+      }
+    }
+  }
+}

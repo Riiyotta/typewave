@@ -1,0 +1,36 @@
+{
+  "component.typo-sim": {
+    "row-gap": {
+      "$value": "24px",
+      "$type": "dimension",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "src/index.css:257",
+            "expect": ".typo-sim__grid{display:flex;flex-direction:column;gap:24px}"
+          }
+        ]
+      }
+    },
+    "label-tracking": {
+      "$value": ".07em",
+      "$type": "dimension",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "src/index.css:260",
+            "expect": "letter-spacing:.07em;text-transform:uppercase"
+          }
+        ]
+      }
+    },
+    "select-color": {
+      "$value": "{color-roles.text.brand}",
+      "$type": "alias"
+    },
+    "divider": {
+      "$value": "{color-roles.border.divider}",
+      "$type": "alias"
+    }
+  }
+}

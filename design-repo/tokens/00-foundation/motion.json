@@ -1,0 +1,624 @@
+{
+  "motion": {
+    "$description": "All motion is CSS transitions or JS-driven inline styles; there are no @keyframes (CLONE_SPEC 1).",
+    "easing": {
+      "standard": {
+        "$value": "cubic-bezier(.4,0,.2,1)",
+        "$type": "cubicBezier",
+        "$description": "Navbar hide, hamburger, mobile menu, FAQ chevron, FAQ lead top, floating CTA.",
+        "$extensions": {
+          "measuredFrom": [
+            {
+              "cite": "src/index.css:28",
+              "expect": "--ease-standard: cubic-bezier(.4,0,.2,1)"
+            },
+            {
+              "cite": "@original/index-D4COY28s.css",
+              "quote": "transform .35s cubic-bezier(.4,0,.2,1)"
+            }
+          ]
+        }
+      },
+      "decel": {
+        "$value": "cubic-bezier(0,0,.2,1)",
+        "$type": "cubicBezier",
+        "$description": "FAQ answer grid-template-rows.",
+        "$extensions": {
+          "measuredFrom": [
+            {
+              "cite": "src/index.css:28",
+              "expect": "--ease-decel: cubic-bezier(0,0,.2,1)"
+            },
+            {
+              "cite": "@original/index-D4COY28s.css",
+              "quote": "grid-template-rows .35s cubic-bezier(0,0,.2,1)"
+            }
+          ]
+        }
+      },
+      "ease": {
+        "$value": "ease",
+        "$type": "keyword",
+        "$description": "Reveal opacity/transform; .btn background.",
+        "$extensions": {
+          "measuredFrom": [
+            {
+              "cite": "src/index.css:91",
+              "expect": "transition:opacity .7s ease,transform .7s ease"
+            },
+            {
+              "cite": "@original/index-D4COY28s.css",
+              "quote": "transition:opacity .7s ease,transform .7s ease"
+            }
+          ]
+        }
+      },
+      "lenis": {
+        "$value": "t => 1 - Math.pow(1 - t, 5)",
+        "$type": "function",
+        "$description": "Lenis smooth-scroll easing (desktop only).",
+        "$extensions": {
+          "measuredFrom": [
+            {
+              "cite": "src/lib/scroll.js:56",
+              "expect": "easing: (t) => 1 - Math.pow(1 - t, 5),"
+            },
+            {
+              "cite": "@original/index-B7zdGq3H.js",
+              "quote": "easing:t=>1-Math.pow(1-t,5)"
+            }
+          ]
+        }
+      }
+    },
+    "duration": {
+      "inspector": {
+        "$value": "120ms",
+        "$type": "duration",
+        "$description": "Type-inspector badge opacity.",
+        "$extensions": {
+          "measuredFrom": [
+            {
+              "cite": "@original/index-B7zdGq3H.js",
+              "quote": "transition:     opacity 0.12s ease;"
+            },
+            {
+              "cite": "CLONE_SPEC.md:106",
+              "expect": "| 0.12s ease | | type-inspector badge opacity |"
+            }
+          ]
+        }
+      },
+      "select": {
+        "$value": "150ms",
+        "$type": "duration",
+        "$description": "Simulator select border-color.",
+        "$extensions": {
+          "measuredFrom": [
+            {
+              "cite": "CLONE_SPEC.md:105",
+              "expect": "| 0.15s | | `.typo-sim__select` border-color |"
+            }
+          ]
+        }
+      },
+      "hover": {
+        "$value": "200ms",
+        "$type": "duration",
+        "$description": "Button background / link colour hovers.",
+        "$extensions": {
+          "measuredFrom": [
+            {
+              "cite": "src/index.css:99",
+              "expect": "transition:background-color .2s ease"
+            },
+            {
+              "cite": "@original/index-D4COY28s.css",
+              "quote": "transition:background-color .2s ease"
+            }
+          ]
+        }
+      },
+      "menu": {
+        "$value": "300ms",
+        "$type": "duration",
+        "$description": "Mobile menu opacity/scale.",
+        "$extensions": {
+          "measuredFrom": [
+            {
+              "cite": "CLONE_SPEC.md:101",
+              "expect": "mobile menu (0.3s)"
+            }
+          ]
+        }
+      },
+      "standard": {
+        "$value": "350ms",
+        "$type": "duration",
+        "$description": "Navbar hide, hamburger, FAQ chevron/answer, FAQ lead top.",
+        "$extensions": {
+          "measuredFrom": [
+            {
+              "cite": "src/index.css:115",
+              "expect": ".navbar{position:fixed;top:0;left:0;width:100%;z-index:100;transform:translateY(0);transition:transform .35s var(--ease-standard)}"
+            }
+          ]
+        }
+      },
+      "floating": {
+        "$value": "400ms",
+        "$type": "duration",
+        "$description": "Floating CTA slide.",
+        "$extensions": {
+          "measuredFrom": [
+            {
+              "cite": "src/index.css:418",
+              "expect": ".floating-cta.is-ready{transition:transform .4s var(--ease-standard)}"
+            },
+            {
+              "cite": "@original/index-D4COY28s.css",
+              "quote": "transition:transform .4s cubic-bezier(.4,0,.2,1)"
+            }
+          ]
+        }
+      },
+      "reveal": {
+        "$value": "700ms",
+        "$type": "duration",
+        "$description": "Fade-up reveal.",
+        "$extensions": {
+          "measuredFrom": [
+            {
+              "cite": "src/index.css:91",
+              "expect": "transition:opacity .7s ease,transform .7s ease"
+            }
+          ]
+        }
+      },
+      "lenis": {
+        "$value": "1.4s",
+        "$type": "duration",
+        "$description": "Lenis smooth-scroll duration (desktop only).",
+        "$extensions": {
+          "measuredFrom": [
+            {
+              "cite": "src/lib/scroll.js:55",
+              "expect": "duration: 1.4,"
+            },
+            {
+              "cite": "@original/index-B7zdGq3H.js",
+              "quote": "duration:1.4,easing:t=>1-Math.pow(1-t,5),smoothWheel:!0"
+            }
+          ]
+        }
+      }
+    },
+    "reveal": {
+      "distance": {
+        "$value": "32px",
+        "$type": "dimension",
+        "$extensions": {
+          "measuredFrom": [
+            {
+              "cite": "src/index.css:91",
+              "expect": ".reveal{opacity:0;transform:translateY(32px)"
+            },
+            {
+              "cite": "@original/index-D4COY28s.css",
+              "quote": ".reveal{opacity:0;transform:translateY(32px)"
+            }
+          ]
+        }
+      },
+      "threshold": {
+        "$value": 0.15,
+        "$type": "number",
+        "$description": "IntersectionObserver threshold, once.",
+        "$extensions": {
+          "measuredFrom": [
+            {
+              "cite": "src/lib/reveal.js:11",
+              "expect": "{ threshold: 0.15 }"
+            },
+            {
+              "cite": "@original/index-B7zdGq3H.js",
+              "quote": "{threshold:.15}"
+            }
+          ]
+        }
+      },
+      "delays": {
+        "$value": [
+          0,
+          100,
+          150,
+          200,
+          300,
+          450
+        ],
+        "$type": "durationList",
+        "$description": "Every stagger delay observed (ms).",
+        "$extensions": {
+          "measuredFrom": [
+            {
+              "cite": "CLONE_SPEC.md:652",
+              "expect": "hero 0/150/300/450ms; how-it-works title 150; figma cards 0/100/200"
+            }
+          ]
+        }
+      }
+    },
+    "compose": {
+      "start": {
+        "$value": 0.9,
+        "$type": "number",
+        "$description": "Char reveal starts when heading top = 0.9vh.",
+        "$extensions": {
+          "measuredFrom": [
+            {
+              "cite": "src/lib/compose.jsx:65",
+              "expect": "const start = 0.9 * vh"
+            },
+            {
+              "cite": "@original/index-B7zdGq3H.js",
+              "quote": "const START_VH=.9,END_VH=.45,STAGGER=.35"
+            }
+          ]
+        }
+      },
+      "end": {
+        "$value": 0.45,
+        "$type": "number",
+        "$description": "Char reveal completes at 0.45vh.",
+        "$extensions": {
+          "measuredFrom": [
+            {
+              "cite": "src/lib/compose.jsx:66",
+              "expect": "const end = 0.45 * vh"
+            },
+            {
+              "cite": "@original/index-B7zdGq3H.js",
+              "quote": "const START_VH=.9,END_VH=.45,STAGGER=.35"
+            }
+          ]
+        }
+      },
+      "stagger": {
+        "$value": 0.35,
+        "$type": "number",
+        "$description": "Per-char window.",
+        "$extensions": {
+          "measuredFrom": [
+            {
+              "cite": "src/lib/compose.jsx:56",
+              "expect": "const SPAN = 0.35"
+            },
+            {
+              "cite": "@original/index-B7zdGq3H.js",
+              "quote": "const START_VH=.9,END_VH=.45,STAGGER=.35"
+            }
+          ]
+        }
+      }
+    },
+    "hero": {
+      "scale-from": {
+        "$value": 0.8,
+        "$type": "number",
+        "$description": "Hero video starts at scale 0.8 and reaches 1 when centred.",
+        "$extensions": {
+          "measuredFrom": [
+            {
+              "cite": "src/components/Hero.jsx:44",
+              "expect": "const s = 0.8 + 0.2 * clamp01(window.scrollY / o)"
+            },
+            {
+              "cite": "@original/index-B7zdGq3H.js",
+              "quote": "INITIAL_SCALE=.8,PEEK_RATIO=.06"
+            }
+          ]
+        }
+      },
+      "peek": {
+        "$value": 0.06,
+        "$type": "number",
+        "$description": "Fraction of viewport the scaled video peeks above the fold.",
+        "$extensions": {
+          "measuredFrom": [
+            {
+              "cite": "src/components/Hero.jsx:31",
+              "expect": "const top = vh - 0.06 * vh - (H * (1 - 0.8)) / 2"
+            },
+            {
+              "cite": "@original/index-B7zdGq3H.js",
+              "quote": "INITIAL_SCALE=.8,PEEK_RATIO=.06"
+            }
+          ]
+        }
+      }
+    },
+    "stack": {
+      "scale-min": {
+        "$value": 0.75,
+        "$type": "number",
+        "$description": "Sticky card scale floor (grows 0.75->1, shrinks back as the next card arrives).",
+        "$extensions": {
+          "measuredFrom": [
+            {
+              "cite": "src/components/HowItWorks.jsx:45",
+              "expect": "const p = 0.75 + 0.25 * clamp01((vh - rect.top) / span)"
+            },
+            {
+              "cite": "@original/index-B7zdGq3H.js",
+              "quote": "p=.75+.25*Math.max(0,Math.min(1,(l-y.top)/(l-r)))"
+            }
+          ]
+        }
+      },
+      "play-at": {
+        "$value": 0.98,
+        "$type": "number",
+        "$description": "Card video starts once scale >= 0.98.",
+        "$extensions": {
+          "measuredFrom": [
+            {
+              "cite": "src/components/HowItWorks.jsx:51",
+              "expect": "if (scale >= 0.98) playVideo(i)"
+            },
+            {
+              "cite": "@original/index-B7zdGq3H.js",
+              "quote": "g>=.98"
+            }
+          ]
+        }
+      }
+    },
+    "scrub": {
+      "window-start": {
+        "$value": 0.2,
+        "$type": "number",
+        "$description": "Frame progress window start.",
+        "$extensions": {
+          "measuredFrom": [
+            {
+              "cite": "src/components/Breakpoint.jsx:22",
+              "expect": "const toFrame = (progress) => clamp01((progress - 0.2) / 0.6) * (TOTAL_FRAMES - 1)"
+            },
+            {
+              "cite": "@original/index-B7zdGq3H.js",
+              "quote": "a=.2,n=.8"
+            }
+          ]
+        }
+      },
+      "window-end": {
+        "$value": 0.8,
+        "$type": "number",
+        "$description": "Frame progress window end.",
+        "$extensions": {
+          "measuredFrom": [
+            {
+              "cite": "@original/index-B7zdGq3H.js",
+              "quote": "a=.2,n=.8"
+            }
+          ]
+        }
+      },
+      "frames": {
+        "$value": 50,
+        "$type": "number",
+        "$description": "Mockup frames 0-49.",
+        "$extensions": {
+          "measuredFrom": [
+            {
+              "cite": "src/components/Breakpoint.jsx:8",
+              "expect": "const TOTAL_FRAMES = 50"
+            }
+          ]
+        }
+      },
+      "px-per-frame": {
+        "$value": 8,
+        "$type": "number",
+        "$description": "Section height = 100vh + frames*8px = 100vh + 400px.",
+        "$extensions": {
+          "measuredFrom": [
+            {
+              "cite": "src/components/Breakpoint.jsx:51",
+              "expect": "style={{ height: `calc(100vh + ${TOTAL_FRAMES * 8}px)` }}"
+            },
+            {
+              "cite": "@original/index-B7zdGq3H.js",
+              "quote": "calc(100vh + ${o.totalFrames*8}px)"
+            }
+          ]
+        }
+      },
+      "caption-travel": {
+        "$value": 0.6,
+        "$type": "number",
+        "$description": "Captions rise from translateY(0.6vh) over the 2nd half of progress.",
+        "$extensions": {
+          "measuredFrom": [
+            {
+              "cite": "src/components/Breakpoint.jsx:31",
+              "expect": "const ty = (1 - clamp01((progress - 0.5) / 0.5)) * vh * 0.6"
+            },
+            {
+              "cite": "@original/index-B7zdGq3H.js",
+              "quote": "(1-Math.min(1,Math.max(0,(p-.5)/.5)))*window.innerHeight*.6"
+            }
+          ]
+        }
+      }
+    },
+    "wave": {
+      "amp-desktop": {
+        "$value": 88,
+        "$type": "number",
+        "$extensions": {
+          "measuredFrom": [
+            {
+              "cite": "src/components/Presets.jsx:18",
+              "expect": "desktop: { count: 12, amp: 88 },"
+            },
+            {
+              "cite": "@original/index-B7zdGq3H.js",
+              "quote": "WAVE_AMPLITUDE=88"
+            }
+          ]
+        }
+      },
+      "amp-tablet": {
+        "$value": 50,
+        "$type": "number",
+        "$extensions": {
+          "measuredFrom": [
+            {
+              "cite": "src/components/Presets.jsx:17",
+              "expect": "tablet: { count: 8, amp: 50 },"
+            },
+            {
+              "cite": "@original/index-B7zdGq3H.js",
+              "quote": "i.key===\"tablet\"?50:WAVE_AMPLITUDE"
+            }
+          ]
+        }
+      },
+      "amp-mobile": {
+        "$value": 22,
+        "$type": "number",
+        "$extensions": {
+          "measuredFrom": [
+            {
+              "cite": "src/components/Presets.jsx:16",
+              "expect": "mobile: { count: 5, amp: 22 },"
+            },
+            {
+              "cite": "@original/index-B7zdGq3H.js",
+              "quote": "i.key===\"mobile\"?22"
+            }
+          ]
+        }
+      },
+      "trigger-start": {
+        "$value": 0.8,
+        "$type": "number",
+        "$extensions": {
+          "measuredFrom": [
+            {
+              "cite": "src/components/Presets.jsx:47",
+              "expect": "const p = clamp01((0.8 * vh - top) / (0.8 * vh - 0.2 * vh))"
+            },
+            {
+              "cite": "@original/index-B7zdGq3H.js",
+              "quote": "TRIGGER_START=.8,TRIGGER_END=.2,PULSE_WIDTH=.35"
+            }
+          ]
+        }
+      },
+      "trigger-end": {
+        "$value": 0.2,
+        "$type": "number",
+        "$extensions": {
+          "measuredFrom": [
+            {
+              "cite": "@original/index-B7zdGq3H.js",
+              "quote": "TRIGGER_START=.8,TRIGGER_END=.2,PULSE_WIDTH=.35"
+            }
+          ]
+        }
+      },
+      "pulse": {
+        "$value": 0.35,
+        "$type": "number",
+        "$extensions": {
+          "measuredFrom": [
+            {
+              "cite": "src/components/Presets.jsx:43",
+              "expect": "const SPAN = 0.35"
+            },
+            {
+              "cite": "@original/index-B7zdGq3H.js",
+              "quote": "TRIGGER_START=.8,TRIGGER_END=.2,PULSE_WIDTH=.35"
+            }
+          ]
+        }
+      }
+    },
+    "nav": {
+      "hide-after": {
+        "$value": 80,
+        "$type": "number",
+        "$description": "Navbar hides when scrolling down and scrollY > 80.",
+        "$extensions": {
+          "measuredFrom": [
+            {
+              "cite": "src/components/Navbar.jsx:45",
+              "expect": "const hide = y > lastY && y > 80"
+            },
+            {
+              "cite": "@original/index-B7zdGq3H.js",
+              "quote": "const f=o>a&&o>80"
+            }
+          ]
+        }
+      },
+      "scroll-offset": {
+        "$value": -80,
+        "$type": "number",
+        "$description": "In-page anchor scroll offset.",
+        "$extensions": {
+          "measuredFrom": [
+            {
+              "cite": "src/lib/scroll.js:80",
+              "expect": "getLenis().scrollTo(selector, { offset: -80 })"
+            },
+            {
+              "cite": "@original/index-B7zdGq3H.js",
+              "quote": "lenis.scrollTo(f,{offset:-80})"
+            }
+          ]
+        }
+      }
+    },
+    "parallax": {
+      "hero-wrapper": {
+        "$value": -0.02,
+        "$type": "number",
+        "$extensions": {
+          "measuredFrom": [
+            {
+              "cite": "src/components/Hero.jsx:96",
+              "expect": "data-parallax=\"-0.02\""
+            }
+          ]
+        }
+      },
+      "hero-content": {
+        "$value": -0.08,
+        "$type": "number",
+        "$extensions": {
+          "measuredFrom": [
+            {
+              "cite": "src/components/Hero.jsx:97",
+              "expect": "data-parallax=\"-0.08\""
+            }
+          ]
+        }
+      },
+      "steps-header": {
+        "$value": -0.04,
+        "$type": "number",
+        "$extensions": {
+          "measuredFrom": [
+            {
+              "cite": "src/components/HowItWorks.jsx:75",
+              "expect": "data-parallax=\"-0.04\""
+            }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "typography-roles": {
+    "$description": "Which scale step each content role uses (the class names the type-inspector badge reports).",
+    "heading-hero": {
+      "$value": "{typography.scale.display-1}",
+      "$type": "alias",
+      "$description": "Hero h1."
+    },
+    "heading-section": {
+      "$value": "{typography.scale.display-2}",
+      "$type": "alias",
+      "$description": "Every section h2; newsletter title and input."
+    },
+    "heading-price": {
+      "$value": "{typography.scale.display-3}",
+      "$type": "alias",
+      "$description": "Pricing price (overridden to display-1-mobile 40px at <=767)."
+    },
+    "heading-footer": {
+      "$value": "{typography.scale.display-3}",
+      "$type": "alias",
+      "$description": "Footer title (excluded from char-reveal)."
+    },
+    "heading-card": {
+      "$value": "{typography.scale.heading-1}",
+      "$type": "alias",
+      "$description": "Step/figma/export card titles."
+    },
+    "heading-plan": {
+      "$value": "{typography.scale.heading-2}",
+      "$type": "alias",
+      "$description": "Plan name/subtitle, includes title."
+    },
+    "text-lead": {
+      "$value": "{typography.scale.subtitle-1}",
+      "$type": "alias",
+      "$description": "Hero subtitle, FAQ questions."
+    },
+    "text-body": {
+      "$value": "{typography.scale.body-1}",
+      "$type": "alias"
+    },
+    "text-small": {
+      "$value": "{typography.scale.body-2}",
+      "$type": "alias",
+      "$description": "Plan licence line."
+    },
+    "text-button": {
+      "$value": "{typography.scale.button-2}",
+      "$type": "alias"
+    },
+    "text-caption": {
+      "$value": "{typography.scale.caption-1}",
+      "$type": "alias",
+      "$description": "Tags, footer legal, simulator labels."
+    }
+  }
+}

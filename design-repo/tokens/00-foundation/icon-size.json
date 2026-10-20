@@ -1,0 +1,95 @@
+{
+  "icon-size": {
+    "button-glyph": {
+      "$value": "16x17",
+      "$type": "size",
+      "$description": "Figma glyph inside CTA buttons.",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "CLONE_SPEC.md:121",
+            "expect": "holding the 16x17 Figma glyph SVG"
+          }
+        ]
+      }
+    },
+    "check": {
+      "$value": "16px",
+      "$type": "dimension",
+      "$description": "Pricing includes check.",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "CLONE_SPEC.md:462",
+            "expect": "span.pricing-includes__check > svg 16x16"
+          }
+        ]
+      }
+    },
+    "chevron": {
+      "$value": "24px",
+      "$type": "dimension",
+      "$description": "FAQ chevron; hamburger box.",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "CLONE_SPEC.md:509",
+            "expect": "span.faq__chevron > svg 24x24"
+          }
+        ]
+      }
+    },
+    "logo-tile": {
+      "$value": "32px",
+      "$type": "dimension",
+      "$description": "Third-party tool logos in export cards; step badge.",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "CLONE_SPEC.md:431",
+            "expect": "Logos are 32x32 SVGs filled `#E6E3DA`."
+          }
+        ]
+      }
+    },
+    "nav-logo": {
+      "$value": "171x40",
+      "$type": "size",
+      "$description": "Navbar wordmark (136.8x32 at <=1024).",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "CLONE_SPEC.md:138",
+            "expect": "a.navbar__logo [href=\"/\" aria-label=\"Typewave homepage\"] > svg 171x40"
+          }
+        ]
+      }
+    },
+    "footer-mark": {
+      "$value": "44x40",
+      "$type": "size",
+      "$description": "Footer hero mark.",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "CLONE_SPEC.md:589",
+            "expect": "div.footer__logo > svg 44x40"
+          }
+        ]
+      }
+    },
+    "folder": {
+      "$value": "96x84",
+      "$type": "size",
+      "$description": "Preset folder artwork (aspect-ratio 96/84).",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "src/index.css:274",
+            "expect": ".presets__folder{width:100%;aspect-ratio:96 / 84}"
+          }
+        ]
+      }
+    }
+  }
+}

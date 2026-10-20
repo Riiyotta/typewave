@@ -1,0 +1,28 @@
+{
+  "component.tag": {
+    "padding": {
+      "$value": "2px 6px",
+      "$type": "dimension",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "src/index.css:110",
+            "expect": ".tag{display:inline-flex;align-items:center;padding:2px 6px"
+          }
+        ]
+      }
+    },
+    "radius": {
+      "$value": "{radius.xs}",
+      "$type": "alias"
+    },
+    "bg": {
+      "$value": "{color-roles.accent.brand}",
+      "$type": "alias"
+    },
+    "text": {
+      "$value": "{color-roles.text.inverse}",
+      "$type": "alias"
+    }
+  }
+}

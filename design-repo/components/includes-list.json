@@ -1,0 +1,15 @@
+{
+  "id": "includes-list",
+  "kind": "component",
+  "purpose": "Two-column check list in a raised panel.",
+  "composes": [
+    "icon",
+    "tag"
+  ],
+  "measuredFrom": [
+    {
+      "cite": "src/index.css:343",
+      "expect": ".pricing-includes__item{display:flex;align-items:center;gap:12px}"
+    }
+  ]
+}

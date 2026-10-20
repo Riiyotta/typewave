@@ -1,0 +1,20 @@
+{
+  "id": "badge",
+  "kind": "primitive",
+  "purpose": "32x32 step-number badge; tone brand / step-2 / step-3.",
+  "implementedBy": [
+    "src/components/HowItWorks.jsx"
+  ],
+  "tokens": [
+    "component.badge.size",
+    "component.badge.tone-1",
+    "component.badge.tone-2",
+    "component.badge.tone-3"
+  ],
+  "measuredFrom": [
+    {
+      "cite": "src/index.css:109",
+      "expect": ".badge{width:32px;height:32px"
+    }
+  ]
+}

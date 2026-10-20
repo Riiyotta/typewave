@@ -1,0 +1,34 @@
+{
+  "elevation": {
+    "shadow-none": {
+      "$value": "none",
+      "$type": "shadow",
+      "$description": "No box-shadows anywhere on the page.",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "CLONE_SPEC.md:76",
+            "expect": "No box-shadows anywhere on the page."
+          }
+        ]
+      }
+    },
+    "blur-floating": {
+      "$value": "12px",
+      "$type": "dimension",
+      "$description": "backdrop-filter blur of the floating CTA.",
+      "$extensions": {
+        "measuredFrom": [
+          {
+            "cite": "src/index.css:417",
+            "expect": "backdrop-filter:blur(12px)"
+          },
+          {
+            "cite": "@original/index-D4COY28s.css",
+            "quote": "backdrop-filter:blur(12px)"
+          }
+        ]
+      }
+    }
+  }
+}
